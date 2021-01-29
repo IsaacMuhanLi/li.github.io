@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/tag.png">
+  <link rel="mask-icon" href="/images/tag.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Encode Sans:300,300italic,400,400italic,700,700italic|M PLUS 1p:300,300italic,400,400italic,700,700italic|Mulish:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"muhan.li","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Stanford University, Machine Learning, Andrew Ng, Coursera Week 6: Advice for Applying Machine Learning, Machine Learning System Design Advice for Applying Machine LearningEvaluating a Learning Algori">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning (6) · Applying Machine Learning">
+<meta property="og:url" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/">
+<meta property="og:site_name" content="bugstop">
+<meta property="og:description" content="Stanford University, Machine Learning, Andrew Ng, Coursera Week 6: Advice for Applying Machine Learning, Machine Learning System Design Advice for Applying Machine LearningEvaluating a Learning Algori">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/1.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/2.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/3.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/4.png">
+<meta property="article:published_time" content="2020-12-20T08:45:07.000Z">
+<meta property="article:modified_time" content="2021-01-28T08:02:40.239Z">
+<meta property="article:author" content="Muhan Li">
+<meta property="article:tag" content="Artificial Intelligence">
+<meta property="article:tag" content="Machine Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/1.png">
+
+<link rel="canonical" href="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Machine Learning (6) · Applying Machine Learning | bugstop</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">bugstop</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Tech Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-window-maximize fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-quote-left fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-hashtag fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-bars fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-inbox fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/bugstop" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lightball.png">
+      <meta itemprop="name" content="Muhan Li">
+      <meta itemprop="description" content="bugstop">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bugstop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning (6) · Applying Machine Learning
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 12-20-2020 16:45:07" itemprop="dateCreated datePublished" datetime="2020-12-20T16:45:07+08:00">12-20-2020</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>5.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 6:</em></strong> Advice for Applying Machine Learning, Machine Learning System Design</p>
+<h3 id="Advice-for-Applying-Machine-Learning"><a href="#Advice-for-Applying-Machine-Learning" class="headerlink" title="Advice for Applying Machine Learning"></a>Advice for Applying Machine Learning</h3><h4 id="Evaluating-a-Learning-Algorithm"><a href="#Evaluating-a-Learning-Algorithm" class="headerlink" title="Evaluating a Learning Algorithm"></a>Evaluating a Learning Algorithm</h4><h5 id="Deciding-What-to-Try-Next"><a href="#Deciding-What-to-Try-Next" class="headerlink" title="Deciding What to Try Next"></a>Deciding What to Try Next</h5><ul>
+<li>get more training examples</li>
+<li>try smaller sets of features</li>
+<li>try getting additional features</li>
+<li>try adding polynomial features</li>
+<li>try decreasing / increasing $\lambda$</li>
+</ul>
+<a id="more"></a>
+<h5 id="Evaluating-a-Hypothesis"><a href="#Evaluating-a-Hypothesis" class="headerlink" title="Evaluating a Hypothesis"></a>Evaluating a Hypothesis</h5><p>$\textsf{Dataset} \begin{cases} 70\% \textsf{ Training set} \\ 30\% \textsf{ Test set} \end{cases}$</p>
+<ol>
+<li>Learn parameter $\theta$ from training data</li>
+<li>Compute test set error $J_{test}\left(\theta\right)$</li>
+</ol>
+<h5 id="Model-Selection-and-Train-Validation-Test-Sets"><a href="#Model-Selection-and-Train-Validation-Test-Sets" class="headerlink" title="Model Selection and Train / Validation / Test Sets"></a>Model Selection and Train / Validation / Test Sets</h5><p><strong>Model selection:</strong> pick $\min J_{test}\left(\theta_d\right), \; d = \textsf{degree of polynomial}$</p>
+<p><strong><em>Problem:</em></strong> $J_{test}\left(\theta_d\right)$ is likely to be an optimistic estimate of generalization error, i.e. our extra parameter $d$ is fit to test set.</p>
+<p>$\textsf{Dataset} \begin{cases} 60\% \textsf{ Training set} \\ 20\% \textsf{ Cross validation set (CV)}  \\ 20\% \textsf{ Test set} \end{cases}$</p>
+<p><strong>Model selection:</strong> pick $\min J_{cv}\left(\theta_d\right)$, estimate generalization error for test set $J_{test}\left(\theta_d\right)$</p>
+<h4 id="Bias-vs-Variance"><a href="#Bias-vs-Variance" class="headerlink" title="Bias vs. Variance"></a>Bias vs. Variance</h4><h5 id="Diagnosing-Bias-vs-Variance"><a href="#Diagnosing-Bias-vs-Variance" class="headerlink" title="Diagnosing Bias vs. Variance"></a>Diagnosing Bias vs. Variance</h5><p>$\begin{matrix} \textsf{High Bias} &amp; - &amp; \textsf{just right} &amp; - &amp; \textsf{High Variance} \\ \textsf{underfit}&amp;&amp;&amp;&amp;\textsf{overfit} \end{matrix}$</p>
+<p>Training error: $\begin{aligned} J_{train}\left(\theta\right) = \dfrac{1}{2m}\sum_{i=1}^{m} \left( h_\theta \left( x^\left(i\right) \right) - y^\left(i\right) \right) ^2 \end{aligned}$</p>
+<p>Validation error: $\begin{aligned} J_{cv}\left(\theta\right) = \dfrac{1}{2m_{cv}}\sum_{i=1}^{m_{cv}} \left( h_\theta \left( x_{cv}^\left(i\right) \right) - y_{cv}^\left(i\right) \right) ^2 \end{aligned}$ or $\begin{aligned} J_{test}\left(\theta\right) \end{aligned}$</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/1.png" alt="Bias vs Variance"></p>
+<ul>
+<li><strong>Bias (underfit):</strong> $\begin{aligned} J_{train}\left(\theta\right) \end{aligned}$ will be high, $\begin{aligned} J_{cv}\left(\theta\right) \approx J_{train}\left(\theta\right) \end{aligned}$</li>
+<li><strong>Variance (overfit):</strong> $\begin{aligned} J_{train}\left(\theta\right) \end{aligned}$ will be low, $\begin{aligned} J_{cv}\left(\theta\right) \gg J_{train}\left(\theta\right) \end{aligned}$</li>
+</ul>
+<h5 id="Regularization-and-Bias-Variance"><a href="#Regularization-and-Bias-Variance" class="headerlink" title="Regularization and Bias / Variance"></a>Regularization and Bias / Variance</h5><p><strong>Linear regression with regularization</strong></p>
+<p>$\begin{aligned} \textsf{Model: } &amp; h_\theta \left(x\right) = \theta_0 + \theta_1x + \theta_2x^2 + \theta_3x^3 + \theta_4x^4 \\ &amp; J\left(\theta\right) = \dfrac{1}{2m} \sum_{i=1}^{m} \left( h_\theta \left( x^\left(i\right) \right) - y^\left(i\right) \right) ^2 + \underbrace{ \dfrac{\lambda}{2m} \sum_{j=1}^{m} \theta_j^2 } \end{aligned}$</p>
+<p>$\begin{matrix} \textsf{Large } \lambda &amp;&amp; \textsf{Intermediate } \lambda &amp;&amp; \textsf{Small } \lambda \\ \textsf{High Bias} &amp; - &amp; \textsf{just right} &amp; - &amp; \textsf{High Variance} \\ \textsf{underfit}&amp;&amp;&amp;&amp;\textsf{overfit} \end{matrix}$</p>
+<p><strong>Choosing the regularization parameter</strong> $\lambda$</p>
+<p>$\begin{aligned} J\left(\theta\right) &amp;= \dfrac{1}{2m} \sum_{i=1}^{m} \left( h_\theta \left( x^\left(i\right) \right) - y^\left(i\right) \right) ^2 + \dfrac{\lambda}{2m} \sum_{j=1}^{m} \theta_j^2 \\ J_{train}\left(\theta\right) &amp;= \dfrac{1}{2m}\sum_{i=1}^{m} \left( h_\theta \left( x^\left(i\right) \right) - y^\left(i\right) \right) ^2 \\ J_{cv}\left(\theta\right) &amp;= \dfrac{1}{2m_{cv}}\sum_{i=1}^{m_{cv}} \left( h_\theta \left( x_{cv}^\left(i\right) \right) - y_{cv}^\left(i\right) \right) ^2 \\ J_{test}\left(\theta\right) &amp;= \dfrac{1}{2m_{test}}\sum_{i=1}^{m_{test}} \left( h_\theta \left( x_{test}^\left(i\right) \right) - y_{test}^\left(i\right) \right) ^2 \end{aligned}$</p>
+<p>try $\lambda = 0 ,\, 0.01 ,\, 0.02 ,\, 0.04 ,\, 0.08 ,\, \dots ,\, 10.24$, train $\min_\theta J\left(\theta\right)$, pick $\min J_{cv}\left(\theta\right)$, estimate $J_{test}\left(\theta\right)$</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/2.png" alt="Bias vs Variance"></p>
+<h5 id="Learning-Curves"><a href="#Learning-Curves" class="headerlink" title="Learning Curves"></a>Learning Curves</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/3.png" alt="Learning Curves"></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-6/4.png" alt="Learning Curves"></p>
+<h5 id="Deciding-What-to-Do-Next-Revisited"><a href="#Deciding-What-to-Do-Next-Revisited" class="headerlink" title="Deciding What to Do Next Revisited"></a>Deciding What to Do Next Revisited</h5><ul>
+<li><p><strong>fix high bias</strong></p>
+<ul>
+<li>try getting additional features</li>
+<li>try adding polynomial features</li>
+<li>try decreasing $\lambda$</li>
+</ul>
+</li>
+<li><p><strong>fix high variance</strong></p>
+<ul>
+<li>get more training examples</li>
+<li>try smaller sets of features</li>
+<li>try increasing $\lambda$</li>
+</ul>
+</li>
+<li><p><strong><em>small</em> neural network</strong></p>
+<ul>
+<li>fewer parameters</li>
+<li>more prone to underfitting</li>
+<li>computationally cheaper</li>
+</ul>
+</li>
+<li><p><strong><em>large</em> neural network</strong></p>
+<ul>
+<li>more parameters</li>
+<li>more prone to overfitting</li>
+<li>computationally more expensive</li>
+<li>use regularization to address overfitting</li>
+</ul>
+</li>
+</ul>
+<h3 id="Machine-Learning-System-Design"><a href="#Machine-Learning-System-Design" class="headerlink" title="Machine Learning System Design"></a>Machine Learning System Design</h3><h4 id="Building-a-Spam-Classifier"><a href="#Building-a-Spam-Classifier" class="headerlink" title="Building a Spam Classifier"></a>Building a Spam Classifier</h4><h5 id="Prioritizing-What-to-Work-on"><a href="#Prioritizing-What-to-Work-on" class="headerlink" title="Prioritizing What to Work on"></a>Prioritizing What to Work on</h5><ul>
+<li>Collect lots of data</li>
+<li>Develop sophisticated features</li>
+<li>Develop algorithms to process your input in different ways</li>
+</ul>
+<h5 id="Error-Analysis"><a href="#Error-Analysis" class="headerlink" title="Error Analysis"></a>Error Analysis</h5><ul>
+<li>Start with a simple algorithm, implement it quickly, and test it early on your cross validation data.</li>
+<li>Plot learning curves to decide if more data, more features, etc. are likely to help.</li>
+<li>Manually examine the errors on examples in the cross-validation set and try to spot a trend where most of the errors were made.</li>
+</ul>
+<h4 id="Handling-Skewed-Data"><a href="#Handling-Skewed-Data" class="headerlink" title="Handling Skewed Data"></a>Handling Skewed Data</h4><h5 id="Error-Metrics-for-Skewed-Classes"><a href="#Error-Metrics-for-Skewed-Classes" class="headerlink" title="Error Metrics for Skewed Classes"></a>Error Metrics for Skewed Classes</h5><p><strong>Precision / Recall</strong></p>
+<p>$y=1$ in presence of rare class:</p>
+<p>$\begin{matrix} &amp; \textrm{actual class} \\ \begin{matrix} \\ \textrm{predicted} &amp;&amp; 1 \\ \textrm{class} &amp;&amp; 0 \end{matrix} &amp; \begin{matrix} 1 &amp; 0 \\ \textsf{True Positive} &amp; \textsf{False Positive} \\  \textsf{False Negative} &amp; \textsf{True Negative} \end{matrix} \end{matrix}$</p>
+<p>$\Rightarrow \; \begin{cases} \textsf{Precision} = \dfrac{\textsf{True Positive}}{\textsf{Predicted Positive}} &amp;= \dfrac{\textsf{True Positive}}{\textsf{True Positive}+\textsf{False Positive}} \\ \textsf{Recall} = \dfrac{\textsf{True Positive}}{\textsf{Actual Positive}} &amp;= \dfrac{\textsf{True Positive}}{\textsf{True Positive}+\textsf{False Negative}} ^\strut \end{cases}$</p>
+<h5 id="Trading-Off-Precision-and-Recall"><a href="#Trading-Off-Precision-and-Recall" class="headerlink" title="Trading Off Precision and Recall"></a>Trading Off Precision and Recall</h5><p>$\begin{matrix} \begin{matrix} \textsf{lower precision} \\ \textsf{higher recall} \end{matrix}  &amp; \begin{matrix} \xrightarrow{ {\rm diffident} \qquad {\rm confident} } \end{matrix} &amp; \begin{matrix} \textsf{higher precision} \\ \textsf{lower recall} \end{matrix} \end{matrix}$</p>
+<p>Predict $1$ if $h_\theta \left(x\right) \geq \textsf{threshold}$</p>
+<p>$\Rightarrow \; \textsf{F}_\textsf{1}\textsf{ Score} = \dfrac{2PR}{P+R}$</p>
+<h4 id="Using-Large-Data-Sets"><a href="#Using-Large-Data-Sets" class="headerlink" title="Using Large Data Sets"></a>Using Large Data Sets</h4><h5 id="Data-For-Machine-Learning"><a href="#Data-For-Machine-Learning" class="headerlink" title="Data For Machine Learning"></a>Data For Machine Learning</h5><p><em>It’s not who has the best algorithm that wins; it’s who has the most data.</em></p>
+<p><strong>Large data rationale</strong></p>
+<ul>
+<li>Assume feature $x\in\mathbb{R}^{n+1}$ has sufficient information to predict $y$ accurately</li>
+<li>Use a learning algorithm with many parameters</li>
+<li>Use a very large training set (unlikely to overfit)</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-5/" rel="prev" title="Machine Learning (5) · Neural Networks · II">
+      <i class="fa fa-chevron-left"></i> Machine Learning (5) · Neural Networks · II
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/" rel="next" title="Machine Learning (7) · Support Vector Machines">
+      Machine Learning (7) · Support Vector Machines <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Advice-for-Applying-Machine-Learning"><span class="nav-number">1.</span> <span class="nav-text">Advice for Applying Machine Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Evaluating-a-Learning-Algorithm"><span class="nav-number">1.1.</span> <span class="nav-text">Evaluating a Learning Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Deciding-What-to-Try-Next"><span class="nav-number">1.1.1.</span> <span class="nav-text">Deciding What to Try Next</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Evaluating-a-Hypothesis"><span class="nav-number">1.1.2.</span> <span class="nav-text">Evaluating a Hypothesis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Model-Selection-and-Train-Validation-Test-Sets"><span class="nav-number">1.1.3.</span> <span class="nav-text">Model Selection and Train &#x2F; Validation &#x2F; Test Sets</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bias-vs-Variance"><span class="nav-number">1.2.</span> <span class="nav-text">Bias vs. Variance</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Diagnosing-Bias-vs-Variance"><span class="nav-number">1.2.1.</span> <span class="nav-text">Diagnosing Bias vs. Variance</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Regularization-and-Bias-Variance"><span class="nav-number">1.2.2.</span> <span class="nav-text">Regularization and Bias &#x2F; Variance</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Learning-Curves"><span class="nav-number">1.2.3.</span> <span class="nav-text">Learning Curves</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Deciding-What-to-Do-Next-Revisited"><span class="nav-number">1.2.4.</span> <span class="nav-text">Deciding What to Do Next Revisited</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning-System-Design"><span class="nav-number">2.</span> <span class="nav-text">Machine Learning System Design</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Building-a-Spam-Classifier"><span class="nav-number">2.1.</span> <span class="nav-text">Building a Spam Classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Prioritizing-What-to-Work-on"><span class="nav-number">2.1.1.</span> <span class="nav-text">Prioritizing What to Work on</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Error-Analysis"><span class="nav-number">2.1.2.</span> <span class="nav-text">Error Analysis</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Handling-Skewed-Data"><span class="nav-number">2.2.</span> <span class="nav-text">Handling Skewed Data</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Error-Metrics-for-Skewed-Classes"><span class="nav-number">2.2.1.</span> <span class="nav-text">Error Metrics for Skewed Classes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Trading-Off-Precision-and-Recall"><span class="nav-number">2.2.2.</span> <span class="nav-text">Trading Off Precision and Recall</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-Large-Data-Sets"><span class="nav-number">2.3.</span> <span class="nav-text">Using Large Data Sets</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Data-For-Machine-Learning"><span class="nav-number">2.3.1.</span> <span class="nav-text">Data For Machine Learning</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Muhan Li"
+      src="/images/lightball.png">
+  <p class="site-author-name" itemprop="name">Muhan Li</p>
+  <div class="site-description" itemprop="description">bugstop</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/bugstop" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;bugstop" rel="noopener" target="_blank"><i class="fab fa-github-square fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/public-profile/in/limh" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;public-profile&#x2F;in&#x2F;limh" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:limuhan@msn.com" title="Email → mailto:limuhan@msn.com" rel="noopener" target="_blank"><i class="fas fa-envelope-square fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fas fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Li, Muhan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">135k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:02</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

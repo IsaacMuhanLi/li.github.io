@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/tag.png">
+  <link rel="mask-icon" href="/images/tag.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Encode Sans:300,300italic,400,400italic,700,700italic|M PLUS 1p:300,300italic,400,400italic,700,700italic|Mulish:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"muhan.li","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Deep Learning Specialization, Course ANeural Networks and Deep Learning by deeplearning.ai, Andrew Ng, Coursera Week 2: Neural Networks Basics  Build a logistic regression model, structured as a shall">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep Learning (2) · Neural Networks Basics">
+<meta property="og:url" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/">
+<meta property="og:site_name" content="bugstop">
+<meta property="og:description" content="Deep Learning Specialization, Course ANeural Networks and Deep Learning by deeplearning.ai, Andrew Ng, Coursera Week 2: Neural Networks Basics  Build a logistic regression model, structured as a shall">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/image.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/sigmoid.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/fp.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/bp.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/lrgd.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/i.png">
+<meta property="article:published_time" content="2020-03-25T02:10:10.000Z">
+<meta property="article:modified_time" content="2021-01-29T02:21:11.892Z">
+<meta property="article:author" content="Muhan Li">
+<meta property="article:tag" content="Artificial Intelligence">
+<meta property="article:tag" content="Deep Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/image.png">
+
+<link rel="canonical" href="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Deep Learning (2) · Neural Networks Basics | bugstop</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">bugstop</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Tech Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-window-maximize fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-quote-left fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-hashtag fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-bars fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-inbox fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/bugstop" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lightball.png">
+      <meta itemprop="name" content="Muhan Li">
+      <meta itemprop="description" content="bugstop">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bugstop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Deep Learning (2) · Neural Networks Basics
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 03-25-2020 10:10:10" itemprop="dateCreated datePublished" datetime="2020-03-25T10:10:10+08:00">03-25-2020</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep Learning</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>9 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Deep Learning Specialization, Course A<br><strong>Neural Networks and Deep Learning</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 2:</em></strong> <em>Neural Networks Basics</em></p>
+<ol>
+<li>Build a logistic regression model, structured as a shallow neural network</li>
+<li>Implement the main steps of an ML algorithm, including making predictions, derivative computation, and gradient descent.</li>
+<li>Implement computationally efficient, highly vectorized, versions of models.</li>
+<li>Understand how to compute derivatives for logistic regression, using a backpropagation mindset.</li>
+<li>Become familiar with Python and Numpy</li>
+<li>Work with iPython Notebooks</li>
+<li>Be able to implement vectorization across multiple training examples</li>
+</ol>
+<a id="more"></a>
+<h3 id="Logistic-Regression-as-a-Neural-Network"><a href="#Logistic-Regression-as-a-Neural-Network" class="headerlink" title="Logistic Regression as a Neural Network"></a>Logistic Regression as a Neural Network</h3><h4 id="Binary-Classification"><a href="#Binary-Classification" class="headerlink" title="Binary Classification"></a>Binary Classification</h4><ul>
+<li><strong><em>y:</em></strong> 1<sup><em>(cat)</em></sup> vs 0<sup><em>(non cat)</em></sup></li>
+<li><strong><em>image size:</em></strong> 64 × 64</li>
+<li><strong><em>n<sub>x</sub>:</em></strong> 12288</li>
+<li><strong><em>m:</em></strong> $\left\{ \left(x^{\left(1\right)},\ y^{\left(1\right)}\right),\  \left(x^{\left(2\right)},\ y^{\left(2\right)}\right),\ \dots ,\  \left(x^{\left(m\right)},\ y^{\left(m\right)}\right) \right\} \qquad x^{\left(i\right)}\in\mathbb{R}^{n_x},\ y^{\left(i\right)} \in\left\{0,1\right\}$</li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/image.png" alt="image"></p>
+<p>$x = \underbrace{\left[ \begin{matrix} 255 &amp; 231 &amp; 42 &amp; \cdots &amp; 255 &amp; 134 &amp; 202 &amp; \cdots &amp; 231 &amp; 134 &amp; 93 &amp; \cdots \end{matrix} \right]^{\mathsf{T}}}_{n_x\ =\ 64\times64\times3\ =\ 12288}$</p>
+<p>$X = \left[ \begin{matrix} \Big| &amp; \Big| &amp; \Big| &amp; &amp; \Big| \\ x^{\left(1\right)} &amp; x^{\left(2\right)} &amp; x^{\left(3\right)} &amp; \cdots &amp; x^{\left(m\right)} \\ \Big| &amp; \Big| &amp; \Big| &amp; &amp; \Big| \end{matrix} \right]  \qquad X\in\mathbb{R}^{n_x \times m}$</p>
+<p>$Y = \left[ \begin{matrix} y^{\left(1\right)} &amp; y^{\left(2\right)} &amp; y^{\left(3\right)} &amp; \cdots &amp; y^{\left(m\right)} \end{matrix} \right]  \qquad Y\in\mathbb{R}^{1 \times m}$</p>
+<h4 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h4><p>Given $x\in\mathbb{R}^{n_x}$, want $\hat{y} = P\left(y=1\ |\ x\right)$.<br><br><strong><em>Parameters:</em></strong> $w\in\mathbb{R}^{n_x},\ b\in\mathbb{R}^{n_x}$<br><br><strong><em>Output:</em></strong> $\hat{y}= \sigma\left( w^{\mathsf{T}}x+b \right) \qquad 0\leq\hat{y}\leq1$<br><br>&emsp;&emsp;&emsp;&emsp;$\sigma\left( z \right)={\rm sigmoid}\left(z\right) = \dfrac{1} {1 + e^{-z}}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/sigmoid.png" alt="sigmoid"></p>
+<h4 id="Logistic-Regression-Cost-Function"><a href="#Logistic-Regression-Cost-Function" class="headerlink" title="Logistic Regression Cost Function"></a>Logistic Regression Cost Function</h4><p>Given $\left\{ \left(x^{\left(1\right)},\ y^{\left(1\right)}\right),\  \left(x^{\left(2\right)},\ y^{\left(2\right)}\right),\ \dots ,\  \left(x^{\left(m\right)},\ y^{\left(m\right)}\right) \right\}$, want $\hat{y}^{\left(i\right)}=y^{\left(i\right)}$.</p>
+<p><strong><em>Loss (error) function:</em></strong> $L\left(\hat{y},\,y\right)=-\left( y\log\hat{y} +\left(1-y\right) \log\left(1-\hat{y}\right) \right)$<br><br>&emsp;&emsp;&emsp;&emsp;<em>Notice:</em> $L\left(\hat{y},\,y\right) = \dfrac{1}{2}\left(\hat{y}-y\right)^2$ makes optimization problem <strong>non-convex.</strong></p>
+<p><strong><em>Cost function:</em></strong> $\begin{aligned}J\left(w,\,b\right)= \dfrac{1}{m} \sum_{i=1}^{m} L\left(\hat{y}^{\left(i\right)},\,y^{\left(i\right)}\right)= -\dfrac{1}{m} \sum_{i=1}^{m} \left( y^{\left(i\right)}\log\hat{y}^{\left(i\right)} +\left(1-y^{\left(i\right)}\right) \log\left(1-\hat{y}^{\left(i\right)}\right) \right)\end{aligned}$</p>
+<p>Want to find $w, b$ to minimize $J\left(w,\,b\right)$.</p>
+<h4 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h4><ol>
+<li><p>initialize <strong>w, b</strong>​ to <strong>0​</strong></p>
+</li>
+<li><p>iterate until <strong>converge</strong> to global optimum &emsp; ( <strong><em>J(w, b)</em></strong> <em>is convex</em> )</p>
+<p>$w:=w-\alpha \cdot \dfrac {\partial J\left( w,b\right)}{\partial w} \qquad b:=b-\alpha \cdot \dfrac {\partial J\left( w,b\right)}{\partial b}$</p>
+</li>
+</ol>
+<h4 id="Derivatives-with-a-Computation-Graph"><a href="#Derivatives-with-a-Computation-Graph" class="headerlink" title="Derivatives with a Computation Graph"></a>Derivatives with a Computation Graph</h4><p>$J\left(a,b,c\right) = \underbrace{3\,(\underbrace{a + \underbrace{bc}_{u\,=\,bc}}_{v\,=\,a+u})}_{J\,=\,3v}$</p>
+<ul>
+<li><p><strong><em>forward propagation</em></strong> → cost function<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/fp.png" alt="left-to-right"></p>
+</li>
+<li><p><strong><em>back propagation</em></strong> → derivatives</p>
+<p>Chain Rule: $\dfrac{dJ}{da} = \dfrac{dJ}{dv}\dfrac{dv}{da} = 3$, $\dfrac{dJ}{db} = \dfrac{dJ}{dv}\dfrac{dv}{du}\dfrac{du}{db} = 6$, $\dfrac{dJ}{dc} = \dfrac{dJ}{dv}\dfrac{dv}{du}\dfrac{du}{dc} = 9$</p>
+<p>&emsp;&emsp;&emsp;&emsp;<em>p.s.</em> $\dfrac{d{\rm FinalOutputVar}}{d{\rm var}}$ in code is simplified as <code>dvar</code>, e.g., <code>dv = 3</code>, <code>da = 3</code>.<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/bp.png" alt="right-to-left"></p>
+</li>
+</ul>
+<h4 id="Logistic-Regression-Gradient-Descent"><a href="#Logistic-Regression-Gradient-Descent" class="headerlink" title="Logistic Regression Gradient Descent"></a>Logistic Regression Gradient Descent</h4><p>$w_1 :=w_1 -\alpha \cdot dw_1 \qquad w_2 :=w_2 -\alpha \cdot dw_2 \qquad b:=b-\alpha \cdot db$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/lrgd.png" alt="example"></p>
+<h4 id="Gradient-Descent-on-m-Examples"><a href="#Gradient-Descent-on-m-Examples" class="headerlink" title="Gradient Descent on m Examples"></a>Gradient Descent on m Examples</h4><p>$\begin{aligned} J\left(w,\,b\right) &amp;= \dfrac{1}{m} \sum_{i=1}^{m} L\left(a^{\left(i\right)},\,y^{\left(i\right)}\right) \\ \dfrac{\partial}{\partial w_1} J\left(w,\,b\right) &amp;= \dfrac{1}{m} \sum_{i=1}^{m}  \underbrace{\dfrac{\partial}{\partial w_1} L\left(a^{\left(i\right)},\,y^{\left(i\right)}\right)}_{dw_1^{\left(i\right)}} \end{aligned}$</p>
+<h5 id="Algorithm-one-step-of-gradient-descent"><a href="#Algorithm-one-step-of-gradient-descent" class="headerlink" title="Algorithm (one step of gradient descent)"></a>Algorithm <em>(one step of gradient descent)</em></h5><p>$J=0; \ dw_1=0; \ dw_2=0; \ db=0$</p>
+<p>For $i=1$ to $m$<br><br>&emsp;&emsp;$z^{\left(i\right)} = w^{\mathsf{T}} x^{\left(i\right)} +b$<br><br>&emsp;&emsp;$a^{\left(i\right)} = \sigma \left( x^{\left(i\right)} \right)$<br><br>&emsp;&emsp;$J +\!\!= - \left[ y^{\left(i\right)}\log a^{\left(i\right)} +\left(1-y^{\left(i\right)}\right) \log\left(1- a^{\left(i\right)}\right) \right]$<br><br>&emsp;&emsp;$dz^{\left(i\right)} = a^{\left(i\right)} - y^{\left(i\right)}$<br><br>&emsp;&emsp;$dw_1 +\!\!= x_1^{\left(i\right)} dz^{\left(i\right)}$<br><br>&emsp;&emsp;$dw_2 +\!\!= x_2^{\left(i\right)} dz^{\left(i\right)}$&emsp;&emsp;&emsp;&emsp;<em>( n = 2 )</em><br>&emsp;&emsp;$db +\!\!= dz^{\left(i\right)}$</p>
+<p>$J /\!\!= m; \ w_1/\!\!= m; \ dw_2/\!\!= m; \ db/\!\!= m$</p>
+<p>$w_1 :=w_1 -\alpha \cdot dw_1 \\ w_2 :=w_2 -\alpha \cdot dw_2 \\ b:=b-\alpha \cdot db$</p>
+<p><strong>Weakness</strong></p>
+<ul>
+<li><strong><em>Efficiency:</em></strong> two for loops (m training samples, all features) → <strong><em>vectorization</em></strong></li>
+</ul>
+<h3 id="Python-and-Vectorization"><a href="#Python-and-Vectorization" class="headerlink" title="Python and Vectorization"></a>Python and Vectorization</h3><h4 id="Vectorization"><a href="#Vectorization" class="headerlink" title="Vectorization"></a>Vectorization</h4><p>$z = w^{\mathsf{T}}x+b$</p>
+<p>$w = \left[ \begin{matrix} \vdots \\ \vdots \end{matrix} \right] \qquad x = \left[ \begin{matrix} \vdots \\ \vdots \end{matrix} \right]  \qquad w\in\mathbb{R}^{n_x}, \  x\in\mathbb{R}^{n_x}$</p>
+<p><strong>non-vectorized</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">z = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n_x):</span><br><span class="line">    z += w[i] * x[i]</span><br><span class="line">z += b</span><br></pre></td></tr></table></figure>
+<p><strong>vectorized</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z = np.dot(w, x) + b</span><br></pre></td></tr></table></figure>
+<p><em>avoid using explicit for loops whenever possible</em></p>
+<h5 id="Algorithm-one-for-loop"><a href="#Algorithm-one-for-loop" class="headerlink" title="Algorithm (one for-loop)"></a>Algorithm <em>(one for-loop)</em></h5><p>$J=0; \ dw=\texttt{np.zeros}\left(n_x, 1\right); \ db=0$</p>
+<p>For $i=1$ to $m$<br><br>&emsp;&emsp;$z^{\left(i\right)} = w^{\mathsf{T}} x^{\left(i\right)} +b$<br><br>&emsp;&emsp;$a^{\left(i\right)} = \sigma \left( x^{\left(i\right)} \right)$<br><br>&emsp;&emsp;$J +\!\!= - \left[ y^{\left(i\right)}\log a^{\left(i\right)} +\left(1-y^{\left(i\right)}\right) \log\left(1- a^{\left(i\right)}\right) \right]$<br><br>&emsp;&emsp;$dz^{\left(i\right)} = a^{\left(i\right)} - y^{\left(i\right)}$<br><br>&emsp;&emsp;$dw +\!\!= x^{\left(i\right)} dz^{\left(i\right)}$<br><br>&emsp;&emsp;$db +\!\!= dz^{\left(i\right)}$</p>
+<p>$J /\!\!= m; \ db/\!\!= m$</p>
+<p>$w :=w -\alpha \cdot dw \\ b:=b-\alpha \cdot db$</p>
+<h4 id="Vectorizing-Logistic-Regression"><a href="#Vectorizing-Logistic-Regression" class="headerlink" title="Vectorizing Logistic Regression"></a>Vectorizing Logistic Regression</h4><p>$z^{\left(i\right)} = w^{\mathsf{T}} x^{\left(i\right)} +b \qquad a^{\left(i\right)} = \sigma \left( x^{\left(i\right)} \right)$</p>
+<p>$\begin{aligned}X= \left[ \begin{matrix} \Big| &amp; \Big| &amp; \Big| &amp; &amp; \Big| \\ x^{\left(1\right)} &amp; x^{\left(2\right)} &amp; x^{\left(3\right)} &amp; \cdots &amp; x^{\left(m\right)} \\ \Big| &amp; \Big| &amp; \Big| &amp; &amp; \Big| \end{matrix} \right] \qquad X\in\mathbb{R}^{n_x \times m}\end{aligned}$</p>
+<p>$\begin{aligned}Y = \left[ \begin{matrix} y^{\left(1\right)} &amp; y^{\left(2\right)} &amp; y^{\left(3\right)} &amp; \cdots &amp; y^{\left(m\right)} \end{matrix} \right]  \qquad Y\in\mathbb{R}^{1 \times m}\end{aligned}$</p>
+<p>$\begin{aligned}Z=\left[ \begin{matrix} z^{\left(1\right)} &amp; z^{\left(2\right)} &amp; z^{\left(3\right)} &amp; \cdots &amp; z^{\left(m\right)} \end{matrix} \right] &amp;=w^{\mathsf{T}}X+ \left[ \begin{matrix} b &amp; b &amp; b &amp; \cdots &amp; b \end{matrix} \right] \\ &amp;= \underbrace{\left[ \begin{matrix} w^{\mathsf{T}} x^{\left(1\right)} +b &amp; w^{\mathsf{T}} x^{\left(2\right)} +b &amp; w^{\mathsf{T}} x^{\left(3\right)} +b &amp; \cdots &amp; w^{\mathsf{T}} x^{\left(m\right)} +b \end{matrix} \right]}_{1 \times m} \end{aligned}$<br>$\begin{aligned}A= \left[ \begin{matrix} a^{\left(1\right)} &amp; a^{\left(2\right)} &amp; a^{\left(3\right)} &amp; \cdots &amp; a^{\left(m\right)} \end{matrix} \right]  = \sigma \left( Z \right)\end{aligned}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Z = np.dot(w.T, X) + b      <span class="comment"># broadcasting</span></span><br></pre></td></tr></table></figure>
+<h4 id="Vectorizing-Logistic-Regression’s-Gradient-Output"><a href="#Vectorizing-Logistic-Regression’s-Gradient-Output" class="headerlink" title="Vectorizing Logistic Regression’s Gradient Output"></a>Vectorizing Logistic Regression’s Gradient Output</h4><p>$ dz^{\left(i\right)} = a^{\left(i\right)} - y^{\left(i\right)}$</p>
+<p>$\begin{aligned}dZ=\left[ \begin{matrix} dz^{\left(1\right)} &amp; dz^{\left(2\right)} &amp; dz^{\left(3\right)} &amp; \cdots &amp; dz^{\left(m\right)} \end{matrix} \right] \end{aligned}$</p>
+<p>$\begin{aligned}dZ=Z-Y&amp;=\left[ \begin{matrix} a^{\left(1\right)}-y^{\left(1\right)} &amp; a^{\left(2\right)}-y^{\left(2\right)} &amp; a^{\left(3\right)}-y^{\left(3\right)} &amp; \cdots &amp; a^{\left(m\right)}-y^{\left(m\right)} \end{matrix} \right] \end{aligned}$</p>
+<p>$\begin{aligned}db=\dfrac{1}{m} \sum ^{m}_{i=1} dz^{\left(i\right)} \end{aligned}$</p>
+<p>$\begin{aligned}dw &amp;=\dfrac{1}{m}\ X\ dZ^{\mathsf{T}}  \\ &amp;= \dfrac{1}{m} \left[ \begin{matrix} \Big| &amp; \Big| &amp; \Big| &amp; &amp; \Big| \\ x^{\left(1\right)} &amp; x^{\left(2\right)} &amp; x^{\left(3\right)} &amp; \cdots &amp; x^{\left(m\right)} \\ \Big| &amp; \Big| &amp; \Big| &amp; &amp; \Big| \end{matrix} \right] \left[ \begin{matrix} dz^{\left(1\right)} \\ dz^{\left(2\right)} \\ \vdots \\ dz^{\left(m\right)} \end{matrix} \right] \\&amp;= \dfrac{1}{m}\underbrace{ \left[ \begin{matrix} x^{\left(1\right)}dz^{\left(1\right)} + x^{\left(2\right)}dz^{\left(2\right)} + x^{\left(3\right)}dz^{\left(3\right)} + \dots + x^{\left(m\right)}dz^{\left(m\right)} \end{matrix} \right] }_{n\times1} \end{aligned}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dZ = A - Y</span><br><span class="line">db = np.<span class="built_in">sum</span>(dZ) / m</span><br><span class="line">dw = np.dot(X, dZ.T) / m</span><br></pre></td></tr></table></figure>
+<h5 id="Algorithm-vectorized"><a href="#Algorithm-vectorized" class="headerlink" title="Algorithm (vectorized)"></a>Algorithm <em>(vectorized)</em></h5><p>$\begin{aligned} &amp; Z = w^{\mathsf{T}}X + b \\&amp; A = \sigma\left(Z\right) \\&amp; dZ = A -Y\end{aligned}$</p>
+<p>$\begin{aligned}&amp;dw =\dfrac{1}{m}\ X\ dZ^{\mathsf{T}} \\&amp; db=\dfrac{1}{m} \sum ^{m}_{i=1} dz^{\left(i\right)}\end{aligned}$</p>
+<p>$\begin{aligned}&amp;w := w -\alpha \cdot dw \\&amp; b :=b-\alpha \cdot db\end{aligned}$</p>
+<p><em>still need a for loop to have iterations of gradient descent</em></p>
+<h4 id="Explanation-of-Logistic-Regression-Cost-Function"><a href="#Explanation-of-Logistic-Regression-Cost-Function" class="headerlink" title="Explanation of Logistic Regression Cost Function"></a>Explanation of Logistic Regression Cost Function</h4><p><strong><em>maximize:</em></strong> $\begin{aligned}\hat{y} = P\left(y=1\ |\ x\right)\end{aligned}$</p>
+<p>&emsp;&emsp;$\begin{aligned}\hat{y}= \sigma\left( w^{\mathsf{T}}x+b \right) \qquad \sigma\left( z \right)={\rm sigmoid}\left(z\right) = \dfrac{1} {1 + e^{-z}}\end{aligned}$</p>
+<p>&emsp;&emsp;$\begin{aligned}\begin{cases} p\left(y|x\right) = \hat{y} \quad &amp;{\rm if} \ \  y=1 \\ p\left(y|x\right) = 1- \hat{y} \quad &amp;{\rm if} \ \  y=0 \end{cases} \quad \Longrightarrow \quad p\left(y|x\right) = \hat{y}^y \left(1-\hat{y}\right)^{1-y} \end{aligned}$</p>
+<p>&emsp;&emsp;$\begin{aligned}\log p\left(y|x\right) = \log\left( \hat{y}^y \left(1-\hat{y}\right)^{1-y}\right) =y\log\hat{y} +\left(1-y\right) \log\left(1-\hat{y}\right) \end{aligned}$</p>
+<p><strong><em>minimize:</em></strong> $\begin{aligned}L\left(\hat{y},\,y\right)=-\left( y\log\hat{y} +\left(1-y\right) \log\left(1-\hat{y}\right) \right)\end{aligned}$</p>
+<p>&emsp;&emsp;$\begin{aligned} p\left({\rm labels\ in\ training\ set}\right) = \prod_{i=1}^{m} p\left(y^{\left(i\right)}|x^{\left(i\right)}\right)\end{aligned}$</p>
+<p>&emsp;&emsp;$\begin{aligned} \log p\left({\rm labels\ in\ training\ set}\right) &amp;= \log \left( \prod_{i=1}^{m} p\left(y^{\left(i\right)}|x^{\left(i\right)}\right) \right) \\ &amp;= \sum_{i=1}^{m} \log\left(p\left(y^{\left(i\right)}|x^{\left(i\right)}\right)\right) \\ &amp;= -\sum_{i=1}^{m}L\left(\hat{y}^{\left(i\right)},\,y^{\left(i\right)}\right) \end{aligned}$</p>
+<p><strong><em>minimize:</em></strong> $\begin{aligned} J\left(w,\,b\right)= \dfrac{1}{m} \sum_{i=1}^{m} L\left(\hat{y}^{\left(i\right)},\,y^{\left(i\right)}\right)\end{aligned}$</p>
+<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Python-Basics-with-numpy"><a href="#Python-Basics-with-numpy" class="headerlink" title="Python Basics with numpy"></a>Python Basics with numpy</h4><h4 id="Logistic-Regression-with-a-Neural-Network-mindset"><a href="#Logistic-Regression-with-a-Neural-Network-mindset" class="headerlink" title="Logistic Regression with a Neural Network mindset"></a>Logistic Regression with a Neural Network mindset</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-2/i.png" alt="example"></p>
+<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+              <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/" rel="prev" title="Deep Learning (1) · Introduction">
+      <i class="fa fa-chevron-left"></i> Deep Learning (1) · Introduction
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-3/" rel="next" title="Deep Learning (3) · Shallow Neural Networks">
+      Deep Learning (3) · Shallow Neural Networks <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistic-Regression-as-a-Neural-Network"><span class="nav-number">1.</span> <span class="nav-text">Logistic Regression as a Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Classification"><span class="nav-number">1.1.</span> <span class="nav-text">Binary Classification</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logistic-Regression"><span class="nav-number">1.2.</span> <span class="nav-text">Logistic Regression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logistic-Regression-Cost-Function"><span class="nav-number">1.3.</span> <span class="nav-text">Logistic Regression Cost Function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradient-Descent"><span class="nav-number">1.4.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Derivatives-with-a-Computation-Graph"><span class="nav-number">1.5.</span> <span class="nav-text">Derivatives with a Computation Graph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logistic-Regression-Gradient-Descent"><span class="nav-number">1.6.</span> <span class="nav-text">Logistic Regression Gradient Descent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradient-Descent-on-m-Examples"><span class="nav-number">1.7.</span> <span class="nav-text">Gradient Descent on m Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Algorithm-one-step-of-gradient-descent"><span class="nav-number">1.7.1.</span> <span class="nav-text">Algorithm (one step of gradient descent)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-and-Vectorization"><span class="nav-number">2.</span> <span class="nav-text">Python and Vectorization</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vectorization"><span class="nav-number">2.1.</span> <span class="nav-text">Vectorization</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Algorithm-one-for-loop"><span class="nav-number">2.1.1.</span> <span class="nav-text">Algorithm (one for-loop)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vectorizing-Logistic-Regression"><span class="nav-number">2.2.</span> <span class="nav-text">Vectorizing Logistic Regression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vectorizing-Logistic-Regression%E2%80%99s-Gradient-Output"><span class="nav-number">2.3.</span> <span class="nav-text">Vectorizing Logistic Regression’s Gradient Output</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Algorithm-vectorized"><span class="nav-number">2.3.1.</span> <span class="nav-text">Algorithm (vectorized)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Explanation-of-Logistic-Regression-Cost-Function"><span class="nav-number">2.4.</span> <span class="nav-text">Explanation of Logistic Regression Cost Function</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Programming-Assignments"><span class="nav-number">3.</span> <span class="nav-text">Programming Assignments</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-Basics-with-numpy"><span class="nav-number">3.1.</span> <span class="nav-text">Python Basics with numpy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logistic-Regression-with-a-Neural-Network-mindset"><span class="nav-number">3.2.</span> <span class="nav-text">Logistic Regression with a Neural Network mindset</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Muhan Li"
+      src="/images/lightball.png">
+  <p class="site-author-name" itemprop="name">Muhan Li</p>
+  <div class="site-description" itemprop="description">bugstop</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/bugstop" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;bugstop" rel="noopener" target="_blank"><i class="fab fa-github-square fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/public-profile/in/limh" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;public-profile&#x2F;in&#x2F;limh" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:limuhan@msn.com" title="Email → mailto:limuhan@msn.com" rel="noopener" target="_blank"><i class="fas fa-envelope-square fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fas fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Li, Muhan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">135k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:02</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

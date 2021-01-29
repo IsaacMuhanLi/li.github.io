@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/tag.png">
+  <link rel="mask-icon" href="/images/tag.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Encode Sans:300,300italic,400,400italic,700,700italic|M PLUS 1p:300,300italic,400,400italic,700,700italic|Mulish:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"muhan.li","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Deep Learning Specialization, Course CStructuring Machine Learning Projects by deeplearning.ai, Andrew Ng, Coursera Week 1: ML Strategy (1)  Understand why Machine Learning strategy is important Apply">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep Learning (8) · ML Strategy · I">
+<meta property="og:url" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-8/">
+<meta property="og:site_name" content="bugstop">
+<meta property="og:description" content="Deep Learning Specialization, Course CStructuring Machine Learning Projects by deeplearning.ai, Andrew Ng, Coursera Week 1: ML Strategy (1)  Understand why Machine Learning strategy is important Apply">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-8/1.png">
+<meta property="article:published_time" content="2020-04-02T17:23:45.000Z">
+<meta property="article:modified_time" content="2021-01-29T02:21:42.236Z">
+<meta property="article:author" content="Muhan Li">
+<meta property="article:tag" content="Artificial Intelligence">
+<meta property="article:tag" content="Deep Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-8/1.png">
+
+<link rel="canonical" href="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Deep Learning (8) · ML Strategy · I | bugstop</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">bugstop</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Tech Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-window-maximize fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-quote-left fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-hashtag fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-bars fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-inbox fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/bugstop" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lightball.png">
+      <meta itemprop="name" content="Muhan Li">
+      <meta itemprop="description" content="bugstop">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bugstop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Deep Learning (8) · ML Strategy · I
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 04-03-2020 01:23:45" itemprop="dateCreated datePublished" datetime="2020-04-03T01:23:45+08:00">04-03-2020</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep Learning</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Deep Learning Specialization, Course C<br><strong>Structuring Machine Learning Projects</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 1:</em></strong> <em>ML Strategy (1)</em></p>
+<ol>
+<li>Understand why Machine Learning strategy is important</li>
+<li>Apply satisficing and optimizing metrics to set up your goal for ML projects</li>
+<li>Choose a correct train/dev/test split of your dataset</li>
+<li>Understand how to define human-level performance</li>
+<li>Use human-level perform to define your key priorities in ML projects</li>
+<li>Take the correct ML Strategic decision based on observations of performances and dataset</li>
+</ol>
+<a id="more"></a>
+<h3 id="Introduction-to-ML-Strategy"><a href="#Introduction-to-ML-Strategy" class="headerlink" title="Introduction to ML Strategy"></a>Introduction to ML Strategy</h3><h4 id="Why-ML-Strategy"><a href="#Why-ML-Strategy" class="headerlink" title="Why ML Strategy?"></a>Why ML Strategy?</h4><ul>
+<li>collect more data</li>
+<li>collect more diverse training set</li>
+<li>train algorithm longer with gradient descent</li>
+<li>try Adam instead of GD</li>
+<li>try bigger / smaller network</li>
+<li>try dropout</li>
+<li>add L<sub>2</sub> regularization</li>
+<li>network architecture<ul>
+<li>activation functions</li>
+<li># hidden units</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h4 id="Orthogonalization"><a href="#Orthogonalization" class="headerlink" title="Orthogonalization"></a>Orthogonalization</h4><ul>
+<li>fit training set well on cost function<ul>
+<li>bigger network</li>
+<li>Adam</li>
+</ul>
+</li>
+<li>fit dev set well on cost function<ul>
+<li>regularization</li>
+<li>bigger training set</li>
+</ul>
+</li>
+<li>fit test set well on cost function<ul>
+<li>bigger dev set</li>
+</ul>
+</li>
+<li>performs well in real world<ul>
+<li>change dev set</li>
+<li>change cost function</li>
+</ul>
+</li>
+</ul>
+<h3 id="Setting-up-your-Goal"><a href="#Setting-up-your-Goal" class="headerlink" title="Setting up your Goal"></a>Setting up your Goal</h3><h4 id="Single-Number-Evaluation-Metric"><a href="#Single-Number-Evaluation-Metric" class="headerlink" title="Single Number Evaluation Metric"></a>Single Number Evaluation Metric</h4><ul>
+<li><strong>Precision</strong><br>% are real cat of examples recognized as cat</li>
+<li><strong>Recall</strong><br>% of actual cats are correctly recognized</li>
+<li><strong>F<sub>1</sub> score</strong><br>harmonic mean of precision and recall<br>$F_1 = \dfrac{2}{\dfrac{1}{P}+\dfrac{1}{R}}$</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Classifier</th>
+<th style="text-align:center">Precision</th>
+<th style="text-align:center">Recall</th>
+<th style="text-align:center">F<sub>1</sub> Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>A</strong></td>
+<td style="text-align:center">95 %</td>
+<td style="text-align:center">90 %</td>
+<td style="text-align:center"><strong>92.4 %</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>B</strong></td>
+<td style="text-align:center">98 %</td>
+<td style="text-align:center">85 %</td>
+<td style="text-align:center">91.0 %</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>dev set + single number evaluation metric speed up iterating process</em></p>
+<h4 id="Satisficing-and-Optimizing-Metric"><a href="#Satisficing-and-Optimizing-Metric" class="headerlink" title="Satisficing and Optimizing Metric"></a>Satisficing and Optimizing Metric</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Classifier</th>
+<th style="text-align:center">Accuracy</th>
+<th style="text-align:center">Running Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>A</strong></td>
+<td style="text-align:center">90 %</td>
+<td style="text-align:center">80 ms</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>B</strong></td>
+<td style="text-align:center"><strong>92 %</strong></td>
+<td style="text-align:center"><strong><em>95 ms</em></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>C</strong></td>
+<td style="text-align:center">95 %</td>
+<td style="text-align:center">1500 ms</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong><em>optimizing</em></strong></td>
+<td style="text-align:center"><strong><em>satisficing</em></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>maximize accuracy</strong> subject to <strong><em>running time &lt; 100 ms</em></strong></p>
+<ul>
+<li><strong><em>N metric:</em></strong> 1 optimizing, N-1 satisficing</li>
+</ul>
+<h4 id="Train-Dev-Test-Distributions"><a href="#Train-Dev-Test-Distributions" class="headerlink" title="Train / Dev / Test Distributions"></a>Train / Dev / Test Distributions</h4><p>make dev and test sets obey same distribution ← randomly shuffle into dev / test</p>
+<p>choose a dev set and test set to reflect data you expect to get in the future and consider important to do well on</p>
+<h4 id="Size-of-Dev-and-Test-Sets"><a href="#Size-of-Dev-and-Test-Sets" class="headerlink" title="Size of Dev and Test Sets"></a>Size of Dev and Test Sets</h4><p>train / dev / test</p>
+<ul>
+<li>~ 1k examples: 70%-30% or 60%-20%-20%</li>
+<li>~ 1m examples: 98%-1%-1%, smaller dev and test sets</li>
+</ul>
+<p><em>set test set to be big enough to give high confidence in the overall performance of the system (no test set might be okay)</em></p>
+<h4 id="When-to-Change-Dev-Test-Sets-and-Metrics"><a href="#When-to-Change-Dev-Test-Sets-and-Metrics" class="headerlink" title="When to Change Dev / Test Sets and Metrics"></a>When to Change Dev / Test Sets and Metrics</h4><p>Metric + Dev: prefers A <em>(misprediction)</em><br>You / Users: prefers B</p>
+<p>$\begin{aligned}{\rm classification}\ &amp;{\rm error}  _{\strut} \\ \textsf{Algorithm A: }&amp; 3\%\ {\rm error} \textsf{ but contains pornographies} \\ \textsf{Algorithm B: }&amp; 5\%\ {\rm error} _{\strut} \\ \textsf{Error: }&amp; \dfrac{1}{m_{dev}} \sum_{i=1}^{m_{dev}} L\left\{ y_{\rm pred}^{\left(i\right)} \neq y^{\left(i\right)} \right\} \\ \textsf{New Error: }&amp; \dfrac{1}{ \sum_{i=1}^{m_{dev}} \omega^{\left(i\right)}} \sum_{i=1}^{m_{dev}} \omega^{\left(i\right)} L\left\{ y_{\rm pred}^{\left(i\right)} \neq y^{\left(i\right)} \right\} \\ &amp; \qquad\qquad \omega^{\left(i\right)}= \begin{cases} 1 \ \ &amp;{\rm if}\ x^{\left(i\right)}\ {\rm is}\ {\rm non}!!-!!{\rm porn} \\ 10 &amp;{\rm if}\ x^{\left(i\right)}\ {\rm is}\ {\rm porn} \end{cases} \end{aligned}$</p>
+<ol>
+<li><strong><em>Place the target:</em></strong> define a metric to evaluate classifiers</li>
+<li><strong><em>Shoot at target:</em></strong> worry separately about how to do well on this metric</li>
+</ol>
+<p><em>if doing well on metric + dev/test set does not correspond to doing well on application, change metric and/or dev/test set</em></p>
+<h3 id="Comparing-to-Human-Level-Performance"><a href="#Comparing-to-Human-Level-Performance" class="headerlink" title="Comparing to Human-Level Performance"></a>Comparing to Human-Level Performance</h3><h4 id="Why-Human-Level-Performance"><a href="#Why-Human-Level-Performance" class="headerlink" title="Why Human-Level Performance?"></a>Why Human-Level Performance?</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-8/1.png" alt="c"></p>
+<p>as long as machine learning is worse than humans, you can:</p>
+<ul>
+<li>get labeled data from humans</li>
+<li>gain insight from manual error analysis</li>
+<li>better analysis of bias / variance</li>
+</ul>
+<h4 id="Avoidable-Bias"><a href="#Avoidable-Bias" class="headerlink" title="Avoidable Bias"></a>Avoidable Bias</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Humans Error</th>
+<th style="text-align:center">Train Error</th>
+<th style="text-align:center">Dev Error</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 %</td>
+<td style="text-align:center">8 %</td>
+<td style="text-align:center">10 %</td>
+<td style="text-align:center">Focus on <strong>Bias</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">7.5 %</td>
+<td style="text-align:center">8 %</td>
+<td style="text-align:center">10 %</td>
+<td style="text-align:center">Focus on <strong>Variance</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="human-level-error-as-a-proxy-for-Bayes-error"><a href="#human-level-error-as-a-proxy-for-Bayes-error" class="headerlink" title="human-level error as a proxy for Bayes error"></a>human-level error as a proxy for Bayes error</h5><p><strong><em>bias:</em></strong> compare to 0% error<br><strong><em>avoidable bias:</em></strong> minimum level of error that you cannot get below<br>&emsp;&emsp;<em>(cannot do better than Bayes error unless overfitting)</em></p>
+<h4 id="Understanding-Human-Level-Performance"><a href="#Understanding-Human-Level-Performance" class="headerlink" title="Understanding Human-Level Performance"></a>Understanding Human-Level Performance</h4><p><strong>human-level error</strong> as a proxy for <strong><em>Bayes error</em></strong></p>
+<h4 id="Surpassing-Human-Level-Performance"><a href="#Surpassing-Human-Level-Performance" class="headerlink" title="Surpassing Human-Level Performance"></a>Surpassing Human-Level Performance</h4><ul>
+<li>Structed Data &emsp; (↔ not Natural Perception)</li>
+<li>Lots of Data</li>
+</ul>
+<h4 id="Improving-your-Model-Performance"><a href="#Improving-your-Model-Performance" class="headerlink" title="Improving your Model Performance"></a>Improving your Model Performance</h4><h5 id="two-fundamental-assumptions-of-supervised-learning"><a href="#two-fundamental-assumptions-of-supervised-learning" class="headerlink" title="two fundamental assumptions of supervised learning"></a>two fundamental assumptions of supervised learning</h5><ol>
+<li>you can fit the training set pretty well (avoidable bias)</li>
+<li>the training set performance generalizes pretty well to the dev / test set (variance)</li>
+</ol>
+<h5 id="reducing-avoidable-bias-and-variance"><a href="#reducing-avoidable-bias-and-variance" class="headerlink" title="reducing (avoidable) bias and variance"></a>reducing (avoidable) bias and variance</h5><p>$\textsf{human-leval error } \leftarrow avoidable\ bias \rightarrow \textsf{ training error } \leftarrow variance \rightarrow \textsf{ dev error}$</p>
+<ul>
+<li><strong>Avoidable Bias</strong><ul>
+<li>Train bigger model</li>
+<li>Train longer / better optimization algorithms (momentum, RMSProp, Adam)</li>
+<li>NN architecture / hyperparameters search (RNN, CNN)</li>
+</ul>
+</li>
+<li><strong>Variance</strong><ul>
+<li>More data</li>
+<li>Regularization (L<sub>2</sub>, dropout, data augmentation)</li>
+<li>NN architecture / hyperparameters search</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+              <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/" rel="prev" title="Deep Learning (7) · Hyperparameter Tuning">
+      <i class="fa fa-chevron-left"></i> Deep Learning (7) · Hyperparameter Tuning
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-9/" rel="next" title="Deep Learning (9) · ML Strategy · II">
+      Deep Learning (9) · ML Strategy · II <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction-to-ML-Strategy"><span class="nav-number">1.</span> <span class="nav-text">Introduction to ML Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Why-ML-Strategy"><span class="nav-number">1.1.</span> <span class="nav-text">Why ML Strategy?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Orthogonalization"><span class="nav-number">1.2.</span> <span class="nav-text">Orthogonalization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting-up-your-Goal"><span class="nav-number">2.</span> <span class="nav-text">Setting up your Goal</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Single-Number-Evaluation-Metric"><span class="nav-number">2.1.</span> <span class="nav-text">Single Number Evaluation Metric</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Satisficing-and-Optimizing-Metric"><span class="nav-number">2.2.</span> <span class="nav-text">Satisficing and Optimizing Metric</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Train-Dev-Test-Distributions"><span class="nav-number">2.3.</span> <span class="nav-text">Train &#x2F; Dev &#x2F; Test Distributions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Size-of-Dev-and-Test-Sets"><span class="nav-number">2.4.</span> <span class="nav-text">Size of Dev and Test Sets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#When-to-Change-Dev-Test-Sets-and-Metrics"><span class="nav-number">2.5.</span> <span class="nav-text">When to Change Dev &#x2F; Test Sets and Metrics</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparing-to-Human-Level-Performance"><span class="nav-number">3.</span> <span class="nav-text">Comparing to Human-Level Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Why-Human-Level-Performance"><span class="nav-number">3.1.</span> <span class="nav-text">Why Human-Level Performance?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Avoidable-Bias"><span class="nav-number">3.2.</span> <span class="nav-text">Avoidable Bias</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#human-level-error-as-a-proxy-for-Bayes-error"><span class="nav-number">3.2.1.</span> <span class="nav-text">human-level error as a proxy for Bayes error</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Understanding-Human-Level-Performance"><span class="nav-number">3.3.</span> <span class="nav-text">Understanding Human-Level Performance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Surpassing-Human-Level-Performance"><span class="nav-number">3.4.</span> <span class="nav-text">Surpassing Human-Level Performance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Improving-your-Model-Performance"><span class="nav-number">3.5.</span> <span class="nav-text">Improving your Model Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#two-fundamental-assumptions-of-supervised-learning"><span class="nav-number">3.5.1.</span> <span class="nav-text">two fundamental assumptions of supervised learning</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#reducing-avoidable-bias-and-variance"><span class="nav-number">3.5.2.</span> <span class="nav-text">reducing (avoidable) bias and variance</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Muhan Li"
+      src="/images/lightball.png">
+  <p class="site-author-name" itemprop="name">Muhan Li</p>
+  <div class="site-description" itemprop="description">bugstop</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/bugstop" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;bugstop" rel="noopener" target="_blank"><i class="fab fa-github-square fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/public-profile/in/limh" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;public-profile&#x2F;in&#x2F;limh" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:limuhan@msn.com" title="Email → mailto:limuhan@msn.com" rel="noopener" target="_blank"><i class="fas fa-envelope-square fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fas fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Li, Muhan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">135k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:02</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
