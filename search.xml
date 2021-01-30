@@ -3104,4 +3104,83 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
         <tag>Machine Learning</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Machine Learning (8) · Unsupervised Learning</title>
+    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/</url>
+    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 8:</em></strong> Unsupervised Learning, Dimensionality Reduction</p>
+<h3 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h3><h4 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h4><h5 id="Unsupervised-Learning-Introduction"><a href="#Unsupervised-Learning-Introduction" class="headerlink" title="Unsupervised Learning: Introduction"></a>Unsupervised Learning: Introduction</h5><p>training set: $\left\{ x^\left(1\right),\, x^\left(2\right),\, x^\left(3\right),\, \dots ,\, x^\left(m\right) \right\}$</p>
+<h5 id="K-Means-Algorithm"><a href="#K-Means-Algorithm" class="headerlink" title="K-Means Algorithm"></a>K-Means Algorithm</h5><p><strong>step 1:</strong> cluster assignment<br><strong>step 2:</strong> move centroid</p>
+<a id="more"></a>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>$K$ (number of clusters)</li>
+<li>Training set $\left\{ x^\left(1\right),\, x^\left(2\right),\, \dots ,\, x^\left(m\right) \right\}$, $x^\left(1\right) \in \mathbb{R}^n$ (drop $x_0=1$ convention)</li>
+</ul>
+<p><strong>Algorithm</strong></p>
+<p>$\begin{aligned} &amp; \textsf{Randomly initialize } K \textsf{ cluster centroids } \mu_1,\, \mu_2,\, \dots ,\, \mu_K \in \mathbb{R^n} \\ &amp; \textsf{Repeat} \\ &amp; \qquad \textsf{for } i=1 \textsf{ to } m \qquad \textrm{// cluster assignment step} \\ &amp; \qquad\qquad c^\left(i\right) := \textsf{index of cluster centroid closest to } x^\left(i\right) \\ &amp; \qquad \textsf{for } k=1 \textsf{ to } K \qquad \textrm{// move centroid step} \\ &amp; \qquad\qquad \mu_k := \textsf{average mean of points assigned to cluster } k \end{aligned}$</p>
+<h5 id="Optimization-Objective"><a href="#Optimization-Objective" class="headerlink" title="Optimization Objective"></a>Optimization Objective</h5><ul>
+<li>$c^\left(i\right)$: index of cluster $\left( 1,\,2,\,\dots,\,K \right)$ to which example $x^\left(i\right)$ is currently assigned</li>
+<li>$\mu_k$: cluster centroid $k$ $\left( \mu_k \in \mathbb{R}^n \right)$</li>
+<li>$\mu_{c^\left(i\right)}$: cluster centroid of cluster to which example $x\left(i\right)$ has been assigned</li>
+</ul>
+<p><strong>Optimization Objective</strong></p>
+<p>$\begin{aligned} &amp; J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) = \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - \mu_{ c^\left(i\right) } \right| ^2 \\ &amp; \min_{ \substack{ c^\left(i\right) ,\,\dots,\, c^\left(m\right) , \\ \mu_1 ,\,\dots,\, \mu_K } } J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) \qquad \textsf{distortion} \end{aligned}$</p>
+<ol>
+<li><strong>cluster assignment step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ wrt $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$, holding $\mu_1 ,\, \dots ,\, \mu_K$ fixed</li>
+<li><strong>move centroid step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ wrt $\mu_1 ,\, \dots ,\, \mu_K$, holding $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$ fixed</li>
+</ol>
+<h5 id="Random-Initialization"><a href="#Random-Initialization" class="headerlink" title="Random Initialization"></a>Random Initialization</h5><p>Randomly pick $K$ training examples and set $\mu_1 ,\,\dots,\, \mu_K$ equal to these $K$ examples. $\left( K \lt m \right)$</p>
+<p><strong>Local Optima</strong></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/1.png" alt="LocalOptima"></p>
+<p><em>multiple random initializations</em></p>
+<p>$\begin{aligned} &amp; \textsf{for } i=1 \textsf{ to } 100 \\ &amp; \qquad \textsf{randomly initialize K-means} \\ &amp; \qquad \textsf{run K-means, get } c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \\ &amp; \qquad \textsf{compute distortion } J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) \\ &amp; \textsf{pick clustering that gave lowest cost } J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) ^\strut \end{aligned}$</p>
+<h5 id="Choosing-the-Number-of-Clusters"><a href="#Choosing-the-Number-of-Clusters" class="headerlink" title="Choosing the Number of Clusters"></a>Choosing the Number of Clusters</h5><ul>
+<li>Elbow method</li>
+<li>Performance on downstream purpose</li>
+</ul>
+<h3 id="Dimensionality-Reduction"><a href="#Dimensionality-Reduction" class="headerlink" title="Dimensionality Reduction"></a>Dimensionality Reduction</h3><h4 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h4><h5 id="Data-Compression"><a href="#Data-Compression" class="headerlink" title="Data Compression"></a>Data Compression</h5><p>Reduce data from 2D to 1D</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/2.png" alt="Dimensionality Reduction"></p>
+<h5 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h5><h4 id="Principal-Component-Analysis"><a href="#Principal-Component-Analysis" class="headerlink" title="Principal Component Analysis"></a>Principal Component Analysis</h4><h5 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/3.png" alt="3"></p>
+<p><strong>Reduce from 2-dimension to 1-dimension:</strong> Find a direction (a vector $u^\left(1\right) \in \mathbb{R}^n$) onto which to project the data, so as to minimize the projection error.<br><br><strong>Reduce from n-dimension to k-dimension:</strong> Find $k$ vectors $u^\left(1\right) ,\, u^\left(2\right) ,\,\dots,\, u^\left(k\right)$ onto which to project the data, so as to minimize the projection error.</p>
+<p><strong>Principal Component Analysis is not Linear Regression</strong></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/4.png" alt="PCA vs LR"></p>
+<p>$\textsf{LR: } x \rightarrow y \qquad\qquad \textsf{PCA: } x_1 ,\, x_2 ,\,\dots,\, x_n$</p>
+<h5 id="PCA-Algorithm"><a href="#PCA-Algorithm" class="headerlink" title="PCA Algorithm"></a>PCA Algorithm</h5><p><strong>Data Preprocessing</strong></p>
+<p>Training set: $x^\left(1\right) ,\, x^\left(2\right) ,\,\dots,\, x^\left(m\right)$<br><br>Preprocessing: feature scaling / mean normalization,<br>&emsp;&emsp; $\begin{aligned} \mu_j = \dfrac{1}{m} \sum_{i=1}^m x_j^\left(i\right) \end{aligned}$<br><br>&emsp;&emsp; replace each $x_j^\left(i\right)$ with $x_j-\mu_j$<br><br>&emsp;&emsp; if different features on different scales, scale features to have comparable range of values.</p>
+<p><strong>Dimensionality Reduction</strong></p>
+<p>Compute covariance matrix<br>&emsp;&emsp; $\begin{aligned} \Sigma = \dfrac{1}{m} \sum_{i=1}^{n} \left( x^\left(i\right) \right) \left( x^\left(i\right) \right) ^\mathsf{T} \quad \in\mathbb{R} ^{n \times n} \end{aligned}$<br><br>Compute eigenvectors $U$ of matrix $\Sigma$<br><br>&emsp;&emsp; $U = \left[ \begin{matrix} \Big| &amp; \Big| &amp; &amp; \Big| &amp; &amp; \Big| \\ u^{\left(1\right)} &amp; u^{\left(2\right)} &amp; \cdots &amp; u^{\left(k\right)} &amp; \cdots &amp; u^{\left(n\right)} \\ \Big| &amp; \Big| &amp; &amp; \Big| &amp; &amp; \Big| \end{matrix} \right]  \quad \in\mathbb{R}^{n \times n}$<br><br>$x \in \mathbb{R}^n \ \longrightarrow \ z \in \mathbb{R}^k$<br><br>&emsp;&emsp; $z _{k \times 1} = U_{\textrm{reduce}}^{\ \mathsf{T}} x = \left( \left[ \begin{matrix} \Big| &amp; \Big| &amp; &amp; \Big| \\ u^{\left(1\right)} &amp; u^{\left(2\right)} &amp; \cdots &amp; u^{\left(k\right)} \\ \Big| &amp; \Big| &amp; &amp; \Big| \end{matrix} \right] ^\mathsf{T} \right) _{k \times n} x _{n \times 1}$</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">[U, S, V] = svd(Sigma)  <span class="comment">% singular value decomposition</span></span><br></pre></td></tr></table></figure>
+<h4 id="Applying-PCA"><a href="#Applying-PCA" class="headerlink" title="Applying PCA"></a>Applying PCA</h4><h5 id="Reconstruction-from-Compressed-Representation"><a href="#Reconstruction-from-Compressed-Representation" class="headerlink" title="Reconstruction from Compressed Representation"></a>Reconstruction from Compressed Representation</h5><p>$z = U_{\textrm{reduce}}^{\ \mathsf{T}} x \qquad x_{\textrm{approx}} = U_{\textrm{reduce}} z$</p>
+<h5 id="Choosing-the-Number-of-Principal-Components"><a href="#Choosing-the-Number-of-Principal-Components" class="headerlink" title="Choosing the Number of Principal Components"></a>Choosing the Number of Principal Components</h5><p>Averaged squared projection error<br>&emsp;&emsp; $\begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned}$<br><br>Total variation in the data<br>&emsp;&emsp; $\begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned}$</p>
+<p>Typically, choose $k$ to be smallest value so that<br><br>&emsp;&emsp; $\begin{aligned} \dfrac{ \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned} } { \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned} } \leq 0.01 \end{aligned}$ &emsp;&emsp; <em>99% of variance is retained</em></p>
+<p>$S = \begin{bmatrix} s_{11} &amp; &amp; &amp; &amp; \\ &amp; s_{22} &amp; &amp; \ 0 &amp; \\ &amp; &amp; s_{33} &amp; &amp; \\ &amp; 0 \ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; &amp; s_{nn} \end{bmatrix}$</p>
+<p>For given $k$<br><br>&emsp;&emsp; $\begin{aligned} \dfrac{ \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned} } { \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned} } = 1- \dfrac{ \begin{aligned} \sum_{i=1}^{k} s_{ii} \end{aligned} } { \begin{aligned} \sum_{i=1}^{n} s_{ii} \end{aligned} } \end{aligned}$</p>
+<h5 id="Advice-for-Applying-PCA"><a href="#Advice-for-Applying-PCA" class="headerlink" title="Advice for Applying PCA"></a>Advice for Applying PCA</h5><p><strong>Supervised Learning Speedup</strong></p>
+<p>$\begin{matrix} x^\left(1\right) ,\, x^\left(1\right) ,\,\dots,\, x^\left(1\right) \quad \in \mathbb{R}^{10000} \\ \qquad \big\downarrow \qquad \textrm{PCA} \\ z^\left(1\right) ,\, z^\left(1\right) ,\,\dots,\, z^\left(1\right) \quad \in \mathbb{R}^{1000} \end{matrix}$</p>
+<p><strong>Note:</strong> Mapping $x^\left(i\right) \rightarrow z^\left(i\right)$ should be difined by running PCA only on the training set. This mapping can be applied as well to $x^\left(i\right) _\textrm{cv}$ and $x^\left(i\right) _\textrm{test}$ in the cross validation and test sets.</p>
+<p><strong>Application of PCA</strong></p>
+<ul>
+<li><strong>Compression</strong><ul>
+<li>Reduce memory/disk space</li>
+<li>Speed up learning algorithm</li>
+</ul>
+</li>
+<li><strong>Visualization</strong></li>
+<li>Misuses<ul>
+<li>Use PCA to provent overfitting is not recommended</li>
+<li>Try original/raw data before implementing PCA</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
 </search>

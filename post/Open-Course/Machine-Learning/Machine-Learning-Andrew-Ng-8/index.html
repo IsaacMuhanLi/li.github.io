@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tag.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/tag.png">
+  <link rel="mask-icon" href="/images/tag.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Encode Sans:300,300italic,400,400italic,700,700italic|M PLUS 1p:300,300italic,400,400italic,700,700italic|Mulish:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"muhan.li","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Stanford University, Machine Learning, Andrew Ng, Coursera Week 8: Unsupervised Learning, Dimensionality Reduction Unsupervised LearningClusteringUnsupervised Learning: Introductiontraining set: $\lef">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning (8) · Unsupervised Learning">
+<meta property="og:url" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/">
+<meta property="og:site_name" content="bugstop">
+<meta property="og:description" content="Stanford University, Machine Learning, Andrew Ng, Coursera Week 8: Unsupervised Learning, Dimensionality Reduction Unsupervised LearningClusteringUnsupervised Learning: Introductiontraining set: $\lef">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/1.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/2.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/3.png">
+<meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/4.png">
+<meta property="article:published_time" content="2021-01-21T00:47:46.000Z">
+<meta property="article:modified_time" content="2021-01-30T01:21:49.332Z">
+<meta property="article:author" content="Muhan Li">
+<meta property="article:tag" content="Artificial Intelligence">
+<meta property="article:tag" content="Machine Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/1.png">
+
+<link rel="canonical" href="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Machine Learning (8) · Unsupervised Learning | bugstop</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">bugstop</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Tech Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-window-maximize fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-quote-left fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-hashtag fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-bars fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-inbox fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/bugstop" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lightball.png">
+      <meta itemprop="name" content="Muhan Li">
+      <meta itemprop="description" content="bugstop">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bugstop">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning (8) · Unsupervised Learning
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 01-21-2021 08:47:46" itemprop="dateCreated datePublished" datetime="2021-01-21T08:47:46+08:00">01-21-2021</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>6.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 8:</em></strong> Unsupervised Learning, Dimensionality Reduction</p>
+<h3 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h3><h4 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h4><h5 id="Unsupervised-Learning-Introduction"><a href="#Unsupervised-Learning-Introduction" class="headerlink" title="Unsupervised Learning: Introduction"></a>Unsupervised Learning: Introduction</h5><p>training set: $\left\{ x^\left(1\right),\, x^\left(2\right),\, x^\left(3\right),\, \dots ,\, x^\left(m\right) \right\}$</p>
+<h5 id="K-Means-Algorithm"><a href="#K-Means-Algorithm" class="headerlink" title="K-Means Algorithm"></a>K-Means Algorithm</h5><p><strong>step 1:</strong> cluster assignment<br><strong>step 2:</strong> move centroid</p>
+<a id="more"></a>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>$K$ (number of clusters)</li>
+<li>Training set $\left\{ x^\left(1\right),\, x^\left(2\right),\, \dots ,\, x^\left(m\right) \right\}$, $x^\left(1\right) \in \mathbb{R}^n$ (drop $x_0=1$ convention)</li>
+</ul>
+<p><strong>Algorithm</strong></p>
+<p>$\begin{aligned} &amp; \textsf{Randomly initialize } K \textsf{ cluster centroids } \mu_1,\, \mu_2,\, \dots ,\, \mu_K \in \mathbb{R^n} \\ &amp; \textsf{Repeat} \\ &amp; \qquad \textsf{for } i=1 \textsf{ to } m \qquad \textrm{// cluster assignment step} \\ &amp; \qquad\qquad c^\left(i\right) := \textsf{index of cluster centroid closest to } x^\left(i\right) \\ &amp; \qquad \textsf{for } k=1 \textsf{ to } K \qquad \textrm{// move centroid step} \\ &amp; \qquad\qquad \mu_k := \textsf{average mean of points assigned to cluster } k \end{aligned}$</p>
+<h5 id="Optimization-Objective"><a href="#Optimization-Objective" class="headerlink" title="Optimization Objective"></a>Optimization Objective</h5><ul>
+<li>$c^\left(i\right)$: index of cluster $\left( 1,\,2,\,\dots,\,K \right)$ to which example $x^\left(i\right)$ is currently assigned</li>
+<li>$\mu_k$: cluster centroid $k$ $\left( \mu_k \in \mathbb{R}^n \right)$</li>
+<li>$\mu_{c^\left(i\right)}$: cluster centroid of cluster to which example $x\left(i\right)$ has been assigned</li>
+</ul>
+<p><strong>Optimization Objective</strong></p>
+<p>$\begin{aligned} &amp; J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) = \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - \mu_{ c^\left(i\right) } \right| ^2 \\ &amp; \min_{ \substack{ c^\left(i\right) ,\,\dots,\, c^\left(m\right) , \\ \mu_1 ,\,\dots,\, \mu_K } } J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) \qquad \textsf{distortion} \end{aligned}$</p>
+<ol>
+<li><strong>cluster assignment step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ wrt $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$, holding $\mu_1 ,\, \dots ,\, \mu_K$ fixed</li>
+<li><strong>move centroid step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ wrt $\mu_1 ,\, \dots ,\, \mu_K$, holding $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$ fixed</li>
+</ol>
+<h5 id="Random-Initialization"><a href="#Random-Initialization" class="headerlink" title="Random Initialization"></a>Random Initialization</h5><p>Randomly pick $K$ training examples and set $\mu_1 ,\,\dots,\, \mu_K$ equal to these $K$ examples. $\left( K \lt m \right)$</p>
+<p><strong>Local Optima</strong></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/1.png" alt="LocalOptima"></p>
+<p><em>multiple random initializations</em></p>
+<p>$\begin{aligned} &amp; \textsf{for } i=1 \textsf{ to } 100 \\ &amp; \qquad \textsf{randomly initialize K-means} \\ &amp; \qquad \textsf{run K-means, get } c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \\ &amp; \qquad \textsf{compute distortion } J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) \\ &amp; \textsf{pick clustering that gave lowest cost } J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) ^\strut \end{aligned}$</p>
+<h5 id="Choosing-the-Number-of-Clusters"><a href="#Choosing-the-Number-of-Clusters" class="headerlink" title="Choosing the Number of Clusters"></a>Choosing the Number of Clusters</h5><ul>
+<li>Elbow method</li>
+<li>Performance on downstream purpose</li>
+</ul>
+<h3 id="Dimensionality-Reduction"><a href="#Dimensionality-Reduction" class="headerlink" title="Dimensionality Reduction"></a>Dimensionality Reduction</h3><h4 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h4><h5 id="Data-Compression"><a href="#Data-Compression" class="headerlink" title="Data Compression"></a>Data Compression</h5><p>Reduce data from 2D to 1D</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/2.png" alt="Dimensionality Reduction"></p>
+<h5 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h5><h4 id="Principal-Component-Analysis"><a href="#Principal-Component-Analysis" class="headerlink" title="Principal Component Analysis"></a>Principal Component Analysis</h4><h5 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/3.png" alt="3"></p>
+<p><strong>Reduce from 2-dimension to 1-dimension:</strong> Find a direction (a vector $u^\left(1\right) \in \mathbb{R}^n$) onto which to project the data, so as to minimize the projection error.<br><br><strong>Reduce from n-dimension to k-dimension:</strong> Find $k$ vectors $u^\left(1\right) ,\, u^\left(2\right) ,\,\dots,\, u^\left(k\right)$ onto which to project the data, so as to minimize the projection error.</p>
+<p><strong>Principal Component Analysis is not Linear Regression</strong></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/4.png" alt="PCA vs LR"></p>
+<p>$\textsf{LR: } x \rightarrow y \qquad\qquad \textsf{PCA: } x_1 ,\, x_2 ,\,\dots,\, x_n$</p>
+<h5 id="PCA-Algorithm"><a href="#PCA-Algorithm" class="headerlink" title="PCA Algorithm"></a>PCA Algorithm</h5><p><strong>Data Preprocessing</strong></p>
+<p>Training set: $x^\left(1\right) ,\, x^\left(2\right) ,\,\dots,\, x^\left(m\right)$<br><br>Preprocessing: feature scaling / mean normalization,<br>&emsp;&emsp; $\begin{aligned} \mu_j = \dfrac{1}{m} \sum_{i=1}^m x_j^\left(i\right) \end{aligned}$<br><br>&emsp;&emsp; replace each $x_j^\left(i\right)$ with $x_j-\mu_j$<br><br>&emsp;&emsp; if different features on different scales, scale features to have comparable range of values.</p>
+<p><strong>Dimensionality Reduction</strong></p>
+<p>Compute covariance matrix<br>&emsp;&emsp; $\begin{aligned} \Sigma = \dfrac{1}{m} \sum_{i=1}^{n} \left( x^\left(i\right) \right) \left( x^\left(i\right) \right) ^\mathsf{T} \quad \in\mathbb{R} ^{n \times n} \end{aligned}$<br><br>Compute eigenvectors $U$ of matrix $\Sigma$<br><br>&emsp;&emsp; $U = \left[ \begin{matrix} \Big| &amp; \Big| &amp; &amp; \Big| &amp; &amp; \Big| \\ u^{\left(1\right)} &amp; u^{\left(2\right)} &amp; \cdots &amp; u^{\left(k\right)} &amp; \cdots &amp; u^{\left(n\right)} \\ \Big| &amp; \Big| &amp; &amp; \Big| &amp; &amp; \Big| \end{matrix} \right]  \quad \in\mathbb{R}^{n \times n}$<br><br>$x \in \mathbb{R}^n \ \longrightarrow \ z \in \mathbb{R}^k$<br><br>&emsp;&emsp; $z _{k \times 1} = U_{\textrm{reduce}}^{\ \mathsf{T}} x = \left( \left[ \begin{matrix} \Big| &amp; \Big| &amp; &amp; \Big| \\ u^{\left(1\right)} &amp; u^{\left(2\right)} &amp; \cdots &amp; u^{\left(k\right)} \\ \Big| &amp; \Big| &amp; &amp; \Big| \end{matrix} \right] ^\mathsf{T} \right) _{k \times n} x _{n \times 1}$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[U, S, V] = svd(Sigma)  <span class="comment">% singular value decomposition</span></span><br></pre></td></tr></table></figure>
+<h4 id="Applying-PCA"><a href="#Applying-PCA" class="headerlink" title="Applying PCA"></a>Applying PCA</h4><h5 id="Reconstruction-from-Compressed-Representation"><a href="#Reconstruction-from-Compressed-Representation" class="headerlink" title="Reconstruction from Compressed Representation"></a>Reconstruction from Compressed Representation</h5><p>$z = U_{\textrm{reduce}}^{\ \mathsf{T}} x \qquad x_{\textrm{approx}} = U_{\textrm{reduce}} z$</p>
+<h5 id="Choosing-the-Number-of-Principal-Components"><a href="#Choosing-the-Number-of-Principal-Components" class="headerlink" title="Choosing the Number of Principal Components"></a>Choosing the Number of Principal Components</h5><p>Averaged squared projection error<br>&emsp;&emsp; $\begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned}$<br><br>Total variation in the data<br>&emsp;&emsp; $\begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned}$</p>
+<p>Typically, choose $k$ to be smallest value so that<br><br>&emsp;&emsp; $\begin{aligned} \dfrac{ \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned} } { \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned} } \leq 0.01 \end{aligned}$ &emsp;&emsp; <em>99% of variance is retained</em></p>
+<p>$S = \begin{bmatrix} s_{11} &amp; &amp; &amp; &amp; \\ &amp; s_{22} &amp; &amp; \ 0 &amp; \\ &amp; &amp; s_{33} &amp; &amp; \\ &amp; 0 \ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; &amp; s_{nn} \end{bmatrix}$</p>
+<p>For given $k$<br><br>&emsp;&emsp; $\begin{aligned} \dfrac{ \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned} } { \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned} } = 1- \dfrac{ \begin{aligned} \sum_{i=1}^{k} s_{ii} \end{aligned} } { \begin{aligned} \sum_{i=1}^{n} s_{ii} \end{aligned} } \end{aligned}$</p>
+<h5 id="Advice-for-Applying-PCA"><a href="#Advice-for-Applying-PCA" class="headerlink" title="Advice for Applying PCA"></a>Advice for Applying PCA</h5><p><strong>Supervised Learning Speedup</strong></p>
+<p>$\begin{matrix} x^\left(1\right) ,\, x^\left(1\right) ,\,\dots,\, x^\left(1\right) \quad \in \mathbb{R}^{10000} \\ \qquad \big\downarrow \qquad \textrm{PCA} \\ z^\left(1\right) ,\, z^\left(1\right) ,\,\dots,\, z^\left(1\right) \quad \in \mathbb{R}^{1000} \end{matrix}$</p>
+<p><strong>Note:</strong> Mapping $x^\left(i\right) \rightarrow z^\left(i\right)$ should be difined by running PCA only on the training set. This mapping can be applied as well to $x^\left(i\right) _\textrm{cv}$ and $x^\left(i\right) _\textrm{test}$ in the cross validation and test sets.</p>
+<p><strong>Application of PCA</strong></p>
+<ul>
+<li><strong>Compression</strong><ul>
+<li>Reduce memory/disk space</li>
+<li>Speed up learning algorithm</li>
+</ul>
+</li>
+<li><strong>Visualization</strong></li>
+<li>Misuses<ul>
+<li>Use PCA to provent overfitting is not recommended</li>
+<li>Try original/raw data before implementing PCA</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/" rel="prev" title="Machine Learning (7) · Support Vector Machines">
+      <i class="fa fa-chevron-left"></i> Machine Learning (7) · Support Vector Machines
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unsupervised-Learning"><span class="nav-number">1.</span> <span class="nav-text">Unsupervised Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clustering"><span class="nav-number">1.1.</span> <span class="nav-text">Clustering</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Unsupervised-Learning-Introduction"><span class="nav-number">1.1.1.</span> <span class="nav-text">Unsupervised Learning: Introduction</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#K-Means-Algorithm"><span class="nav-number">1.1.2.</span> <span class="nav-text">K-Means Algorithm</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Optimization-Objective"><span class="nav-number">1.1.3.</span> <span class="nav-text">Optimization Objective</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Random-Initialization"><span class="nav-number">1.1.4.</span> <span class="nav-text">Random Initialization</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Choosing-the-Number-of-Clusters"><span class="nav-number">1.1.5.</span> <span class="nav-text">Choosing the Number of Clusters</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dimensionality-Reduction"><span class="nav-number">2.</span> <span class="nav-text">Dimensionality Reduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Motivation"><span class="nav-number">2.1.</span> <span class="nav-text">Motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Data-Compression"><span class="nav-number">2.1.1.</span> <span class="nav-text">Data Compression</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Data-Visualization"><span class="nav-number">2.1.2.</span> <span class="nav-text">Data Visualization</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Principal-Component-Analysis"><span class="nav-number">2.2.</span> <span class="nav-text">Principal Component Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Formulation"><span class="nav-number">2.2.1.</span> <span class="nav-text">Problem Formulation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PCA-Algorithm"><span class="nav-number">2.2.2.</span> <span class="nav-text">PCA Algorithm</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Applying-PCA"><span class="nav-number">2.3.</span> <span class="nav-text">Applying PCA</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Reconstruction-from-Compressed-Representation"><span class="nav-number">2.3.1.</span> <span class="nav-text">Reconstruction from Compressed Representation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Choosing-the-Number-of-Principal-Components"><span class="nav-number">2.3.2.</span> <span class="nav-text">Choosing the Number of Principal Components</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Advice-for-Applying-PCA"><span class="nav-number">2.3.3.</span> <span class="nav-text">Advice for Applying PCA</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Muhan Li"
+      src="/images/lightball.png">
+  <p class="site-author-name" itemprop="name">Muhan Li</p>
+  <div class="site-description" itemprop="description">bugstop</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/bugstop" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;bugstop" rel="noopener" target="_blank"><i class="fab fa-github-square fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/public-profile/in/limh" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;public-profile&#x2F;in&#x2F;limh" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:limuhan@msn.com" title="Email → mailto:limuhan@msn.com" rel="noopener" target="_blank"><i class="fas fa-envelope-square fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fas fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Li, Muhan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">141k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:09</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
