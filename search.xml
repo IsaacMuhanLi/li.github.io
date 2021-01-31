@@ -1,48 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Anaconda Tutorial</title>
-    <url>/post/Programming/Python/Anaconda-Tutorial/</url>
-    <content><![CDATA[<p>这里只列出了部分基础操作命令。<br><br></p>
-<h3 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h3><ol>
-<li><strong>查看所有环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
-或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
-<li><strong>创建环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create --name your_env_name</span><br></pre></td></tr></table></figure>
-或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name</span><br></pre></td></tr></table></figure>
-指定 Python 版本和安装包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name python=3.5 numpy pandas</span><br></pre></td></tr></table></figure>
-克隆一部分旧的环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name --<span class="built_in">clone</span> oldname</span><br></pre></td></tr></table></figure>
-<a id="more"></a></li>
-<li><strong>启用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate your_env_name</span><br></pre></td></tr></table></figure>
-或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">activate your_env_name</span><br></pre></td></tr></table></figure></li>
-<li><strong>停用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></table></figure></li>
-<li><strong>删除环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n your_env_name --all</span><br></pre></td></tr></table></figure></li>
-<li><strong>导出环境配置</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env <span class="built_in">export</span> &gt; environment.yml</span><br></pre></td></tr></table></figure></li>
-<li><strong>根据配置文件生成环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
-<br></li>
-</ol>
-<h3 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h3><ol>
-<li><strong>列举包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
-指定某个包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list -n packagename</span><br></pre></td></tr></table></figure></li>
-<li><strong>安装包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install packagename</span><br></pre></td></tr></table></figure>
-指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -n envname</span><br></pre></td></tr></table></figure></li>
-<li><strong>更新包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update packagename</span><br></pre></td></tr></table></figure>
-指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update -n envname packagename</span><br></pre></td></tr></table></figure></li>
-<li><strong>删除包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove packagename</span><br></pre></td></tr></table></figure>
-指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n envname</span><br></pre></td></tr></table></figure></li>
-<li><strong>更新 conda、anaconda、python</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update conda</span><br><span class="line">conda update anaconda</span><br><span class="line">conda update python</span><br></pre></td></tr></table></figure>
-指定 Python 版本<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install python=3.6</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Programming</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Artificial Intelligence (1) · Introduction</title>
     <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-1/</url>
     <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
@@ -72,6 +30,77 @@
             <i class="fa fa-quote-left"></i>
             <p><strong>Rumpelstilskin Principle</strong><br>Once you have a name for something, you get power over it.</p>
 <p><strong>Occam’s Razor</strong><br>Simple ideas are often the most powerful.</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<p><br></p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Artificial Intelligence</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Artificial Intelligence (2) · Reasoning</title>
+    <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/</url>
+    <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
+<p><br></p>
+<p>本节内容：目标树，产生式系统</p>
+<a id="more"></a>
+<p><br></p>
+<h4 id="第二讲-目标树与问题求解"><a href="#第二讲-目标树与问题求解" class="headerlink" title="第二讲 目标树与问题求解"></a>第二讲 目标树与问题求解</h4><h4 id="Problem-Reduction"><a href="#Problem-Reduction" class="headerlink" title="Problem Reduction"></a>Problem Reduction</h4><p><strong>Goal Tree</strong> (also called <strong>and/or tree</strong>, <strong>problem reduction tree</strong>)</p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/GoalTree.jpg" alt="GoalTree"></p>
+<p>PROCEDURE:</p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/math.png" alt="math"></p>
+<p>Safe transformations, Heuristic transformations</p>
+<p><br></p>
+<h4 id="CATECHISM"><a href="#CATECHISM" class="headerlink" title="CATECHISM"></a>CATECHISM</h4><ul>
+<li>WHAT KIND</li>
+<li>HOW REPRESENTED</li>
+<li>HOW USED</li>
+<li>HOW MUCH</li>
+<li>WHAT EXACTLY</li>
+</ul>
+<p><br></p>
+<h4 id="Modeling-Problem-Solving"><a href="#Modeling-Problem-Solving" class="headerlink" title="Modeling Problem Solving"></a>Modeling Problem Solving</h4><ul>
+<li>Generate and Test</li>
+<li>Problem Reduction</li>
+</ul>
+<p><br></p>
+<h3 id="第三讲-目标树和基于规则的专家系统（产生式）"><a href="#第三讲-目标树和基于规则的专家系统（产生式）" class="headerlink" title="第三讲 目标树和基于规则的专家系统（产生式）"></a>第三讲 目标树和基于规则的专家系统（产生式）</h3><h4 id="移放方块问题"><a href="#移放方块问题" class="headerlink" title="移放方块问题"></a>移放方块问题</h4><p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/box.jpg" alt="box"></p>
+<p><strong>Goal tree can answer certain kinds of questions about its own behavior.</strong></p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/gt.jpg" alt="box"></p>
+<p><br></p>
+<h4 id="Simon’s-Ant"><a href="#Simon’s-Ant" class="headerlink" title="Simon’s Ant"></a>Simon’s Ant</h4><p>The complexity of the behavior is a consequence of the complexity of the environment, not the complexity of the program.</p>
+<p><strong>C(behavior) = max{C(program), C(environment)}</strong></p>
+<p><br></p>
+<h4 id="RULE-BASED-SYSTEM"><a href="#RULE-BASED-SYSTEM" class="headerlink" title="RULE-BASED SYSTEM"></a>RULE-BASED SYSTEM</h4><p><em>BUILDING A GOAL TREE</em></p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/ExpertSystem.jpg" alt="ExpertSystem"></p>
+<ul>
+<li><p><strong>FORWARD-CHAINING RULE-BASED “EXPERT” SYSTEM</strong></p>
+<p>work forward from facts</p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/ExpertSystem1.jpg" alt="ExpertSystem"></p>
+</li>
+<li><p><strong>BACKWARD-CHAINING RULE-BASED “EXPERT” SYSTEM</strong></p>
+<p>work backward from a hypothesis</p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/ExpertSystem2.jpg" alt="ExpertSystem"></p>
+</li>
+</ul>
+<p><strong>Deduction(演绎) System:</strong> working with facts to produce new facts</p>
+<p><br></p>
+<h4 id="建立规则库"><a href="#建立规则库" class="headerlink" title="建立规则库"></a>建立规则库</h4><ol>
+<li>将专家做法转化为 IF-THEN 条件语句</li>
+<li>考虑个例（而 1 中只得到了总体的规则）</li>
+<li>考虑看起来相同但实际处理不同的东西</li>
+<li>运行系统，看它在什么情况下会出错</li>
+</ol>
+<p><br></p>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Knowledge <strong>about knowledge</strong> is power.</p>
 
             <i class="fa fa-quote-right"></i>
           </blockquote>
@@ -339,77 +368,6 @@
 <p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-5/10.jpg" alt="signal"></p>
 <script type="math/tex; mode=display">
 \max _{X,Y}\int _{x,y}f\left(x-X\right)\cdot g\left(x-X,y-Y\right)</script>]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Artificial Intelligence</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Artificial Intelligence (2) · Reasoning</title>
-    <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/</url>
-    <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
-<p><br></p>
-<p>本节内容：目标树，产生式系统</p>
-<a id="more"></a>
-<p><br></p>
-<h4 id="第二讲-目标树与问题求解"><a href="#第二讲-目标树与问题求解" class="headerlink" title="第二讲 目标树与问题求解"></a>第二讲 目标树与问题求解</h4><h4 id="Problem-Reduction"><a href="#Problem-Reduction" class="headerlink" title="Problem Reduction"></a>Problem Reduction</h4><p><strong>Goal Tree</strong> (also called <strong>and/or tree</strong>, <strong>problem reduction tree</strong>)</p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/GoalTree.jpg" alt="GoalTree"></p>
-<p>PROCEDURE:</p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/math.png" alt="math"></p>
-<p>Safe transformations, Heuristic transformations</p>
-<p><br></p>
-<h4 id="CATECHISM"><a href="#CATECHISM" class="headerlink" title="CATECHISM"></a>CATECHISM</h4><ul>
-<li>WHAT KIND</li>
-<li>HOW REPRESENTED</li>
-<li>HOW USED</li>
-<li>HOW MUCH</li>
-<li>WHAT EXACTLY</li>
-</ul>
-<p><br></p>
-<h4 id="Modeling-Problem-Solving"><a href="#Modeling-Problem-Solving" class="headerlink" title="Modeling Problem Solving"></a>Modeling Problem Solving</h4><ul>
-<li>Generate and Test</li>
-<li>Problem Reduction</li>
-</ul>
-<p><br></p>
-<h3 id="第三讲-目标树和基于规则的专家系统（产生式）"><a href="#第三讲-目标树和基于规则的专家系统（产生式）" class="headerlink" title="第三讲 目标树和基于规则的专家系统（产生式）"></a>第三讲 目标树和基于规则的专家系统（产生式）</h3><h4 id="移放方块问题"><a href="#移放方块问题" class="headerlink" title="移放方块问题"></a>移放方块问题</h4><p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/box.jpg" alt="box"></p>
-<p><strong>Goal tree can answer certain kinds of questions about its own behavior.</strong></p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/gt.jpg" alt="box"></p>
-<p><br></p>
-<h4 id="Simon’s-Ant"><a href="#Simon’s-Ant" class="headerlink" title="Simon’s Ant"></a>Simon’s Ant</h4><p>The complexity of the behavior is a consequence of the complexity of the environment, not the complexity of the program.</p>
-<p><strong>C(behavior) = max{C(program), C(environment)}</strong></p>
-<p><br></p>
-<h4 id="RULE-BASED-SYSTEM"><a href="#RULE-BASED-SYSTEM" class="headerlink" title="RULE-BASED SYSTEM"></a>RULE-BASED SYSTEM</h4><p><em>BUILDING A GOAL TREE</em></p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/ExpertSystem.jpg" alt="ExpertSystem"></p>
-<ul>
-<li><p><strong>FORWARD-CHAINING RULE-BASED “EXPERT” SYSTEM</strong></p>
-<p>work forward from facts</p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/ExpertSystem1.jpg" alt="ExpertSystem"></p>
-</li>
-<li><p><strong>BACKWARD-CHAINING RULE-BASED “EXPERT” SYSTEM</strong></p>
-<p>work backward from a hypothesis</p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-2/ExpertSystem2.jpg" alt="ExpertSystem"></p>
-</li>
-</ul>
-<p><strong>Deduction(演绎) System:</strong> working with facts to produce new facts</p>
-<p><br></p>
-<h4 id="建立规则库"><a href="#建立规则库" class="headerlink" title="建立规则库"></a>建立规则库</h4><ol>
-<li>将专家做法转化为 IF-THEN 条件语句</li>
-<li>考虑个例（而 1 中只得到了总体的规则）</li>
-<li>考虑看起来相同但实际处理不同的东西</li>
-<li>运行系统，看它在什么情况下会出错</li>
-</ol>
-<p><br></p>
-<blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <p>Knowledge <strong>about knowledge</strong> is power.</p>
-
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
-<p><br></p>
-]]></content>
       <categories>
         <category>Open Course</category>
         <category>Artificial Intelligence</category>
@@ -919,6 +877,49 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Deep Learning (1) · Introduction</title>
+    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/</url>
+    <content><![CDATA[<p>Deep Learning Specialization, Course A<br><strong>Neural Networks and Deep Learning</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 1:</em></strong> <em>Introduction to Deep Learning</em></p>
+<ol>
+<li>Understand the major trends driving the rise of deep learning.</li>
+<li>Be able to explain how deep learning is applied to supervised learning.</li>
+<li>Understand what are the major categories of models (such as CNNs and RNNs), and when they should be applied.</li>
+<li>Be able to recognize the basics of when deep learning will (or will not) work well.</li>
+</ol>
+<a id="more"></a>
+<h3 id="Introduction-to-Deep-Learning"><a href="#Introduction-to-Deep-Learning" class="headerlink" title="Introduction to Deep Learning"></a>Introduction to Deep Learning</h3><h4 id="What-is-a-neural-network"><a href="#What-is-a-neural-network" class="headerlink" title="What is a neural network?"></a>What is a neural network?</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/house-price.png" alt="House Price"></p>
+<p><strong>ReLU,</strong> Rectified Linear Unit Function: $\max\left(0,y\right)$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/1.png" alt="What is a neural network?"></p>
+<p><strong>Notice</strong> that each of these hidden units in the neural network takes its inputs all four input features. <strong><em>(density connected)</em></strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/2.png" alt="What is a neural network?"></p>
+<h4 id="Supervised-Learning-with-Neural-Networks"><a href="#Supervised-Learning-with-Neural-Networks" class="headerlink" title="Supervised Learning with Neural Networks"></a>Supervised Learning with Neural Networks</h4><ul>
+<li><strong>standard neural network</strong></li>
+<li><strong>convolution on neural networks, CNN:</strong> image applications</li>
+<li><strong>recurrent neural network, RNN:</strong> sequence data</li>
+<li><strong>custom / hybrid</strong></li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/nn.png" alt="Neural Networks"></p>
+<ul>
+<li><strong>Structured Data:</strong> features have well defined meanings</li>
+<li><strong>Unstructured Data:</strong> audio / image / text</li>
+</ul>
+<h4 id="Why-is-Deep-Learning-taking-off"><a href="#Why-is-Deep-Learning-taking-off" class="headerlink" title="Why is Deep Learning taking off?"></a>Why is Deep Learning taking off?</h4><ul>
+<li><strong>Data</strong><br><strong><em>m:</em></strong> size of training sets / number of training examples &emsp; <em>(on small training sets: feature engineering)</em><br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/scale.png" alt="Scale"></li>
+<li><strong>Computation</strong></li>
+<li><strong>Algorithms</strong><br><strong><em>activation function:</em></strong> Sigmoid → ReLU<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/relu.png" alt="Activation Function"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Deep Learning (10) · Foundations of Convolutional Neural Networks</title>
     <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-10/</url>
     <content><![CDATA[<p>Deep Learning Specialization, Course D<br><strong>Convolutional Neural Networks</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
@@ -1059,49 +1060,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
 <h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Convolutional-Model-step-by-step"><a href="#Convolutional-Model-step-by-step" class="headerlink" title="Convolutional Model: step by step"></a>Convolutional Model: step by step</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-10/12.png" alt="1"></p>
 <h4 id="Convolutional-Model-application"><a href="#Convolutional-Model-application" class="headerlink" title="Convolutional Model: application"></a>Convolutional Model: application</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-10/13.png" alt="2"></p>
 <p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deep Learning (1) · Introduction</title>
-    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/</url>
-    <content><![CDATA[<p>Deep Learning Specialization, Course A<br><strong>Neural Networks and Deep Learning</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 1:</em></strong> <em>Introduction to Deep Learning</em></p>
-<ol>
-<li>Understand the major trends driving the rise of deep learning.</li>
-<li>Be able to explain how deep learning is applied to supervised learning.</li>
-<li>Understand what are the major categories of models (such as CNNs and RNNs), and when they should be applied.</li>
-<li>Be able to recognize the basics of when deep learning will (or will not) work well.</li>
-</ol>
-<a id="more"></a>
-<h3 id="Introduction-to-Deep-Learning"><a href="#Introduction-to-Deep-Learning" class="headerlink" title="Introduction to Deep Learning"></a>Introduction to Deep Learning</h3><h4 id="What-is-a-neural-network"><a href="#What-is-a-neural-network" class="headerlink" title="What is a neural network?"></a>What is a neural network?</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/house-price.png" alt="House Price"></p>
-<p><strong>ReLU,</strong> Rectified Linear Unit Function: $\max\left(0,y\right)$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/1.png" alt="What is a neural network?"></p>
-<p><strong>Notice</strong> that each of these hidden units in the neural network takes its inputs all four input features. <strong><em>(density connected)</em></strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/2.png" alt="What is a neural network?"></p>
-<h4 id="Supervised-Learning-with-Neural-Networks"><a href="#Supervised-Learning-with-Neural-Networks" class="headerlink" title="Supervised Learning with Neural Networks"></a>Supervised Learning with Neural Networks</h4><ul>
-<li><strong>standard neural network</strong></li>
-<li><strong>convolution on neural networks, CNN:</strong> image applications</li>
-<li><strong>recurrent neural network, RNN:</strong> sequence data</li>
-<li><strong>custom / hybrid</strong></li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/nn.png" alt="Neural Networks"></p>
-<ul>
-<li><strong>Structured Data:</strong> features have well defined meanings</li>
-<li><strong>Unstructured Data:</strong> audio / image / text</li>
-</ul>
-<h4 id="Why-is-Deep-Learning-taking-off"><a href="#Why-is-Deep-Learning-taking-off" class="headerlink" title="Why is Deep Learning taking off?"></a>Why is Deep Learning taking off?</h4><ul>
-<li><strong>Data</strong><br><strong><em>m:</em></strong> size of training sets / number of training examples &emsp; <em>(on small training sets: feature engineering)</em><br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/scale.png" alt="Scale"></li>
-<li><strong>Computation</strong></li>
-<li><strong>Algorithms</strong><br><strong><em>activation function:</em></strong> Sigmoid → ReLU<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/relu.png" alt="Activation Function"></li>
-</ul>
 ]]></content>
       <categories>
         <category>Open Course</category>
@@ -1331,6 +1289,75 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Deep Learning (14) · Recurrent Neural Networks</title>
+    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/</url>
+    <content><![CDATA[<p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 1:</em></strong> <em>Recurrent Neural Networks</em></p>
+<ol>
+<li>Learn about recurrent neural networks. This type of model has been proven to perform extremely well on temporal data. It has several variants including LSTMs, GRUs and Bidirectional RNNs, which you are going to learn about in this section.</li>
+</ol>
+<a id="more"></a>
+<h3 id="Recurrent-Neural-Networks"><a href="#Recurrent-Neural-Networks" class="headerlink" title="Recurrent Neural Networks"></a>Recurrent Neural Networks</h3><h4 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h4><ul>
+<li><strong><em>x:</em></strong> x<sup>&lt;1&gt;</sup>, x<sup>&lt;2&gt;</sup>, x<sup>&lt;3&gt;</sup>, …, x<sup>&lt;t&gt;</sup>, …, x<sup>&lt;9&gt;</sup>,   T<sub>x</sub> = 9<br><em>Harry Potter and Hermione Granger invented a new spell.</em></li>
+<li><strong><em>y:</em></strong> y<sup>&lt;1&gt;</sup>, y<sup>&lt;2&gt;</sup>, y<sup>&lt;3&gt;</sup>, …, y<sup>&lt;t&gt;</sup>, …, y<sup>&lt;9&gt;</sup>,   T<sub>y</sub> = 9<br>named-entity recognition: <em>1 1 0 1 1 0 0 0 0</em></li>
+</ul>
+<p>$\begin{matrix} \qquad \textit{x:} &amp; \textsf{Harry} &amp; \textsf{Potter} &amp; \textsf{and} &amp; \textsf{Hermione} &amp; \textsf{Granger} &amp; \textsf{invented} &amp; \textsf{a} &amp; \textsf{new} &amp; \textsf{spell} \\ &amp; x^{\left\lt 1\right\gt } &amp; x^{\left\lt 2\right\gt } &amp; x^{\left\lt 3\right\gt } &amp; x^{\left\lt 4\right\gt } &amp; x^{\left\lt 5\right\gt } &amp; x^{\left\lt 6\right\gt } &amp; x^{\left\lt 7\right\gt } &amp; x^{\left\lt 8\right\gt } &amp; x^{\left\lt 9\right\gt } \\ {\rm Vocabulary} &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \large{\rm one \ hot}  &amp;&amp;&amp;&amp;&amp; \\ \left[\begin{matrix} \rm a \\ \rm aaron \\ \vdots \\ \rm and \\ \vdots \\ \rm harry \\ \vdots \\ \rm potter \\ \vdots \\ \rm zulu \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \cdots &amp; \cdots \end{matrix}$</p>
+<p>use a new fake word <strong>&lt;UNK&gt;</strong> to represent words not in the vocabulary<br>use a toke <strong>&lt;EOS&gt;</strong> to represent the end of every sentence</p>
+<h4 id="Recurrent-Neural-Network-Model"><a href="#Recurrent-Neural-Network-Model" class="headerlink" title="Recurrent Neural Network Model"></a>Recurrent Neural Network Model</h4><p><strong>Why not a standard network</strong></p>
+<ul>
+<li>inputs and outputs can be different lengths in different examples</li>
+<li>does not share features learned across different positions of text</li>
+</ul>
+<p><strong>Recurrent Neural Network</strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/1.png" alt></p>
+<p><strong><em>limitation:</em></strong> not using information later in the sequence → BRNN (Bidirectional Recurrent Neural Network)</p>
+<h5 id="Forward-Propagation"><a href="#Forward-Propagation" class="headerlink" title="Forward Propagation"></a>Forward Propagation</h5><p>$\begin{aligned}a^{\left\lt 0\right\gt } &amp;= \overrightarrow {0} _{\strut} \\ a^{\left\lt 1\right\gt } &amp;= g\left( W_{aa} a^{\left\lt 0\right\gt } + W_{ax} x^{\left\lt 1\right\gt } +b_a \right) &amp;{\rm tanh / ReLU} \\ \hat{y}^{\left\lt 1\right\gt } &amp;= g\left( W_{ya} a^{\left\lt 1\right\gt } +b_y \right) &amp;{\rm sigmoid / softmax} \\ &amp;\ \ \vdots \\ a^{\left\lt t\right\gt } &amp;= g\left( W_{aa} a^{\left\lt t-1\right\gt } + W_{ax} x^{\left\lt t\right\gt } +b_a \right) \\ &amp;= g\left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right) &amp; W_a &amp;= \left[ \begin{array}{c|c} W_{aa} &amp; W_{ax} \end{array} \right] \\ \hat{y}^{\left\lt t\right\gt } &amp;= g\left( W_{ya} a^{\left\lt t\right\gt } +b_y \right) = g\left( W_{y} a^{\left\lt t\right\gt } +b_y \right) &amp; \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] &amp;= \left[ \begin{array}{c} a^{\left\lt t-1\right\gt } \\ \hline x^{\left\lt t\right\gt } \end{array} \right] \end{aligned}$</p>
+<h4 id="Backpropagation-Through-Time"><a href="#Backpropagation-Through-Time" class="headerlink" title="Backpropagation Through Time"></a>Backpropagation Through Time</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/2.png" alt></p>
+<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = -{y}^{\left\lt t\right\gt } \log \hat{y}^{\left\lt t\right\gt } - \left(1-{y}^{\left\lt t\right\gt } \right) \log \left( 1- \hat{y}^{\left\lt t\right\gt } \right) \\ &amp; L \left( \hat{y}, y\right) = \sum_{t=1}^{T_y} L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
+<h4 id="Different-Types-of-RNNs"><a href="#Different-Types-of-RNNs" class="headerlink" title="Different Types of RNNs"></a>Different Types of RNNs</h4><ul>
+<li>many-to-many architecture</li>
+<li>many-to-one architecture</li>
+<li>one-to-many architecture</li>
+<li>one-to-one architecture</li>
+<li>many-to-many architecture <em>(different length)</em></li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/3.png" alt></p>
+<h4 id="Language-Model-and-Sequence-Generation"><a href="#Language-Model-and-Sequence-Generation" class="headerlink" title="Language Model and Sequence Generation"></a>Language Model and Sequence Generation</h4><p>$P\left( y^{\left\lt 1\right\gt }, y^{\left\lt 2\right\gt }, \dots, y^{\left\lt T_y\right\gt }\right)$</p>
+<ul>
+<li><strong><em>training set:</em></strong> large corpus of text</li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/4.png" alt></p>
+<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = - \sum_i {y}^{\left\lt t\right\gt }_i \log \hat{y}^{\left\lt t\right\gt } _i \\ &amp; L \left( \hat{y}, y\right) = \sum_t L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
+<h4 id="Sampling-Novel-Sequences"><a href="#Sampling-Novel-Sequences" class="headerlink" title="Sampling Novel Sequences"></a>Sampling Novel Sequences</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/5.png" alt></p>
+<h4 id="Vanishing-Gradients-with-RNNs"><a href="#Vanishing-Gradients-with-RNNs" class="headerlink" title="Vanishing Gradients with RNNs"></a>Vanishing Gradients with RNNs</h4><p>$\xleftarrow{\textrm{The}\ cat\ \textrm{which … …} \ was\ \textrm{full.}}$<br>$\xleftarrow{\textrm{The}\ cats\ \textrm{which … …} \ were\ \textrm{full.}}$</p>
+<h4 id="Gated-Recurrent-Unit-GRU"><a href="#Gated-Recurrent-Unit-GRU" class="headerlink" title="Gated Recurrent Unit (GRU)"></a>Gated Recurrent Unit (GRU)</h4><p>$a ^{\left\lt t\right\gt } = \tanh \left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right)$</p>
+<h5 id="Simplified-GRU"><a href="#Simplified-GRU" class="headerlink" title="Simplified GRU"></a>Simplified GRU</h5><ul>
+<li><strong><em>c:</em></strong> memory cell, c<sup>&lt;t&gt;</sup> = a<sup>&lt;t&gt;</sup></li>
+</ul>
+<p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; {\approx 0 \ {\rm or} \ 1} \quad \textsf{Gate: update?} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt }  + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \qquad &amp; \textsf{element-wise multiplication} \end{aligned}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/6.png" alt></p>
+<h5 id="Full-GRU"><a href="#Full-GRU" class="headerlink" title="Full GRU"></a>Full GRU</h5><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ \Gamma_r \odot c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) \\ \Gamma_r &amp;= {\rm sigmoid} \left( W_r \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_r \right) \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= {c} ^{\left\lt t\right\gt } \end{aligned}$</p>
+<h4 id="Long-Short-Term-Memory-LSTM"><a href="#Long-Short-Term-Memory-LSTM" class="headerlink" title="Long Short Term Memory (LSTM)"></a>Long Short Term Memory (LSTM)</h4><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; \textsf{update gate} \\ \Gamma_f &amp;= {\rm sigmoid} \left( W_f \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_f \right) &amp; \textsf{forget gate} \\ \Gamma_o &amp;= {\rm sigmoid} \left( W_o \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_o \right) &amp; \textsf{output gate} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \Gamma_f \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= \Gamma_o \odot \tanh \left( {c} ^{\left\lt t\right\gt } \right) \end{aligned}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/7.png" alt></p>
+<h4 id="Bidirectional-RNN-BRNN"><a href="#Bidirectional-RNN-BRNN" class="headerlink" title="Bidirectional RNN (BRNN)"></a>Bidirectional RNN (BRNN)</h4><p><strong>Acyclic Graph</strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/8.png" alt></p>
+<p>$\hat{y}^{\left\lt t\right\gt } = g\left( W_y \left[ \overrightarrow {a}^{\left\lt t\right\gt } , \overleftarrow {a}^{\left\lt t\right\gt } \right] +b_y\right)$</p>
+<h4 id="Deep-RNNs"><a href="#Deep-RNNs" class="headerlink" title="Deep RNNs"></a>Deep RNNs</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/9.png" alt></p>
+<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Building-a-Recurrent-Neural-Network-step-by-step"><a href="#Building-a-Recurrent-Neural-Network-step-by-step" class="headerlink" title="Building a Recurrent Neural Network - step by step"></a>Building a Recurrent Neural Network - step by step</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/10.png" alt></p>
+<h4 id="Dinosaur-Island-Character-Level-Language-Modeling"><a href="#Dinosaur-Island-Character-Level-Language-Modeling" class="headerlink" title="Dinosaur Island - Character-Level Language Modeling"></a>Dinosaur Island - Character-Level Language Modeling</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/11.png" alt></p>
+<h4 id="Jazz-Improvisation-with-LSTM"><a href="#Jazz-Improvisation-with-LSTM" class="headerlink" title="Jazz Improvisation with LSTM"></a>Jazz Improvisation with LSTM</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/12.png" alt></p>
+<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Deep Learning (15) · Natural Language Processing</title>
     <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-15/</url>
     <content><![CDATA[<p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
@@ -1502,75 +1529,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
 <h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Neural-Machine-Translation-with-Attention"><a href="#Neural-Machine-Translation-with-Attention" class="headerlink" title="Neural Machine Translation with Attention"></a>Neural Machine Translation with Attention</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-16/13.png" alt></p>
 <p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-16/14.png" alt></p>
 <h4 id="Trigger-word-detection"><a href="#Trigger-word-detection" class="headerlink" title="Trigger word detection"></a>Trigger word detection</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-16/15.png" alt></p>
-<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deep Learning (14) · Recurrent Neural Networks</title>
-    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/</url>
-    <content><![CDATA[<p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 1:</em></strong> <em>Recurrent Neural Networks</em></p>
-<ol>
-<li>Learn about recurrent neural networks. This type of model has been proven to perform extremely well on temporal data. It has several variants including LSTMs, GRUs and Bidirectional RNNs, which you are going to learn about in this section.</li>
-</ol>
-<a id="more"></a>
-<h3 id="Recurrent-Neural-Networks"><a href="#Recurrent-Neural-Networks" class="headerlink" title="Recurrent Neural Networks"></a>Recurrent Neural Networks</h3><h4 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h4><ul>
-<li><strong><em>x:</em></strong> x<sup>&lt;1&gt;</sup>, x<sup>&lt;2&gt;</sup>, x<sup>&lt;3&gt;</sup>, …, x<sup>&lt;t&gt;</sup>, …, x<sup>&lt;9&gt;</sup>,   T<sub>x</sub> = 9<br><em>Harry Potter and Hermione Granger invented a new spell.</em></li>
-<li><strong><em>y:</em></strong> y<sup>&lt;1&gt;</sup>, y<sup>&lt;2&gt;</sup>, y<sup>&lt;3&gt;</sup>, …, y<sup>&lt;t&gt;</sup>, …, y<sup>&lt;9&gt;</sup>,   T<sub>y</sub> = 9<br>named-entity recognition: <em>1 1 0 1 1 0 0 0 0</em></li>
-</ul>
-<p>$\begin{matrix} \qquad \textit{x:} &amp; \textsf{Harry} &amp; \textsf{Potter} &amp; \textsf{and} &amp; \textsf{Hermione} &amp; \textsf{Granger} &amp; \textsf{invented} &amp; \textsf{a} &amp; \textsf{new} &amp; \textsf{spell} \\ &amp; x^{\left\lt 1\right\gt } &amp; x^{\left\lt 2\right\gt } &amp; x^{\left\lt 3\right\gt } &amp; x^{\left\lt 4\right\gt } &amp; x^{\left\lt 5\right\gt } &amp; x^{\left\lt 6\right\gt } &amp; x^{\left\lt 7\right\gt } &amp; x^{\left\lt 8\right\gt } &amp; x^{\left\lt 9\right\gt } \\ {\rm Vocabulary} &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \large{\rm one \ hot}  &amp;&amp;&amp;&amp;&amp; \\ \left[\begin{matrix} \rm a \\ \rm aaron \\ \vdots \\ \rm and \\ \vdots \\ \rm harry \\ \vdots \\ \rm potter \\ \vdots \\ \rm zulu \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \cdots &amp; \cdots \end{matrix}$</p>
-<p>use a new fake word <strong>&lt;UNK&gt;</strong> to represent words not in the vocabulary<br>use a toke <strong>&lt;EOS&gt;</strong> to represent the end of every sentence</p>
-<h4 id="Recurrent-Neural-Network-Model"><a href="#Recurrent-Neural-Network-Model" class="headerlink" title="Recurrent Neural Network Model"></a>Recurrent Neural Network Model</h4><p><strong>Why not a standard network</strong></p>
-<ul>
-<li>inputs and outputs can be different lengths in different examples</li>
-<li>does not share features learned across different positions of text</li>
-</ul>
-<p><strong>Recurrent Neural Network</strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/1.png" alt></p>
-<p><strong><em>limitation:</em></strong> not using information later in the sequence → BRNN (Bidirectional Recurrent Neural Network)</p>
-<h5 id="Forward-Propagation"><a href="#Forward-Propagation" class="headerlink" title="Forward Propagation"></a>Forward Propagation</h5><p>$\begin{aligned}a^{\left\lt 0\right\gt } &amp;= \overrightarrow {0} _{\strut} \\ a^{\left\lt 1\right\gt } &amp;= g\left( W_{aa} a^{\left\lt 0\right\gt } + W_{ax} x^{\left\lt 1\right\gt } +b_a \right) &amp;{\rm tanh / ReLU} \\ \hat{y}^{\left\lt 1\right\gt } &amp;= g\left( W_{ya} a^{\left\lt 1\right\gt } +b_y \right) &amp;{\rm sigmoid / softmax} \\ &amp;\ \ \vdots \\ a^{\left\lt t\right\gt } &amp;= g\left( W_{aa} a^{\left\lt t-1\right\gt } + W_{ax} x^{\left\lt t\right\gt } +b_a \right) \\ &amp;= g\left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right) &amp; W_a &amp;= \left[ \begin{array}{c|c} W_{aa} &amp; W_{ax} \end{array} \right] \\ \hat{y}^{\left\lt t\right\gt } &amp;= g\left( W_{ya} a^{\left\lt t\right\gt } +b_y \right) = g\left( W_{y} a^{\left\lt t\right\gt } +b_y \right) &amp; \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] &amp;= \left[ \begin{array}{c} a^{\left\lt t-1\right\gt } \\ \hline x^{\left\lt t\right\gt } \end{array} \right] \end{aligned}$</p>
-<h4 id="Backpropagation-Through-Time"><a href="#Backpropagation-Through-Time" class="headerlink" title="Backpropagation Through Time"></a>Backpropagation Through Time</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/2.png" alt></p>
-<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = -{y}^{\left\lt t\right\gt } \log \hat{y}^{\left\lt t\right\gt } - \left(1-{y}^{\left\lt t\right\gt } \right) \log \left( 1- \hat{y}^{\left\lt t\right\gt } \right) \\ &amp; L \left( \hat{y}, y\right) = \sum_{t=1}^{T_y} L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
-<h4 id="Different-Types-of-RNNs"><a href="#Different-Types-of-RNNs" class="headerlink" title="Different Types of RNNs"></a>Different Types of RNNs</h4><ul>
-<li>many-to-many architecture</li>
-<li>many-to-one architecture</li>
-<li>one-to-many architecture</li>
-<li>one-to-one architecture</li>
-<li>many-to-many architecture <em>(different length)</em></li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/3.png" alt></p>
-<h4 id="Language-Model-and-Sequence-Generation"><a href="#Language-Model-and-Sequence-Generation" class="headerlink" title="Language Model and Sequence Generation"></a>Language Model and Sequence Generation</h4><p>$P\left( y^{\left\lt 1\right\gt }, y^{\left\lt 2\right\gt }, \dots, y^{\left\lt T_y\right\gt }\right)$</p>
-<ul>
-<li><strong><em>training set:</em></strong> large corpus of text</li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/4.png" alt></p>
-<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = - \sum_i {y}^{\left\lt t\right\gt }_i \log \hat{y}^{\left\lt t\right\gt } _i \\ &amp; L \left( \hat{y}, y\right) = \sum_t L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
-<h4 id="Sampling-Novel-Sequences"><a href="#Sampling-Novel-Sequences" class="headerlink" title="Sampling Novel Sequences"></a>Sampling Novel Sequences</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/5.png" alt></p>
-<h4 id="Vanishing-Gradients-with-RNNs"><a href="#Vanishing-Gradients-with-RNNs" class="headerlink" title="Vanishing Gradients with RNNs"></a>Vanishing Gradients with RNNs</h4><p>$\xleftarrow{\textrm{The}\ cat\ \textrm{which … …} \ was\ \textrm{full.}}$<br>$\xleftarrow{\textrm{The}\ cats\ \textrm{which … …} \ were\ \textrm{full.}}$</p>
-<h4 id="Gated-Recurrent-Unit-GRU"><a href="#Gated-Recurrent-Unit-GRU" class="headerlink" title="Gated Recurrent Unit (GRU)"></a>Gated Recurrent Unit (GRU)</h4><p>$a ^{\left\lt t\right\gt } = \tanh \left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right)$</p>
-<h5 id="Simplified-GRU"><a href="#Simplified-GRU" class="headerlink" title="Simplified GRU"></a>Simplified GRU</h5><ul>
-<li><strong><em>c:</em></strong> memory cell, c<sup>&lt;t&gt;</sup> = a<sup>&lt;t&gt;</sup></li>
-</ul>
-<p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; {\approx 0 \ {\rm or} \ 1} \quad \textsf{Gate: update?} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt }  + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \qquad &amp; \textsf{element-wise multiplication} \end{aligned}$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/6.png" alt></p>
-<h5 id="Full-GRU"><a href="#Full-GRU" class="headerlink" title="Full GRU"></a>Full GRU</h5><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ \Gamma_r \odot c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) \\ \Gamma_r &amp;= {\rm sigmoid} \left( W_r \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_r \right) \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= {c} ^{\left\lt t\right\gt } \end{aligned}$</p>
-<h4 id="Long-Short-Term-Memory-LSTM"><a href="#Long-Short-Term-Memory-LSTM" class="headerlink" title="Long Short Term Memory (LSTM)"></a>Long Short Term Memory (LSTM)</h4><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; \textsf{update gate} \\ \Gamma_f &amp;= {\rm sigmoid} \left( W_f \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_f \right) &amp; \textsf{forget gate} \\ \Gamma_o &amp;= {\rm sigmoid} \left( W_o \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_o \right) &amp; \textsf{output gate} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \Gamma_f \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= \Gamma_o \odot \tanh \left( {c} ^{\left\lt t\right\gt } \right) \end{aligned}$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/7.png" alt></p>
-<h4 id="Bidirectional-RNN-BRNN"><a href="#Bidirectional-RNN-BRNN" class="headerlink" title="Bidirectional RNN (BRNN)"></a>Bidirectional RNN (BRNN)</h4><p><strong>Acyclic Graph</strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/8.png" alt></p>
-<p>$\hat{y}^{\left\lt t\right\gt } = g\left( W_y \left[ \overrightarrow {a}^{\left\lt t\right\gt } , \overleftarrow {a}^{\left\lt t\right\gt } \right] +b_y\right)$</p>
-<h4 id="Deep-RNNs"><a href="#Deep-RNNs" class="headerlink" title="Deep RNNs"></a>Deep RNNs</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/9.png" alt></p>
-<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Building-a-Recurrent-Neural-Network-step-by-step"><a href="#Building-a-Recurrent-Neural-Network-step-by-step" class="headerlink" title="Building a Recurrent Neural Network - step by step"></a>Building a Recurrent Neural Network - step by step</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/10.png" alt></p>
-<h4 id="Dinosaur-Island-Character-Level-Language-Modeling"><a href="#Dinosaur-Island-Character-Level-Language-Modeling" class="headerlink" title="Dinosaur Island - Character-Level Language Modeling"></a>Dinosaur Island - Character-Level Language Modeling</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/11.png" alt></p>
-<h4 id="Jazz-Improvisation-with-LSTM"><a href="#Jazz-Improvisation-with-LSTM" class="headerlink" title="Jazz Improvisation with LSTM"></a>Jazz Improvisation with LSTM</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/12.png" alt></p>
 <p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
 ]]></content>
       <categories>
@@ -1964,91 +1922,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
-    <title>Deep Learning (7) · Hyperparameter Tuning</title>
-    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/</url>
-    <content><![CDATA[<p>Deep Learning Specialization, Course B<br><strong>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</strong><br>by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 3:</em></strong> <em>Hyperparameter Tuning, Batch Normalization and Programming Frameworks</em></p>
-<ol>
-<li>Master the process of hyperparameter tuning</li>
-</ol>
-<a id="more"></a>
-<h3 id="Hyperparameter-Tuning"><a href="#Hyperparameter-Tuning" class="headerlink" title="Hyperparameter Tuning"></a>Hyperparameter Tuning</h3><h4 id="Tuning-Process"><a href="#Tuning-Process" class="headerlink" title="Tuning Process"></a>Tuning Process</h4><ul>
-<li><strong>hyperparameter</strong></li>
-<li><strong><em>α</em></strong><ul>
-<li><strong>β</strong> ~ 0.9</li>
-<li>β<sub>1</sub>, β<sub>2</sub>, ε = 0.9, 0.999, 10<sup>-8</sup></li>
-<li><em># layers</em></li>
-<li><strong># hidden units</strong></li>
-<li><em>learning rate decay</em></li>
-<li><strong>mini-batch size</strong></li>
-</ul>
-</li>
-</ul>
-<p>try <strong>random values,</strong> don’t use a <em>grid;</em><br><strong>coarse to fine</strong> search</p>
-<h4 id="Using-an-Appropriate-Scale-to-Pick-Hyperparameters"><a href="#Using-an-Appropriate-Scale-to-Pick-Hyperparameters" class="headerlink" title="Using an Appropriate Scale to Pick Hyperparameters"></a>Using an Appropriate Scale to Pick Hyperparameters</h4><p>α ~ 10<sup>a</sup> ~ 10<sup>b</sup></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">r = np.random.uniform(a, b)</span><br><span class="line">alpha = <span class="number">10</span> ** r</span><br></pre></td></tr></table></figure>
-<p>β ~ 0.9 ~ 0.999… → 1-10<sup>b</sup> ~ 1-10<sup>a</sup></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">r = np.random.uniform(a, b)</span><br><span class="line">beta = <span class="number">1</span> - <span class="number">10</span> ** r</span><br></pre></td></tr></table></figure>
-<h4 id="Hyperparameters-Tuning-in-Practice-Pandas-vs-Caviar"><a href="#Hyperparameters-Tuning-in-Practice-Pandas-vs-Caviar" class="headerlink" title="Hyperparameters Tuning in Practice: Pandas vs. Caviar"></a>Hyperparameters Tuning in Practice: Pandas vs. Caviar</h4><ul>
-<li><strong><em>Pandas:</em></strong> babysitting one model</li>
-<li><strong><em>Caviar:</em></strong> training many models in parallel</li>
-</ul>
-<h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><h4 id="Normalizing-Activations-in-a-Network"><a href="#Normalizing-Activations-in-a-Network" class="headerlink" title="Normalizing Activations in a Network"></a>Normalizing Activations in a Network</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/1.png" alt="c"></p>
-<p>$\qquad \begin{aligned}\mu &amp;= \frac{1}{m} \sum_{i=1}^{m} x^{\left( i \right)} \\\sigma ^2 &amp;= \frac{1}{m} \sum_{i=1}^{m} { x^{\left( i \right)} } ^2 \\ x &amp;= \dfrac{x- \mu}{\sigma} \end{aligned}$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/2.png" alt="c"></p>
-<p><strong>normalize z<sup>[l]</sup></strong></p>
-<p>Given some intermediate values $z^{\left[l\right]\left(i\right)} = z^{\left( 1 \right)},\,z^{\left( 2 \right)},\,\dots,\,z^{\left( m \right)}$</p>
-<p>$\qquad \begin{aligned}\mu &amp;= \frac{1}{m} \sum_{i=1}^{m} z^{\left( i \right)} \\ \sigma ^2 &amp;= \frac{1}{m} \sum_{i=1}^{m} {\left( z^{\left( i \right)} -\mu \right)} ^2 \\ z^{\left( i \right)}_{\rm norm} &amp;= \dfrac{z^{\left( i \right)}- \mu}{\sqrt{ \sigma^2 + \varepsilon }} \\ \tilde{z}^{\left( i \right)} &amp;= \gamma z^{\left( i \right)}_{\rm norm} + \beta \end{aligned}$</p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;<em>γ, β are learnable parameters of your model</em></p>
-<p>use $\tilde{z}^{\left[l\right]\left(i\right)}$ instead of $z^{\left[l\right]\left(i\right)}$</p>
-<h4 id="Fitting-Batch-Norm-into-a-Neural-Network"><a href="#Fitting-Batch-Norm-into-a-Neural-Network" class="headerlink" title="Fitting Batch Norm into a Neural Network"></a>Fitting Batch Norm into a Neural Network</h4><p>$x \xrightarrow{ W^{\left[1\right]},\,b^{\left[1\right]} } z^{\left[1\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[1\right]},\,\beta^{\left[1\right]} } \tilde{z}^{\left[1\right]} \xrightarrow[\small {}^{g^{\left[1\right]}}]{} a^{\left[1\right]}  \xrightarrow{ W^{\left[2\right]},\,b^{\left[2\right]} } z^{\left[2\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[2\right]},\,\beta^{\left[2\right]} } \tilde{z}^{\left[2\right]} \xrightarrow[\small {}^{g^{\left[2\right]}}]{} a^{\left[2\right]} \xrightarrow{} \cdots$</p>
-<p><strong>Parameters:</strong> $\begin{aligned} &amp; W^{\left[1\right]},\,b^{\left[1\right]} ,\, W^{\left[2\right]},\,b^{\left[2\right]} ,\, \dots,\, W^{\left[l\right]},\,b^{\left[l\right]} \\  &amp; \gamma^{\left[1\right]},\,\beta^{\left[1\right]} ,\, \gamma^{\left[2\right]},\,\beta^{\left[2\right]} ,\, \dots,\, \gamma^{\left[l\right]},\,\beta^{\left[l\right]} \end{aligned}$</p>
-<h5 id="working-with-mini-batches"><a href="#working-with-mini-batches" class="headerlink" title="working with mini-batches"></a>working with mini-batches</h5><p>$\begin{aligned} &amp; X^{\left\{1\right\}} \xrightarrow{ W^{\left[1\right]},\,b^{\left[1\right]} } Z^{\left[1\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[1\right]},\,\beta^{\left[1\right]} } \tilde{Z}^{\left[1\right]} \xrightarrow[\small {}^{g^{\left[1\right]}}]{} A^{\left[1\right]}  \xrightarrow{ W^{\left[2\right]},\,b^{\left[2\right]} } Z^{\left[2\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[2\right]},\,\beta^{\left[2\right]} } \tilde{Z}^{\left[2\right]} \xrightarrow[\small {}^{g^{\left[2\right]}}]{} A^{\left[2\right]} \xrightarrow{} \cdots \\ &amp; X^{\left\{2\right\}} \xrightarrow{ W^{\left[1\right]},\,b^{\left[1\right]} } Z^{\left[1\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[1\right]},\,\beta^{\left[1\right]} } \tilde{Z}^{\left[1\right]} \xrightarrow[\small {}^{g^{\left[1\right]}}]{} A^{\left[1\right]}  \xrightarrow{ W^{\left[2\right]},\,b^{\left[2\right]} } Z^{\left[2\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[2\right]},\,\beta^{\left[2\right]} } \tilde{Z}^{\left[2\right]} \xrightarrow[\small {}^{g^{\left[2\right]}}]{} A^{\left[2\right]} \xrightarrow{} \cdots \\ &amp; \cdots \end{aligned}$</p>
-<p>&emsp;&emsp;<strong><em>Notice:</em></strong> b<sup>[l]</sup> can be eliminated (or always be zero) since it is subtracted out during batch normalization</p>
-<p>&emsp;&emsp;$\begin{aligned} &amp; z^{\left[l\right]} = W^{\left[l\right]}a^{\left[l-1\right]} \\ &amp; \tilde{z}^{\left[l\right]} = \gamma^{\left[l\right]} z^{\left( l \right)}_{\rm norm} +\beta^{\left[l\right]} \end{aligned}$</p>
-<p><strong>Parameters:</strong> $W^{\left[1\right]} \in \mathbb{R}^{n^{\left[ l \right]} \times n^{\left[ l-1 \right]}} ,\quad \gamma^{\left[l\right]} \in \mathbb{R}^{n^{\left[ l \right]} \times 1} ,\quad \beta^{\left[l\right]} \in \mathbb{R}^{n^{\left[ l \right]} \times 1}$</p>
-<p>for t = 1, 2, …, num_mini_batches</p>
-<p>&emsp;&emsp;forward prop on X<sup>{t}</sup></p>
-<p>&emsp;&emsp;&emsp;&emsp;in each hidden layer, use BN to replace z<sup>[l]</sup> with z̃<sup>[l]</sup></p>
-<p>&emsp;&emsp;back prop  to compute dW<sup>[l]</sup>, dγ<sup>[l]</sup>, dβ<sup>[l]</sup></p>
-<p>&emsp;&emsp;update parameters</p>
-<p>&emsp;&emsp;$\qquad \begin{aligned} &amp; W^{\left[l\right]} := W^{\left[l\right]} - dW^{\left[l\right]} \\ &amp; \gamma^{\left[l\right]} := \gamma^{\left[l\right]} - d\gamma^{\left[l\right]} \\ &amp; \beta^{\left[l\right]} := \beta^{\left[l\right]} - d\beta^{\left[l\right]} \end{aligned}$</p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<em>works with Momentum / RMSProp / Adam</em></p>
-<h4 id="Why-does-Batch-Norm-Work"><a href="#Why-does-Batch-Norm-Work" class="headerlink" title="Why does Batch Norm Work?"></a>Why does Batch Norm Work?</h4><p><strong>covariate shift</strong></p>
-<p>batch norm limits the amount to which updating the parameters in the earlier layers can affect the distribution of values that the layer now sees and therefore has to learn on</p>
-<p><strong>regularization</strong></p>
-<p>similar to dropout, batch norm adds some noise to each hidden layer’s activations which has a <em>slight</em> effect</p>
-<h4 id="Batch-Norm-at-Test-Time"><a href="#Batch-Norm-at-Test-Time" class="headerlink" title="Batch Norm at Test Time"></a>Batch Norm at Test Time</h4><p><strong>on mini-batches:</strong></p>
-<p>$\qquad \begin{aligned}\mu^{\left[l\right]} &amp;= \frac{1}{m} \sum_{i=1}^{m} z^{\left[l\right]\left(i\right)} \\ {\sigma ^2} ^{\left[l\right]} &amp;= \frac{1}{m} \sum_{i=1}^{m} {\left( z^{\left[l\right]\left(i\right)} -\mu ^{\left[l\right]} \right)} ^2 \\ z^{\left[l\right]\left(i\right)}_{\rm norm} &amp;= \dfrac{z^{\left[l\right]\left(i\right)}- \mu ^{\left[l\right]}}{\sqrt{ {\sigma ^2} ^{\left[l\right]} + \varepsilon }} \\ \tilde{z}^{\left[l\right]\left(i\right)} &amp;= \gamma^{\left[l\right]}  z^{\left[l\right]\left(i\right)}_{\rm norm} + \beta ^{\left[l\right]} \end{aligned}$</p>
-<p><strong>at test time:</strong></p>
-<p>μ, σ<sup>2</sup> is estimated using a exponentially weighted average (across the mini-batches)</p>
-<p>$\qquad \begin{aligned}\mu ^{\left[l\right]} &amp;= \frac{1}{T} \sum_{t=1}^{T} \mu^{\left\{t\right\} \left[l\right]} \\ {\sigma ^2} ^{\left[l\right]} &amp;= \frac{1}{T} \sum_{t=1}^{T} {\sigma ^2}^{\left\{t\right\} \left[l\right]} \\ z^{\left[l\right]\left(i\right)}_{\rm norm} &amp;= \dfrac{z^{\left[l\right]\left(i\right)}- \mu ^{\left[l\right]}}{\sqrt{ {\sigma ^2} ^{\left[l\right]} + \varepsilon }} \\ \tilde{z}^{\left[l\right]\left(i\right)} &amp;= \gamma^{\left[l\right]}  z^{\left[l\right]\left(i\right)}_{\rm norm} + \beta ^{\left[l\right]} \end{aligned}$</p>
-<h3 id="Multi-Class-Classification"><a href="#Multi-Class-Classification" class="headerlink" title="Multi-Class Classification"></a>Multi-Class Classification</h3><h4 id="Softmax-Regression"><a href="#Softmax-Regression" class="headerlink" title="Softmax Regression"></a>Softmax Regression</h4><p><strong>C = #classes</strong> = 4 → <strong>n<sup>[L]</sup> = C</strong> = 4 → ŷ ∈ R<sup>4×1</sup></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/3.png" alt="c"></p>
-<p>$\begin{aligned} z^{\left[L\right]} &amp;= W^{\left[L\right]} a^{\left[L-1\right]} + b^{\left[L\right]} \\ &amp; \textsf{Activation Function}^{\strut} \\ t &amp;= e^{ z^{\left[L\right]} } , \qquad t \in \mathbb{R}^{4 \times 1} \\ a^{\left[L\right]} &amp;= \dfrac{e^{ z^{\left[L\right]} }}{\sum_{i=1}^{4} t_i} , \qquad a_i^{\left[L\right]} = \dfrac{t_i}{\sum_{i=1}^{4} t_i} \end{aligned}$</p>
-<p>$\Rightarrow {\rm softmax:}\ \ a^{\left[L\right]}_{\Tiny{(C,1)}} = g^{\left[L\right]} \left( z^{\left[L\right]}_{\Tiny{(C,1)}} \right)$</p>
-<p><strong><em>softmax regression generalizes logistic regression to C classes</em></strong></p>
-<h4 id="Training-a-Softmax-Classifier"><a href="#Training-a-Softmax-Classifier" class="headerlink" title="Training a Softmax Classifier"></a>Training a Softmax Classifier</h4><h5 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h5><p>$\begin{aligned}&amp; y= \left[\begin{matrix} 0\\1\\0\\0 \end{matrix}\right] \quad a^{\left[L\right]} = \hat{y}= \left[\begin{matrix} 0.3\\0.2\\0.1\\0.4 \end{matrix}\right] \qquad C=4 \\ &amp; \ \ \ \ \qquad\qquad\qquad\qquad\qquad\Downarrow \\ &amp; L\left(\hat{y},\,y\right) = -\sum_{j=1}^{4} y_j \log \hat{y}_j = -\log \hat{y}_2 \Rightarrow \hat{y}_2 \uparrow \\ &amp; J\left( W^{\left[1\right]},b^{\left[1\right]}, \dots,W^{\left[L\right]},b^{\left[L\right]} \right) = \dfrac{1}{m} \sum_{i=1}^{m} L\left(\hat{y}^{\left(i\right)},\,y^{\left(i\right)}\right) \end{aligned}$</p>
-<h5 id="Gradient-Decent"><a href="#Gradient-Decent" class="headerlink" title="Gradient Decent"></a>Gradient Decent</h5><p>$dz^{\left[L\right]} = \dfrac{\partial J}{\partial z^{\left[L\right]}} = \hat{y}-y$</p>
-<h3 id="Introduction-to-Programming-Frameworks"><a href="#Introduction-to-Programming-Frameworks" class="headerlink" title="Introduction to Programming Frameworks"></a>Introduction to Programming Frameworks</h3><h4 id="Deep-Learning-Frameworks"><a href="#Deep-Learning-Frameworks" class="headerlink" title="Deep Learning Frameworks"></a>Deep Learning Frameworks</h4><ul>
-<li>ease of programming</li>
-<li>running speed</li>
-<li>truly open</li>
-</ul>
-<h4 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h4><p><a href="Deep-Learning-Andrew-Ng-7/tensorflow.ipynb">tensorflow.ipynb</a></p>
-<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="TensorFlow-1"><a href="#TensorFlow-1" class="headerlink" title="TensorFlow"></a>TensorFlow</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/4.png" alt="t"></p>
-<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Deep Learning (6) · Optimization Algorithms</title>
     <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/</url>
     <content><![CDATA[<p>Deep Learning Specialization, Course B<br><strong>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</strong><br>by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
@@ -2145,6 +2018,91 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
 <li>plateaus can make learning slow</li>
 </ul>
 <h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/3.png" alt="optimization"></p>
+<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Deep Learning (7) · Hyperparameter Tuning</title>
+    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/</url>
+    <content><![CDATA[<p>Deep Learning Specialization, Course B<br><strong>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</strong><br>by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 3:</em></strong> <em>Hyperparameter Tuning, Batch Normalization and Programming Frameworks</em></p>
+<ol>
+<li>Master the process of hyperparameter tuning</li>
+</ol>
+<a id="more"></a>
+<h3 id="Hyperparameter-Tuning"><a href="#Hyperparameter-Tuning" class="headerlink" title="Hyperparameter Tuning"></a>Hyperparameter Tuning</h3><h4 id="Tuning-Process"><a href="#Tuning-Process" class="headerlink" title="Tuning Process"></a>Tuning Process</h4><ul>
+<li><strong>hyperparameter</strong></li>
+<li><strong><em>α</em></strong><ul>
+<li><strong>β</strong> ~ 0.9</li>
+<li>β<sub>1</sub>, β<sub>2</sub>, ε = 0.9, 0.999, 10<sup>-8</sup></li>
+<li><em># layers</em></li>
+<li><strong># hidden units</strong></li>
+<li><em>learning rate decay</em></li>
+<li><strong>mini-batch size</strong></li>
+</ul>
+</li>
+</ul>
+<p>try <strong>random values,</strong> don’t use a <em>grid;</em><br><strong>coarse to fine</strong> search</p>
+<h4 id="Using-an-Appropriate-Scale-to-Pick-Hyperparameters"><a href="#Using-an-Appropriate-Scale-to-Pick-Hyperparameters" class="headerlink" title="Using an Appropriate Scale to Pick Hyperparameters"></a>Using an Appropriate Scale to Pick Hyperparameters</h4><p>α ~ 10<sup>a</sup> ~ 10<sup>b</sup></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">r = np.random.uniform(a, b)</span><br><span class="line">alpha = <span class="number">10</span> ** r</span><br></pre></td></tr></table></figure>
+<p>β ~ 0.9 ~ 0.999… → 1-10<sup>b</sup> ~ 1-10<sup>a</sup></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">r = np.random.uniform(a, b)</span><br><span class="line">beta = <span class="number">1</span> - <span class="number">10</span> ** r</span><br></pre></td></tr></table></figure>
+<h4 id="Hyperparameters-Tuning-in-Practice-Pandas-vs-Caviar"><a href="#Hyperparameters-Tuning-in-Practice-Pandas-vs-Caviar" class="headerlink" title="Hyperparameters Tuning in Practice: Pandas vs. Caviar"></a>Hyperparameters Tuning in Practice: Pandas vs. Caviar</h4><ul>
+<li><strong><em>Pandas:</em></strong> babysitting one model</li>
+<li><strong><em>Caviar:</em></strong> training many models in parallel</li>
+</ul>
+<h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><h4 id="Normalizing-Activations-in-a-Network"><a href="#Normalizing-Activations-in-a-Network" class="headerlink" title="Normalizing Activations in a Network"></a>Normalizing Activations in a Network</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/1.png" alt="c"></p>
+<p>$\qquad \begin{aligned}\mu &amp;= \frac{1}{m} \sum_{i=1}^{m} x^{\left( i \right)} \\\sigma ^2 &amp;= \frac{1}{m} \sum_{i=1}^{m} { x^{\left( i \right)} } ^2 \\ x &amp;= \dfrac{x- \mu}{\sigma} \end{aligned}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/2.png" alt="c"></p>
+<p><strong>normalize z<sup>[l]</sup></strong></p>
+<p>Given some intermediate values $z^{\left[l\right]\left(i\right)} = z^{\left( 1 \right)},\,z^{\left( 2 \right)},\,\dots,\,z^{\left( m \right)}$</p>
+<p>$\qquad \begin{aligned}\mu &amp;= \frac{1}{m} \sum_{i=1}^{m} z^{\left( i \right)} \\ \sigma ^2 &amp;= \frac{1}{m} \sum_{i=1}^{m} {\left( z^{\left( i \right)} -\mu \right)} ^2 \\ z^{\left( i \right)}_{\rm norm} &amp;= \dfrac{z^{\left( i \right)}- \mu}{\sqrt{ \sigma^2 + \varepsilon }} \\ \tilde{z}^{\left( i \right)} &amp;= \gamma z^{\left( i \right)}_{\rm norm} + \beta \end{aligned}$</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;<em>γ, β are learnable parameters of your model</em></p>
+<p>use $\tilde{z}^{\left[l\right]\left(i\right)}$ instead of $z^{\left[l\right]\left(i\right)}$</p>
+<h4 id="Fitting-Batch-Norm-into-a-Neural-Network"><a href="#Fitting-Batch-Norm-into-a-Neural-Network" class="headerlink" title="Fitting Batch Norm into a Neural Network"></a>Fitting Batch Norm into a Neural Network</h4><p>$x \xrightarrow{ W^{\left[1\right]},\,b^{\left[1\right]} } z^{\left[1\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[1\right]},\,\beta^{\left[1\right]} } \tilde{z}^{\left[1\right]} \xrightarrow[\small {}^{g^{\left[1\right]}}]{} a^{\left[1\right]}  \xrightarrow{ W^{\left[2\right]},\,b^{\left[2\right]} } z^{\left[2\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[2\right]},\,\beta^{\left[2\right]} } \tilde{z}^{\left[2\right]} \xrightarrow[\small {}^{g^{\left[2\right]}}]{} a^{\left[2\right]} \xrightarrow{} \cdots$</p>
+<p><strong>Parameters:</strong> $\begin{aligned} &amp; W^{\left[1\right]},\,b^{\left[1\right]} ,\, W^{\left[2\right]},\,b^{\left[2\right]} ,\, \dots,\, W^{\left[l\right]},\,b^{\left[l\right]} \\  &amp; \gamma^{\left[1\right]},\,\beta^{\left[1\right]} ,\, \gamma^{\left[2\right]},\,\beta^{\left[2\right]} ,\, \dots,\, \gamma^{\left[l\right]},\,\beta^{\left[l\right]} \end{aligned}$</p>
+<h5 id="working-with-mini-batches"><a href="#working-with-mini-batches" class="headerlink" title="working with mini-batches"></a>working with mini-batches</h5><p>$\begin{aligned} &amp; X^{\left\{1\right\}} \xrightarrow{ W^{\left[1\right]},\,b^{\left[1\right]} } Z^{\left[1\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[1\right]},\,\beta^{\left[1\right]} } \tilde{Z}^{\left[1\right]} \xrightarrow[\small {}^{g^{\left[1\right]}}]{} A^{\left[1\right]}  \xrightarrow{ W^{\left[2\right]},\,b^{\left[2\right]} } Z^{\left[2\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[2\right]},\,\beta^{\left[2\right]} } \tilde{Z}^{\left[2\right]} \xrightarrow[\small {}^{g^{\left[2\right]}}]{} A^{\left[2\right]} \xrightarrow{} \cdots \\ &amp; X^{\left\{2\right\}} \xrightarrow{ W^{\left[1\right]},\,b^{\left[1\right]} } Z^{\left[1\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[1\right]},\,\beta^{\left[1\right]} } \tilde{Z}^{\left[1\right]} \xrightarrow[\small {}^{g^{\left[1\right]}}]{} A^{\left[1\right]}  \xrightarrow{ W^{\left[2\right]},\,b^{\left[2\right]} } Z^{\left[2\right]} \xrightarrow[\small {}^\textsf{Batch Norm}]{ \gamma^{\left[2\right]},\,\beta^{\left[2\right]} } \tilde{Z}^{\left[2\right]} \xrightarrow[\small {}^{g^{\left[2\right]}}]{} A^{\left[2\right]} \xrightarrow{} \cdots \\ &amp; \cdots \end{aligned}$</p>
+<p>&emsp;&emsp;<strong><em>Notice:</em></strong> b<sup>[l]</sup> can be eliminated (or always be zero) since it is subtracted out during batch normalization</p>
+<p>&emsp;&emsp;$\begin{aligned} &amp; z^{\left[l\right]} = W^{\left[l\right]}a^{\left[l-1\right]} \\ &amp; \tilde{z}^{\left[l\right]} = \gamma^{\left[l\right]} z^{\left( l \right)}_{\rm norm} +\beta^{\left[l\right]} \end{aligned}$</p>
+<p><strong>Parameters:</strong> $W^{\left[1\right]} \in \mathbb{R}^{n^{\left[ l \right]} \times n^{\left[ l-1 \right]}} ,\quad \gamma^{\left[l\right]} \in \mathbb{R}^{n^{\left[ l \right]} \times 1} ,\quad \beta^{\left[l\right]} \in \mathbb{R}^{n^{\left[ l \right]} \times 1}$</p>
+<p>for t = 1, 2, …, num_mini_batches</p>
+<p>&emsp;&emsp;forward prop on X<sup>{t}</sup></p>
+<p>&emsp;&emsp;&emsp;&emsp;in each hidden layer, use BN to replace z<sup>[l]</sup> with z̃<sup>[l]</sup></p>
+<p>&emsp;&emsp;back prop  to compute dW<sup>[l]</sup>, dγ<sup>[l]</sup>, dβ<sup>[l]</sup></p>
+<p>&emsp;&emsp;update parameters</p>
+<p>&emsp;&emsp;$\qquad \begin{aligned} &amp; W^{\left[l\right]} := W^{\left[l\right]} - dW^{\left[l\right]} \\ &amp; \gamma^{\left[l\right]} := \gamma^{\left[l\right]} - d\gamma^{\left[l\right]} \\ &amp; \beta^{\left[l\right]} := \beta^{\left[l\right]} - d\beta^{\left[l\right]} \end{aligned}$</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<em>works with Momentum / RMSProp / Adam</em></p>
+<h4 id="Why-does-Batch-Norm-Work"><a href="#Why-does-Batch-Norm-Work" class="headerlink" title="Why does Batch Norm Work?"></a>Why does Batch Norm Work?</h4><p><strong>covariate shift</strong></p>
+<p>batch norm limits the amount to which updating the parameters in the earlier layers can affect the distribution of values that the layer now sees and therefore has to learn on</p>
+<p><strong>regularization</strong></p>
+<p>similar to dropout, batch norm adds some noise to each hidden layer’s activations which has a <em>slight</em> effect</p>
+<h4 id="Batch-Norm-at-Test-Time"><a href="#Batch-Norm-at-Test-Time" class="headerlink" title="Batch Norm at Test Time"></a>Batch Norm at Test Time</h4><p><strong>on mini-batches:</strong></p>
+<p>$\qquad \begin{aligned}\mu^{\left[l\right]} &amp;= \frac{1}{m} \sum_{i=1}^{m} z^{\left[l\right]\left(i\right)} \\ {\sigma ^2} ^{\left[l\right]} &amp;= \frac{1}{m} \sum_{i=1}^{m} {\left( z^{\left[l\right]\left(i\right)} -\mu ^{\left[l\right]} \right)} ^2 \\ z^{\left[l\right]\left(i\right)}_{\rm norm} &amp;= \dfrac{z^{\left[l\right]\left(i\right)}- \mu ^{\left[l\right]}}{\sqrt{ {\sigma ^2} ^{\left[l\right]} + \varepsilon }} \\ \tilde{z}^{\left[l\right]\left(i\right)} &amp;= \gamma^{\left[l\right]}  z^{\left[l\right]\left(i\right)}_{\rm norm} + \beta ^{\left[l\right]} \end{aligned}$</p>
+<p><strong>at test time:</strong></p>
+<p>μ, σ<sup>2</sup> is estimated using a exponentially weighted average (across the mini-batches)</p>
+<p>$\qquad \begin{aligned}\mu ^{\left[l\right]} &amp;= \frac{1}{T} \sum_{t=1}^{T} \mu^{\left\{t\right\} \left[l\right]} \\ {\sigma ^2} ^{\left[l\right]} &amp;= \frac{1}{T} \sum_{t=1}^{T} {\sigma ^2}^{\left\{t\right\} \left[l\right]} \\ z^{\left[l\right]\left(i\right)}_{\rm norm} &amp;= \dfrac{z^{\left[l\right]\left(i\right)}- \mu ^{\left[l\right]}}{\sqrt{ {\sigma ^2} ^{\left[l\right]} + \varepsilon }} \\ \tilde{z}^{\left[l\right]\left(i\right)} &amp;= \gamma^{\left[l\right]}  z^{\left[l\right]\left(i\right)}_{\rm norm} + \beta ^{\left[l\right]} \end{aligned}$</p>
+<h3 id="Multi-Class-Classification"><a href="#Multi-Class-Classification" class="headerlink" title="Multi-Class Classification"></a>Multi-Class Classification</h3><h4 id="Softmax-Regression"><a href="#Softmax-Regression" class="headerlink" title="Softmax Regression"></a>Softmax Regression</h4><p><strong>C = #classes</strong> = 4 → <strong>n<sup>[L]</sup> = C</strong> = 4 → ŷ ∈ R<sup>4×1</sup></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/3.png" alt="c"></p>
+<p>$\begin{aligned} z^{\left[L\right]} &amp;= W^{\left[L\right]} a^{\left[L-1\right]} + b^{\left[L\right]} \\ &amp; \textsf{Activation Function}^{\strut} \\ t &amp;= e^{ z^{\left[L\right]} } , \qquad t \in \mathbb{R}^{4 \times 1} \\ a^{\left[L\right]} &amp;= \dfrac{e^{ z^{\left[L\right]} }}{\sum_{i=1}^{4} t_i} , \qquad a_i^{\left[L\right]} = \dfrac{t_i}{\sum_{i=1}^{4} t_i} \end{aligned}$</p>
+<p>$\Rightarrow {\rm softmax:}\ \ a^{\left[L\right]}_{\Tiny{(C,1)}} = g^{\left[L\right]} \left( z^{\left[L\right]}_{\Tiny{(C,1)}} \right)$</p>
+<p><strong><em>softmax regression generalizes logistic regression to C classes</em></strong></p>
+<h4 id="Training-a-Softmax-Classifier"><a href="#Training-a-Softmax-Classifier" class="headerlink" title="Training a Softmax Classifier"></a>Training a Softmax Classifier</h4><h5 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h5><p>$\begin{aligned}&amp; y= \left[\begin{matrix} 0\\1\\0\\0 \end{matrix}\right] \quad a^{\left[L\right]} = \hat{y}= \left[\begin{matrix} 0.3\\0.2\\0.1\\0.4 \end{matrix}\right] \qquad C=4 \\ &amp; \ \ \ \ \qquad\qquad\qquad\qquad\qquad\Downarrow \\ &amp; L\left(\hat{y},\,y\right) = -\sum_{j=1}^{4} y_j \log \hat{y}_j = -\log \hat{y}_2 \Rightarrow \hat{y}_2 \uparrow \\ &amp; J\left( W^{\left[1\right]},b^{\left[1\right]}, \dots,W^{\left[L\right]},b^{\left[L\right]} \right) = \dfrac{1}{m} \sum_{i=1}^{m} L\left(\hat{y}^{\left(i\right)},\,y^{\left(i\right)}\right) \end{aligned}$</p>
+<h5 id="Gradient-Decent"><a href="#Gradient-Decent" class="headerlink" title="Gradient Decent"></a>Gradient Decent</h5><p>$dz^{\left[L\right]} = \dfrac{\partial J}{\partial z^{\left[L\right]}} = \hat{y}-y$</p>
+<h3 id="Introduction-to-Programming-Frameworks"><a href="#Introduction-to-Programming-Frameworks" class="headerlink" title="Introduction to Programming Frameworks"></a>Introduction to Programming Frameworks</h3><h4 id="Deep-Learning-Frameworks"><a href="#Deep-Learning-Frameworks" class="headerlink" title="Deep Learning Frameworks"></a>Deep Learning Frameworks</h4><ul>
+<li>ease of programming</li>
+<li>running speed</li>
+<li>truly open</li>
+</ul>
+<h4 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h4><p><a href="Deep-Learning-Andrew-Ng-7/tensorflow.ipynb">tensorflow.ipynb</a></p>
+<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="TensorFlow-1"><a href="#TensorFlow-1" class="headerlink" title="TensorFlow"></a>TensorFlow</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/4.png" alt="t"></p>
 <p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
 ]]></content>
       <categories>
@@ -2541,36 +2499,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
-    <title>GitHub · Changing Author Info</title>
-    <url>/post/Programming/Git/GitHub-Changing-Author-Info/</url>
-    <content><![CDATA[<p>Before running this script, you’ll need:</p>
-<ul>
-<li>The old email address that appears in the author/committer fields that you want to change</li>
-<li>The correct name and email address that you would like such commits to be attributed to</li>
-</ul>
-<a id="more"></a>
-<p><br></p>
-<h5 id="Create-a-fresh-bare-clone-of-your-repository"><a href="#Create-a-fresh-bare-clone-of-your-repository" class="headerlink" title="Create a fresh, bare clone of your repository"></a>Create a fresh, bare clone of your repository</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone --bare https://hostname/user/repo.git</span><br><span class="line">cd repo.git</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="Copy-and-paste-the-script-replacing-the-following-variables-based-on-the-information-you-gathered"><a href="#Copy-and-paste-the-script-replacing-the-following-variables-based-on-the-information-you-gathered" class="headerlink" title="Copy and paste the script, replacing the following variables based on the information you gathered"></a>Copy and paste the script, replacing the following variables based on the information you gathered</h5><ul>
-<li><code>OLD_EMAIL</code></li>
-<li><code>CORRECT_NAME</code></li>
-<li><code>CORRECT_EMAIL</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line"></span><br><span class="line">git filter-branch --env-filter &#39;</span><br><span class="line"></span><br><span class="line">OLD_EMAIL&#x3D;&quot;your-old-email@example.com&quot;</span><br><span class="line">CORRECT_NAME&#x3D;&quot;Your Correct Name&quot;</span><br><span class="line">CORRECT_EMAIL&#x3D;&quot;your-correct-email@example.com&quot;</span><br><span class="line"></span><br><span class="line">if [ &quot;$GIT_COMMITTER_EMAIL&quot; &#x3D; &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">    export GIT_COMMITTER_NAME&#x3D;&quot;$CORRECT_NAME&quot;</span><br><span class="line">    export GIT_COMMITTER_EMAIL&#x3D;&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">if [ &quot;$GIT_AUTHOR_EMAIL&quot; &#x3D; &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">    export GIT_AUTHOR_NAME&#x3D;&quot;$CORRECT_NAME&quot;</span><br><span class="line">    export GIT_AUTHOR_EMAIL&#x3D;&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">&#39; --tag-name-filter cat -- --branches --tags</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="Review-the-new-Git-history-for-errors"><a href="#Review-the-new-Git-history-for-errors" class="headerlink" title="Review the new Git history for errors."></a>Review the new Git history for errors.</h5><p><br></p>
-<h5 id="Push-the-corrected-history-to-GitHub-Enterprise"><a href="#Push-the-corrected-history-to-GitHub-Enterprise" class="headerlink" title="Push the corrected history to GitHub Enterprise:"></a>Push the corrected history to GitHub Enterprise:</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push --force --tags origin &#x27;refs/heads/*&#x27;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Programming</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Game Theory (1)</title>
     <url>/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/</url>
     <content><![CDATA[<p>Yale University, <strong>Game Theory,</strong> Economics 159</p>
@@ -2639,6 +2567,36 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       <tags>
         <tag>Economics</tag>
         <tag>Game Theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitHub · Changing Author Info</title>
+    <url>/post/Programming/Git/GitHub-Changing-Author-Info/</url>
+    <content><![CDATA[<p>Before running this script, you’ll need:</p>
+<ul>
+<li>The old email address that appears in the author/committer fields that you want to change</li>
+<li>The correct name and email address that you would like such commits to be attributed to</li>
+</ul>
+<a id="more"></a>
+<p><br></p>
+<h5 id="Create-a-fresh-bare-clone-of-your-repository"><a href="#Create-a-fresh-bare-clone-of-your-repository" class="headerlink" title="Create a fresh, bare clone of your repository"></a>Create a fresh, bare clone of your repository</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone --bare https://hostname/user/repo.git</span><br><span class="line">cd repo.git</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="Copy-and-paste-the-script-replacing-the-following-variables-based-on-the-information-you-gathered"><a href="#Copy-and-paste-the-script-replacing-the-following-variables-based-on-the-information-you-gathered" class="headerlink" title="Copy and paste the script, replacing the following variables based on the information you gathered"></a>Copy and paste the script, replacing the following variables based on the information you gathered</h5><ul>
+<li><code>OLD_EMAIL</code></li>
+<li><code>CORRECT_NAME</code></li>
+<li><code>CORRECT_EMAIL</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line"></span><br><span class="line">git filter-branch --env-filter &#39;</span><br><span class="line"></span><br><span class="line">OLD_EMAIL&#x3D;&quot;your-old-email@example.com&quot;</span><br><span class="line">CORRECT_NAME&#x3D;&quot;Your Correct Name&quot;</span><br><span class="line">CORRECT_EMAIL&#x3D;&quot;your-correct-email@example.com&quot;</span><br><span class="line"></span><br><span class="line">if [ &quot;$GIT_COMMITTER_EMAIL&quot; &#x3D; &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">    export GIT_COMMITTER_NAME&#x3D;&quot;$CORRECT_NAME&quot;</span><br><span class="line">    export GIT_COMMITTER_EMAIL&#x3D;&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">if [ &quot;$GIT_AUTHOR_EMAIL&quot; &#x3D; &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">    export GIT_AUTHOR_NAME&#x3D;&quot;$CORRECT_NAME&quot;</span><br><span class="line">    export GIT_AUTHOR_EMAIL&#x3D;&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">&#39; --tag-name-filter cat -- --branches --tags</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="Review-the-new-Git-history-for-errors"><a href="#Review-the-new-Git-history-for-errors" class="headerlink" title="Review the new Git history for errors."></a>Review the new Git history for errors.</h5><p><br></p>
+<h5 id="Push-the-corrected-history-to-GitHub-Enterprise"><a href="#Push-the-corrected-history-to-GitHub-Enterprise" class="headerlink" title="Push the corrected history to GitHub Enterprise:"></a>Push the corrected history to GitHub Enterprise:</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push --force --tags origin &#x27;refs/heads/*&#x27;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Programming</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -2859,6 +2817,37 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Machine Learning (4) · Neural Networks · I</title>
+    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/</url>
+    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 4:</em></strong> Neural Networks: Representation</p>
+<h3 id="Neural-Networks-Representation"><a href="#Neural-Networks-Representation" class="headerlink" title="Neural Networks: Representation"></a>Neural Networks: Representation</h3><h4 id="Motivations"><a href="#Motivations" class="headerlink" title="Motivations"></a>Motivations</h4><h5 id="Non-linear-Hypotheses"><a href="#Non-linear-Hypotheses" class="headerlink" title="Non-linear Hypotheses"></a>Non-linear Hypotheses</h5><p>$\textrm{polynomial terms:} \quad n_{\textsf{}^{\textsf{quadratic}}_{\textsf{features}}} \sim O\left( n_{\textsf{}^{\textsf{original}}_{\textsf{features}}} ^2 \right) \qquad n_{\textsf{}^{\textsf{cubic}}_{\textsf{features}}} \sim O\left( n_{\textsf{}^{\textsf{original}}_{\textsf{features}}} ^3 \right)$</p>
+<a id="more"></a>
+<h4 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h4><h5 id="Model-Representation"><a href="#Model-Representation" class="headerlink" title="Model Representation"></a>Model Representation</h5><p><strong>Neuron Model:</strong> logistic unit</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/neuron.png" alt="neuron"></p>
+<p>$x=\left[\begin{matrix} x_0\\x_1\\x_2\\x_3 \end{matrix}\right] \qquad \theta=\left[\begin{matrix} \theta_0\\\theta_1\\\theta_2\\\theta_3 \end{matrix}\right] \qquad h_\theta \left(x\right) = \dfrac{1}{1+e^{-\theta^{\mathsf{T}}x}}$</p>
+<p><strong>Neuron Network</strong></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/network.png" alt="network"></p>
+<p>Forward Propagation</p>
+<p>$\begin{aligned} a_1^{\left(2\right)} &amp;= g\left( \Theta_{10}^{\left(1\right)}x_0 + \Theta_{11}^{\left(1\right)}x_1 + \Theta_{12}^{\left(1\right)}x_2 + \Theta_{13}^{\left(1\right)}x_3 \right) \\ a_2^{\left(2\right)} &amp;= g\left( \Theta_{20}^{\left(1\right)}x_0 + \Theta_{21}^{\left(1\right)}x_1 + \Theta_{22}^{\left(1\right)}x_2 + \Theta_{23}^{\left(1\right)}x_3 \right) \\ a_3^{\left(2\right)} &amp;= g\left( \Theta_{30}^{\left(1\right)}x_0 + \Theta_{31}^{\left(1\right)}x_1 + \Theta_{32}^{\left(1\right)}x_2 + \Theta_{33}^{\left(1\right)}x_3 \right) \\ h_\Theta \left(x\right) = a_1^{\left(3\right)} &amp;= g\left( \Theta_{10}^{\left(2\right)}a_0^{\left(2\right)} + \Theta_{11}^{\left(2\right)}a_1^{\left(2\right)} + \Theta_{12}^{\left(2\right)}a_2^{\left(2\right)} + \Theta_{13}^{\left(2\right)}a_3^{\left(2\right)} \right) \end{aligned}$</p>
+<p><em>vectorized implementation</em></p>
+<p>$\begin{aligned} z^{\left(2\right)} = \Theta^{\left(1\right)} a^{\left(1\right)} \quad&amp;\quad a^{\left(2\right)} = g\left( z^{\left(1\right)} \right) \qquad \textrm{add } a_0^{\left(2\right)}=1 \\ z^{\left(3\right)} = \Theta^{\left(2\right)} a^{\left(2\right)} \quad&amp;\quad a^{\left(3\right)} = g\left( z^{\left(3\right)} \right) = h_\Theta \left(x\right) \end{aligned}$</p>
+<h4 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h4><p><strong>XOR / XNOR</strong></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/xor1.png" alt="XOR"></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/xor2.png" alt="XOR"></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/xor3.png" alt="XOR"></p>
+<h5 id="Multiclass-Classification"><a href="#Multiclass-Classification" class="headerlink" title="Multiclass Classification"></a>Multiclass Classification</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/multiclass.png" alt="MulticlassClassification"></p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Machine Learning (5) · Neural Networks · II</title>
     <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-5/</url>
     <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
@@ -2891,37 +2880,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
 <li>Use gradient checking to compare $\dfrac{\partial}{\partial \, \Theta_{ji}^{\left(l\right)}} J\left(\Theta\right)$ computed using backprop versus using numerical estimate of gradient of $J\left(\Theta\right)$, and then disable gradient checking code</li>
 <li>Use gradient descent or advanced optimization methods with back propagation to try to minimize $J\left(\Theta\right)$ as a function of parameters $\Theta$</li>
 </ol>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Machine Learning (4) · Neural Networks · I</title>
-    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/</url>
-    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 4:</em></strong> Neural Networks: Representation</p>
-<h3 id="Neural-Networks-Representation"><a href="#Neural-Networks-Representation" class="headerlink" title="Neural Networks: Representation"></a>Neural Networks: Representation</h3><h4 id="Motivations"><a href="#Motivations" class="headerlink" title="Motivations"></a>Motivations</h4><h5 id="Non-linear-Hypotheses"><a href="#Non-linear-Hypotheses" class="headerlink" title="Non-linear Hypotheses"></a>Non-linear Hypotheses</h5><p>$\textrm{polynomial terms:} \quad n_{\textsf{}^{\textsf{quadratic}}_{\textsf{features}}} \sim O\left( n_{\textsf{}^{\textsf{original}}_{\textsf{features}}} ^2 \right) \qquad n_{\textsf{}^{\textsf{cubic}}_{\textsf{features}}} \sim O\left( n_{\textsf{}^{\textsf{original}}_{\textsf{features}}} ^3 \right)$</p>
-<a id="more"></a>
-<h4 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h4><h5 id="Model-Representation"><a href="#Model-Representation" class="headerlink" title="Model Representation"></a>Model Representation</h5><p><strong>Neuron Model:</strong> logistic unit</p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/neuron.png" alt="neuron"></p>
-<p>$x=\left[\begin{matrix} x_0\\x_1\\x_2\\x_3 \end{matrix}\right] \qquad \theta=\left[\begin{matrix} \theta_0\\\theta_1\\\theta_2\\\theta_3 \end{matrix}\right] \qquad h_\theta \left(x\right) = \dfrac{1}{1+e^{-\theta^{\mathsf{T}}x}}$</p>
-<p><strong>Neuron Network</strong></p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/network.png" alt="network"></p>
-<p>Forward Propagation</p>
-<p>$\begin{aligned} a_1^{\left(2\right)} &amp;= g\left( \Theta_{10}^{\left(1\right)}x_0 + \Theta_{11}^{\left(1\right)}x_1 + \Theta_{12}^{\left(1\right)}x_2 + \Theta_{13}^{\left(1\right)}x_3 \right) \\ a_2^{\left(2\right)} &amp;= g\left( \Theta_{20}^{\left(1\right)}x_0 + \Theta_{21}^{\left(1\right)}x_1 + \Theta_{22}^{\left(1\right)}x_2 + \Theta_{23}^{\left(1\right)}x_3 \right) \\ a_3^{\left(2\right)} &amp;= g\left( \Theta_{30}^{\left(1\right)}x_0 + \Theta_{31}^{\left(1\right)}x_1 + \Theta_{32}^{\left(1\right)}x_2 + \Theta_{33}^{\left(1\right)}x_3 \right) \\ h_\Theta \left(x\right) = a_1^{\left(3\right)} &amp;= g\left( \Theta_{10}^{\left(2\right)}a_0^{\left(2\right)} + \Theta_{11}^{\left(2\right)}a_1^{\left(2\right)} + \Theta_{12}^{\left(2\right)}a_2^{\left(2\right)} + \Theta_{13}^{\left(2\right)}a_3^{\left(2\right)} \right) \end{aligned}$</p>
-<p><em>vectorized implementation</em></p>
-<p>$\begin{aligned} z^{\left(2\right)} = \Theta^{\left(1\right)} a^{\left(1\right)} \quad&amp;\quad a^{\left(2\right)} = g\left( z^{\left(1\right)} \right) \qquad \textrm{add } a_0^{\left(2\right)}=1 \\ z^{\left(3\right)} = \Theta^{\left(2\right)} a^{\left(2\right)} \quad&amp;\quad a^{\left(3\right)} = g\left( z^{\left(3\right)} \right) = h_\Theta \left(x\right) \end{aligned}$</p>
-<h4 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h4><p><strong>XOR / XNOR</strong></p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/xor1.png" alt="XOR"></p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/xor2.png" alt="XOR"></p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/xor3.png" alt="XOR"></p>
-<h5 id="Multiclass-Classification"><a href="#Multiclass-Classification" class="headerlink" title="Multiclass Classification"></a>Multiclass Classification</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-4/multiclass.png" alt="MulticlassClassification"></p>
 ]]></content>
       <categories>
         <category>Open Course</category>
@@ -3181,6 +3139,48 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       <tags>
         <tag>Artificial Intelligence</tag>
         <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python · Anaconda Tutorial</title>
+    <url>/post/Programming/Python/Python-Anaconda-Tutorial/</url>
+    <content><![CDATA[<p>这里只列出了部分基础操作命令。<br><br></p>
+<h3 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h3><ol>
+<li><strong>查看所有环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
+或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
+<li><strong>创建环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create --name your_env_name</span><br></pre></td></tr></table></figure>
+或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name</span><br></pre></td></tr></table></figure>
+指定 Python 版本和安装包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name python=3.5 numpy pandas</span><br></pre></td></tr></table></figure>
+克隆一部分旧的环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name --<span class="built_in">clone</span> oldname</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li><strong>启用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate your_env_name</span><br></pre></td></tr></table></figure>
+或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">activate your_env_name</span><br></pre></td></tr></table></figure></li>
+<li><strong>停用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></table></figure></li>
+<li><strong>删除环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n your_env_name --all</span><br></pre></td></tr></table></figure></li>
+<li><strong>导出环境配置</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env <span class="built_in">export</span> &gt; environment.yml</span><br></pre></td></tr></table></figure></li>
+<li><strong>根据配置文件生成环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
+<br></li>
+</ol>
+<h3 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h3><ol>
+<li><strong>列举包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+指定某个包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list -n packagename</span><br></pre></td></tr></table></figure></li>
+<li><strong>安装包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install packagename</span><br></pre></td></tr></table></figure>
+指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -n envname</span><br></pre></td></tr></table></figure></li>
+<li><strong>更新包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update packagename</span><br></pre></td></tr></table></figure>
+指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update -n envname packagename</span><br></pre></td></tr></table></figure></li>
+<li><strong>删除包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove packagename</span><br></pre></td></tr></table></figure>
+指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n envname</span><br></pre></td></tr></table></figure></li>
+<li><strong>更新 conda、anaconda、python</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update conda</span><br><span class="line">conda update anaconda</span><br><span class="line">conda update python</span><br></pre></td></tr></table></figure>
+指定 Python 版本<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install python=3.6</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Programming</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
 </search>
