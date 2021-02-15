@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/3.png">
 <meta property="og:image" content="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/4.png">
 <meta property="article:published_time" content="2021-01-21T00:47:46.000Z">
-<meta property="article:modified_time" content="2021-01-30T01:21:49.332Z">
+<meta property="article:modified_time" content="2021-02-15T05:12:38.188Z">
 <meta property="article:author" content="Muhan Li">
 <meta property="article:tag" content="Artificial Intelligence">
 <meta property="article:tag" content="Machine Learning">
@@ -310,7 +310,7 @@
 <h4 id="Applying-PCA"><a href="#Applying-PCA" class="headerlink" title="Applying PCA"></a>Applying PCA</h4><h5 id="Reconstruction-from-Compressed-Representation"><a href="#Reconstruction-from-Compressed-Representation" class="headerlink" title="Reconstruction from Compressed Representation"></a>Reconstruction from Compressed Representation</h5><p>$z = U_{\textrm{reduce}}^{\ \mathsf{T}} x \qquad x_{\textrm{approx}} = U_{\textrm{reduce}} z$</p>
 <h5 id="Choosing-the-Number-of-Principal-Components"><a href="#Choosing-the-Number-of-Principal-Components" class="headerlink" title="Choosing the Number of Principal Components"></a>Choosing the Number of Principal Components</h5><p>Averaged squared projection error<br>&emsp;&emsp; $\begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned}$<br><br>Total variation in the data<br>&emsp;&emsp; $\begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned}$</p>
 <p>Typically, choose $k$ to be smallest value so that<br><br>&emsp;&emsp; $\begin{aligned} \dfrac{ \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned} } { \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned} } \leq 0.01 \end{aligned}$ &emsp;&emsp; <em>99% of variance is retained</em></p>
-<p>$S = \begin{bmatrix} s_{11} &amp; &amp; &amp; &amp; \\ &amp; s_{22} &amp; &amp; \ 0 &amp; \\ &amp; &amp; s_{33} &amp; &amp; \\ &amp; 0 \ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; &amp; s_{nn} \end{bmatrix}$</p>
+<p>$S = \begin{bmatrix} \begin{matrix} s_{11} &amp; \\ &amp; s_{22} \end{matrix} &amp; \Large{0} \\ \Large{0} &amp; \begin{matrix} \ddots &amp; \\ &amp; s_{nn} \end{matrix} \end{bmatrix}$</p>
 <p>For given $k$<br><br>&emsp;&emsp; $\begin{aligned} \dfrac{ \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - x^\left(i\right)_\mathrm{approx} \right| ^2 \end{aligned} } { \begin{aligned} \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) \right| ^2 \end{aligned} } = 1- \dfrac{ \begin{aligned} \sum_{i=1}^{k} s_{ii} \end{aligned} } { \begin{aligned} \sum_{i=1}^{n} s_{ii} \end{aligned} } \end{aligned}$</p>
 <h5 id="Advice-for-Applying-PCA"><a href="#Advice-for-Applying-PCA" class="headerlink" title="Advice for Applying PCA"></a>Advice for Applying PCA</h5><p><strong>Supervised Learning Speedup</strong></p>
 <p>$\begin{matrix} x^\left(1\right) ,\, x^\left(1\right) ,\,\dots,\, x^\left(1\right) \quad \in \mathbb{R}^{10000} \\ \qquad \big\downarrow \qquad \textrm{PCA} \\ z^\left(1\right) ,\, z^\left(1\right) ,\,\dots,\, z^\left(1\right) \quad \in \mathbb{R}^{1000} \end{matrix}$</p>
