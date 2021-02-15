@@ -191,6 +191,242 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lightball.png">
+      <meta itemprop="name" content="Muhan Li">
+      <meta itemprop="description" content="bugstop">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bugstop">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-10/" class="post-title-link" itemprop="url">Machine Learning (10) · Recommender Systems</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 02-15-2021 11:49:22" itemprop="dateCreated datePublished" datetime="2021-02-15T11:49:22+08:00">02-15-2021</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>9.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 9:</em></strong> Anomaly Detection, Recommender Systems <sup> <code>Part 2</code></sup></p>
+<h3 id="Recommender-Systems"><a href="#Recommender-Systems" class="headerlink" title="Recommender Systems"></a>Recommender Systems</h3><h4 id="Predicting-Movie-Ratings"><a href="#Predicting-Movie-Ratings" class="headerlink" title="Predicting Movie Ratings"></a>Predicting Movie Ratings</h4><h5 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Movie</th>
+<th style="text-align:center">Alice (1)</th>
+<th style="text-align:center">Bob (2)</th>
+<th style="text-align:center">Carol (3)</th>
+<th style="text-align:center">Dave (4)</th>
+<th style="text-align:center">$x_1$</th>
+<th style="text-align:center">$x_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$x^\left(1\right)$</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center"><strong>0.9</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(2\right)$</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center"><strong>1.0</strong></td>
+<td style="text-align:center"><strong>0.01</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(3\right)$</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><strong>0.99</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(4\right)$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>0.1</strong></td>
+<td style="text-align:center"><strong>1.0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(5\right)$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>0.9</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+          <!--noindex-->
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lightball.png">
+      <meta itemprop="name" content="Muhan Li">
+      <meta itemprop="description" content="bugstop">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bugstop">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/" class="post-title-link" itemprop="url">Machine Learning (9) · Anomaly Detection</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 02-01-2021 02:49:22" itemprop="dateCreated datePublished" datetime="2021-02-01T02:49:22+08:00">02-01-2021</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Open-Course/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>7.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 9:</em></strong> Anomaly Detection, Recommender Systems <sup> <code>Part 1</code></sup></p>
+<h3 id="Anomaly-Detection"><a href="#Anomaly-Detection" class="headerlink" title="Anomaly Detection"></a>Anomaly Detection</h3><h4 id="Density-Estimation"><a href="#Density-Estimation" class="headerlink" title="Density Estimation"></a>Density Estimation</h4><h5 id="Problem-Motivation"><a href="#Problem-Motivation" class="headerlink" title="Problem Motivation"></a>Problem Motivation</h5><p>Dataset $\left\{ x^\left(1\right) ,\, x^\left(2\right) ,\,\dots,\, x^\left(m\right) \right\}$, is $x_\mathrm{test}$ anomalous?</p>
+<p>Model $p\left(x\right) \begin{cases} \lt \varepsilon &amp; \rightarrow \textsf{flag anomaly} \\ \geq \varepsilon &amp; \rightarrow \textsf{OK} \end{cases}$</p>
+          <!--noindex-->
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -911,184 +1147,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-16/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/lightball.png">
-      <meta itemprop="name" content="Muhan Li">
-      <meta itemprop="description" content="bugstop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bugstop">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-16/" class="post-title-link" itemprop="url">Deep Learning (16) · Sequence Models</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 04-17-2020 15:15:49" itemprop="dateCreated datePublished" datetime="2020-04-17T15:15:49+08:00">04-17-2020</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Open-Course/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep Learning</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>4.5k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>4 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 3:</em></strong> <em>Sequence Models &amp; Attention Mechanism</em></p>
-<ol>
-<li>Sequence models can be augmented using an attention mechanism. This algorithm will help your model understand where it should focus its attention given a sequence of inputs. This week, you will also learn about speech recognition and how to deal with audio data.</li>
-</ol>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://muhan.li/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/lightball.png">
-      <meta itemprop="name" content="Muhan Li">
-      <meta itemprop="description" content="bugstop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bugstop">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-15/" class="post-title-link" itemprop="url">Deep Learning (15) · Natural Language Processing</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 04-16-2020 12:58:37" itemprop="dateCreated datePublished" datetime="2020-04-16T12:58:37+08:00">04-16-2020</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Open-Course/" itemprop="url" rel="index"><span itemprop="name">Open Course</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Open-Course/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep Learning</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>4.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>4 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 2:</em></strong> <em>Natural Language Processing &amp; Word Embeddings</em></p>
-<ol>
-<li>Natural language processing with deep learning is an important combination. Using word vector representations and embedding layers you can train recurrent neural networks with outstanding performances in a wide variety of industries. Examples of applications are sentiment analysis, named entity recognition and machine translation.</li>
-</ol>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1160,7 +1218,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1224,12 +1282,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">141k</span>
+    <span title="Symbols count total">158k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:09</span>
+    <span title="Reading time total">2:23</span>
 </div>
 
         

@@ -690,6 +690,49 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Deep Learning (1) · Introduction</title>
+    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/</url>
+    <content><![CDATA[<p>Deep Learning Specialization, Course A<br><strong>Neural Networks and Deep Learning</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 1:</em></strong> <em>Introduction to Deep Learning</em></p>
+<ol>
+<li>Understand the major trends driving the rise of deep learning.</li>
+<li>Be able to explain how deep learning is applied to supervised learning.</li>
+<li>Understand what are the major categories of models (such as CNNs and RNNs), and when they should be applied.</li>
+<li>Be able to recognize the basics of when deep learning will (or will not) work well.</li>
+</ol>
+<a id="more"></a>
+<h3 id="Introduction-to-Deep-Learning"><a href="#Introduction-to-Deep-Learning" class="headerlink" title="Introduction to Deep Learning"></a>Introduction to Deep Learning</h3><h4 id="What-is-a-neural-network"><a href="#What-is-a-neural-network" class="headerlink" title="What is a neural network?"></a>What is a neural network?</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/house-price.png" alt="House Price"></p>
+<p><strong>ReLU,</strong> Rectified Linear Unit Function: $\max\left(0,y\right)$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/1.png" alt="What is a neural network?"></p>
+<p><strong>Notice</strong> that each of these hidden units in the neural network takes its inputs all four input features. <strong><em>(density connected)</em></strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/2.png" alt="What is a neural network?"></p>
+<h4 id="Supervised-Learning-with-Neural-Networks"><a href="#Supervised-Learning-with-Neural-Networks" class="headerlink" title="Supervised Learning with Neural Networks"></a>Supervised Learning with Neural Networks</h4><ul>
+<li><strong>standard neural network</strong></li>
+<li><strong>convolution on neural networks, CNN:</strong> image applications</li>
+<li><strong>recurrent neural network, RNN:</strong> sequence data</li>
+<li><strong>custom / hybrid</strong></li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/nn.png" alt="Neural Networks"></p>
+<ul>
+<li><strong>Structured Data:</strong> features have well defined meanings</li>
+<li><strong>Unstructured Data:</strong> audio / image / text</li>
+</ul>
+<h4 id="Why-is-Deep-Learning-taking-off"><a href="#Why-is-Deep-Learning-taking-off" class="headerlink" title="Why is Deep Learning taking off?"></a>Why is Deep Learning taking off?</h4><ul>
+<li><strong>Data</strong><br><strong><em>m:</em></strong> size of training sets / number of training examples &emsp; <em>(on small training sets: feature engineering)</em><br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/scale.png" alt="Scale"></li>
+<li><strong>Computation</strong></li>
+<li><strong>Algorithms</strong><br><strong><em>activation function:</em></strong> Sigmoid → ReLU<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/relu.png" alt="Activation Function"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Artificial Intelligence (8) · Learning · III</title>
     <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-8/</url>
     <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
@@ -874,49 +917,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </categories>
       <tags>
         <tag>Artificial Intelligence</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deep Learning (1) · Introduction</title>
-    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/</url>
-    <content><![CDATA[<p>Deep Learning Specialization, Course A<br><strong>Neural Networks and Deep Learning</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 1:</em></strong> <em>Introduction to Deep Learning</em></p>
-<ol>
-<li>Understand the major trends driving the rise of deep learning.</li>
-<li>Be able to explain how deep learning is applied to supervised learning.</li>
-<li>Understand what are the major categories of models (such as CNNs and RNNs), and when they should be applied.</li>
-<li>Be able to recognize the basics of when deep learning will (or will not) work well.</li>
-</ol>
-<a id="more"></a>
-<h3 id="Introduction-to-Deep-Learning"><a href="#Introduction-to-Deep-Learning" class="headerlink" title="Introduction to Deep Learning"></a>Introduction to Deep Learning</h3><h4 id="What-is-a-neural-network"><a href="#What-is-a-neural-network" class="headerlink" title="What is a neural network?"></a>What is a neural network?</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/house-price.png" alt="House Price"></p>
-<p><strong>ReLU,</strong> Rectified Linear Unit Function: $\max\left(0,y\right)$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/1.png" alt="What is a neural network?"></p>
-<p><strong>Notice</strong> that each of these hidden units in the neural network takes its inputs all four input features. <strong><em>(density connected)</em></strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/2.png" alt="What is a neural network?"></p>
-<h4 id="Supervised-Learning-with-Neural-Networks"><a href="#Supervised-Learning-with-Neural-Networks" class="headerlink" title="Supervised Learning with Neural Networks"></a>Supervised Learning with Neural Networks</h4><ul>
-<li><strong>standard neural network</strong></li>
-<li><strong>convolution on neural networks, CNN:</strong> image applications</li>
-<li><strong>recurrent neural network, RNN:</strong> sequence data</li>
-<li><strong>custom / hybrid</strong></li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/nn.png" alt="Neural Networks"></p>
-<ul>
-<li><strong>Structured Data:</strong> features have well defined meanings</li>
-<li><strong>Unstructured Data:</strong> audio / image / text</li>
-</ul>
-<h4 id="Why-is-Deep-Learning-taking-off"><a href="#Why-is-Deep-Learning-taking-off" class="headerlink" title="Why is Deep Learning taking off?"></a>Why is Deep Learning taking off?</h4><ul>
-<li><strong>Data</strong><br><strong><em>m:</em></strong> size of training sets / number of training examples &emsp; <em>(on small training sets: feature engineering)</em><br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/scale.png" alt="Scale"></li>
-<li><strong>Computation</strong></li>
-<li><strong>Algorithms</strong><br><strong><em>activation function:</em></strong> Sigmoid → ReLU<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/relu.png" alt="Activation Function"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Deep Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -2674,6 +2674,131 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Machine Learning (10) · Recommender Systems</title>
+    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-10/</url>
+    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 9:</em></strong> Anomaly Detection, Recommender Systems <sup> <code>Part 2</code></sup></p>
+<h3 id="Recommender-Systems"><a href="#Recommender-Systems" class="headerlink" title="Recommender Systems"></a>Recommender Systems</h3><h4 id="Predicting-Movie-Ratings"><a href="#Predicting-Movie-Ratings" class="headerlink" title="Predicting Movie Ratings"></a>Predicting Movie Ratings</h4><h5 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Movie</th>
+<th style="text-align:center">Alice (1)</th>
+<th style="text-align:center">Bob (2)</th>
+<th style="text-align:center">Carol (3)</th>
+<th style="text-align:center">Dave (4)</th>
+<th style="text-align:center">$x_1$</th>
+<th style="text-align:center">$x_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$x^\left(1\right)$</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center"><strong>0.9</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(2\right)$</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center"><strong>1.0</strong></td>
+<td style="text-align:center"><strong>0.01</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(3\right)$</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><strong>0.99</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(4\right)$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>0.1</strong></td>
+<td style="text-align:center"><strong>1.0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$x^\left(5\right)$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>0.9</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<a id="more"></a>
+<h5 id="Content-Based-Recommendations"><a href="#Content-Based-Recommendations" class="headerlink" title="Content-Based Recommendations"></a>Content-Based Recommendations</h5><p>For each user $j$, learn a parameter $\theta^\left(j\right) \in\mathbb{R}^{n+1}$. Predict user $j$ as rating movie $i$ with $\left( \theta^\left(j\right) \right)^\mathsf{T} x^\left(i\right)$ stars.</p>
+<p>$\qquad y^\left(1,\,3\right) = \left( \theta^\left(1\right) \right)^\mathsf{T} x^\left(3\right) = \begin{bmatrix} 0\\5\\0 \end{bmatrix} ^\mathsf{T} \begin{bmatrix} 1\\0.99\\0 \end{bmatrix} = 4.95$</p>
+<p><strong>Problem Formulation</strong></p>
+<ul>
+<li>$n_u$: number of users</li>
+<li>$n_m$: mumber of movies</li>
+<li>$m^\left(j\right)$: number of movies rated by user $j$</li>
+<li>$r\left(i,\,j\right)$: $1$ if user $j$ has rated movie $i$</li>
+<li>$y^\left(i,\,j\right)$: rating given by user $j$ to movie $i$, defined only if $r\left(i,\,j\right)=1$</li>
+<li>$\theta^\left(j\right)$: parameter vector for user $j$</li>
+<li>$x^\left(i\right)$: feature vector for movie $i$</li>
+</ul>
+<p>For user $j$, movie $i$, predicted rating: $\left( \theta^\left(j\right) \right)^\mathsf{T} \left( x^\left(i\right) \right)$<br><br>To learn $\theta^\left(j\right)$:<br><br>$\qquad \displaystyle\min_{\theta^\left(j\right)} \: \dfrac{1}{2\,{\color{lightgrey} {m^\left(j\right)} }} \displaystyle\sum_{i:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right)^2 +\dfrac{\lambda}{2\,{\color{lightgrey} {m^\left(j\right)} }} \displaystyle\sum_{k=1}^{n} \left(\theta_k^\left(j\right)\right)^2$<br><br>To learn $\theta^\left(1\right) ,\, \theta^\left(2\right) ,\, \dots ,\, \theta^\left(n_u\right)$:<br><br>$\qquad \displaystyle\min_{\theta^\left(1\right) ,\, \dots ,\, \theta^\left(n_u\right)} \: \dfrac{1}{2} \displaystyle\sum_{j=1}^{n_u} \displaystyle\sum_{i:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right)^2 +\dfrac{\lambda}{2} \displaystyle\sum_{j=1}^{n_u} \displaystyle\sum_{k=1}^{n} \left(\theta_k^\left(j\right)\right)^2$<br><br>Gradient descent update:<br>$\qquad \begin{aligned} &amp; \theta_k^\left(j\right) := \theta_k^\left(j\right) - \alpha \left( \sum_{i:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right) x_k^\left(i\right) \right) &amp; \textrm{for }k=0 \\ &amp; \theta_k^\left(j\right) := \theta_k^\left(j\right) - \alpha \left( \sum_{i:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right) x_k^\left(i\right) +\lambda\,\theta_k^\left(j\right) \right) &amp; \textrm{for }k\neq0 \end{aligned}$</p>
+<h4 id="Collaborative-Filtering"><a href="#Collaborative-Filtering" class="headerlink" title="Collaborative Filtering"></a>Collaborative Filtering</h4><h5 id="Collaborative-Filtering-1"><a href="#Collaborative-Filtering-1" class="headerlink" title="Collaborative Filtering"></a>Collaborative Filtering</h5><p>Given $\theta^\left(1\right) ,\, \theta^\left(2\right) ,\, \dots ,\, \theta^\left(n_u\right)$<br><br>To learn $x^\left(i\right)$:<br><br>$\qquad \displaystyle\min_{x^\left(i\right)} \: \dfrac{1}{2} \displaystyle\sum_{j:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right)^2 +\dfrac{\lambda}{2} \displaystyle\sum_{k=1}^{n} \left(x_k^\left(i\right)\right)^2$<br><br>To learn $x^\left(1\right) ,\, x^\left(2\right) ,\, \dots ,\, x^\left(n_m\right)$:<br><br>$\qquad \displaystyle\min_{x^\left(1\right) ,\, \dots ,\, x^\left(n_m\right)} \: \dfrac{1}{2} \displaystyle\sum_{i=1}^{n_m} \displaystyle\sum_{j:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right)^2 +\dfrac{\lambda}{2} \displaystyle\sum_{i=1}^{n_m} \displaystyle\sum_{k=1}^{n} \left(x_k^\left(i\right)\right)^2$</p>
+<ul>
+<li>Given $x^\left(1\right) ,\, x^\left(2\right) ,\, \dots ,\, x^\left(n_m\right)$, can estimate $\theta^\left(1\right) ,\, \theta^\left(2\right) ,\, \dots ,\, \theta^\left(n_u\right)$</li>
+<li>Given $\theta^\left(1\right) ,\, \theta^\left(2\right) ,\, \dots ,\, \theta^\left(n_u\right)$, can estimate $x^\left(1\right) ,\, x^\left(2\right) ,\, \dots ,\, x^\left(n_m\right)$</li>
+</ul>
+<p>$\textsf{Guess } \theta \rightarrow x \rightarrow \theta \rightarrow x \rightarrow \theta \rightarrow x \rightarrow \cdots \textsf{until converge}$</p>
+<h5 id="Collaborative-Filtering-Algorithm"><a href="#Collaborative-Filtering-Algorithm" class="headerlink" title="Collaborative Filtering Algorithm"></a>Collaborative Filtering Algorithm</h5><ul>
+<li><p>Given $x^\left(1\right) ,\, x^\left(2\right) ,\, \dots ,\, x^\left(n_m\right)$, estimate $\theta^\left(1\right) ,\, \theta^\left(2\right) ,\, \dots ,\, \theta^\left(n_u\right)$:</p>
+<p>$\qquad \displaystyle\min_{\theta^\left(1\right) ,\, \dots ,\, \theta^\left(n_u\right)} \: \dfrac{1}{2} \displaystyle\sum_{j=1}^{n_u} \displaystyle\sum_{i:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right)^2 +\dfrac{\lambda}{2} \displaystyle\sum_{j=1}^{n_u} \displaystyle\sum_{k=1}^{n} \left(\theta_k^\left(j\right)\right)^2$</p>
+</li>
+<li><p>Given $\theta^\left(1\right) ,\, \theta^\left(2\right) ,\, \dots ,\, \theta^\left(n_u\right)$, estimate $x^\left(1\right) ,\, x^\left(2\right) ,\, \dots ,\, x^\left(n_m\right)$:</p>
+<p>$\qquad \displaystyle\min_{x^\left(1\right) ,\, \dots ,\, x^\left(n_m\right)} \: \dfrac{1}{2} \displaystyle\sum_{i=1}^{n_m} \displaystyle\sum_{j:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right)^2 +\dfrac{\lambda}{2} \displaystyle\sum_{i=1}^{n_m} \displaystyle\sum_{k=1}^{n} \left(x_k^\left(i\right)\right)^2$</p>
+</li>
+</ul>
+<p>Minimizing $x^\left(1\right) ,\, x^\left(2\right) ,\, \dots ,\, x^\left(n_m\right)$ and $\theta^\left(1\right) ,\, \theta^\left(2\right) ,\, \dots ,\, \theta^\left(n_u\right)$ simultaneously:<br><br>$\qquad \displaystyle\min_{ \substack{ x^\left(1\right) ,\,\dots,\, x^\left(n_m\right) , \\ \theta^\left(1\right) ,\,\dots,\, \theta^\left(n_u\right) } } J\left( x^\left(1\right) ,\,\dots,\, x^\left(n_m\right) ,\, \theta^\left(1\right) ,\,\dots,\, \theta^\left(n_u\right) \right)$ $\qquad x \in \mathbb{R}^n ,\ \theta \in \mathbb{R}^n$<br><br>$\qquad J\left( x^\left(1\right) ,\,\dots,\, x^\left(n_m\right) ,\, \theta^\left(1\right) ,\,\dots,\, \theta^\left(n_u\right) \right) = \dfrac{1}{2} \displaystyle\sum_{\left(i,\,j\right):\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right)^2 +\dfrac{\lambda}{2} \displaystyle\sum_{i=1}^{n_m} \displaystyle\sum_{k=1}^{n} \left(x_k^\left(i\right)\right)^2 +\dfrac{\lambda}{2} \displaystyle\sum_{j=1}^{n_u} \displaystyle\sum_{k=1}^{n} \left(\theta_k^\left(j\right)\right)^2$</p>
+<p><strong>Collaborative Filtering Algorithm</strong></p>
+<ol>
+<li><p>Initialize $x^\left(1\right) ,\,\dots,\, x^\left(n_m\right) ,\, \theta^\left(1\right) ,\,\dots,\, \theta^\left(n_u\right)$ to small random values.</p>
+</li>
+<li><p>Minimize $J\left( x^\left(1\right) ,\,\dots,\, x^\left(n_m\right) ,\, \theta^\left(1\right) ,\,\dots,\, \theta^\left(n_u\right) \right)$ using gradient descent (or advanced optimization algorithms).</p>
+<p>$\qquad \begin{aligned} &amp; x_k^\left(i\right) := x_k^\left(i\right) - \alpha \left( \sum_{j:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right) x_k^\left(i\right) +\lambda\,x_k^\left(i\right) \right) &amp; \textrm{for every } j=1,\,\dots,\,n_u \\ &amp; \theta_k^\left(j\right) := \theta_k^\left(j\right) - \alpha \left( \sum_{i:\:r\left(i,\,j\right)=1} \left( { \theta^\left(j\right) }^\mathsf{T} x^\left(i\right) -y^\left(i,\,j\right) \right) x_k^\left(i\right) +\lambda\,\theta_k^\left(j\right) \right) &amp; \textrm{for every } i=1,\,\dots,\,n_m \end{aligned}$</p>
+</li>
+<li><p>For a user with parameters $\theta$ and a movie with <em>learned</em> features $x$, predict a star rating of $\theta^\mathsf{T}x$.</p>
+</li>
+</ol>
+<h4 id="Low-Rank-Matrix-Factorization"><a href="#Low-Rank-Matrix-Factorization" class="headerlink" title="Low-Rank Matrix Factorization"></a>Low-Rank Matrix Factorization</h4><h5 id="Vectorization-Low-Rank-Matrix-Factorization"><a href="#Vectorization-Low-Rank-Matrix-Factorization" class="headerlink" title="Vectorization: Low-Rank Matrix Factorization"></a>Vectorization: Low-Rank Matrix Factorization</h5><p>$X = \begin{bmatrix} \substack{\rule{25pt}{0.5pt}\\\\} \ \left( x^\left(1\right) \right) ^\mathsf{T} \ \substack{\rule{25pt}{0.5pt}\\\\} \\ \substack{\rule{25pt}{0.5pt}\\\\} \ \left( x^\left(2\right) \right) ^\mathsf{T} \ \substack{\rule{25pt}{0.5pt}\\\\} \\ \vdots \\ \substack{\rule{25pt}{0.5pt}\\\\} \ \left( x^\left(n_m\right) \right) ^\mathsf{T} \ \substack{\rule{25pt}{0.5pt}\\\\} \end{bmatrix} \qquad\qquad \Theta = \begin{bmatrix} \substack{\rule{25pt}{0.5pt}\\\\} \ \left( \theta^\left(1\right) \right) ^\mathsf{T} \ \substack{\rule{25pt}{0.5pt}\\\\} \\ \substack{\rule{25pt}{0.5pt}\\\\} \ \left( \theta^\left(2\right) \right) ^\mathsf{T} \ \substack{\rule{25pt}{0.5pt}\\\\} \\ \vdots \\ \substack{\rule{25pt}{0.5pt}\\\\} \ \left( \theta^\left(n_u\right) \right) ^\mathsf{T} \ \substack{\rule{25pt}{0.5pt}\\\\} \end{bmatrix}$</p>
+<p>Predicted ratings: $X\Theta^\mathsf{T}$</p>
+<p><strong>Finding Related Movies</strong></p>
+<p>small distance $\left| x^\left(i\right) - x^\left(j\right) \right|$ $\rightarrow$ “similar” movies</p>
+<h5 id="Implementational-Detail-Mean-Normalization"><a href="#Implementational-Detail-Mean-Normalization" class="headerlink" title="Implementational Detail: Mean Normalization"></a>Implementational Detail: Mean Normalization</h5><p>users who have not rated any movies</p>
+<p>$\qquad \displaystyle\min_{ \substack{ x^\left(1\right) ,\,\dots,\, x^\left(n_m\right) , \\ \theta^\left(1\right) ,\,\dots,\, \theta^\left(n_u\right) } } \dfrac{\lambda}{2} \displaystyle\sum_{j=1}^{n_u} \displaystyle\sum_{k=1}^{n} \left(\theta_k^\left(j\right)\right)^2 \:\Rightarrow\: \theta=\vec{0} \:\Rightarrow\: \theta^\mathsf{T}x=0$</p>
+<p><strong>Mean Normalization</strong></p>
+<p>$Y=\begin{bmatrix} 5&amp;5&amp;0&amp;0&amp;? \\ 5&amp;?&amp;?&amp;0&amp;? \\ ?&amp;4&amp;0&amp;?&amp;? \\ 0&amp;0&amp;5&amp;4&amp;? \\ 0&amp;0&amp;5&amp;0&amp;? \end{bmatrix} \qquad\qquad \mu=\begin{bmatrix} 2.5\\2.5\\2\\2.25\\1.25 \end{bmatrix} \:\rightarrow\: Y=\begin{bmatrix} 2.5&amp;2.5&amp;-2.5&amp;-2.5&amp;? \\ 2.5&amp;?&amp;?&amp;-2.5&amp;? \\ ?&amp;2&amp;-2&amp;?&amp;? \\ -2.25&amp;-2.25&amp;2.75&amp;1.75&amp;? \\ -1.25&amp;-1.25&amp;3.75&amp;-1.25&amp;? \end{bmatrix} \:\rightarrow\: \textsf{learn } \theta^\left(j\right),\,x^\left(i\right)$</p>
+<p>For user $j$ on movie $i$, predict $\left(\theta^\left(j\right)\right)\left(x^\left(i\right)\right)+\mu_i$<br><br>$\qquad$new users: $\theta=\vec{0} \:\Rightarrow\: \left(\theta^\left(j\right)\right)\left(x^\left(i\right)\right)+\mu_i = \mu_i$</p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Machine Learning (2) · Linear Regression · II</title>
     <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-2/</url>
     <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
@@ -3131,6 +3256,127 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
 </ul>
 </li>
 </ul>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Machine Learning (9) · Anomaly Detection</title>
+    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/</url>
+    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 9:</em></strong> Anomaly Detection, Recommender Systems <sup> <code>Part 1</code></sup></p>
+<h3 id="Anomaly-Detection"><a href="#Anomaly-Detection" class="headerlink" title="Anomaly Detection"></a>Anomaly Detection</h3><h4 id="Density-Estimation"><a href="#Density-Estimation" class="headerlink" title="Density Estimation"></a>Density Estimation</h4><h5 id="Problem-Motivation"><a href="#Problem-Motivation" class="headerlink" title="Problem Motivation"></a>Problem Motivation</h5><p>Dataset $\left\{ x^\left(1\right) ,\, x^\left(2\right) ,\,\dots,\, x^\left(m\right) \right\}$, is $x_\mathrm{test}$ anomalous?</p>
+<p>Model $p\left(x\right) \begin{cases} \lt \varepsilon &amp; \rightarrow \textsf{flag anomaly} \\ \geq \varepsilon &amp; \rightarrow \textsf{OK} \end{cases}$</p>
+<a id="more"></a>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/1.png" alt="1"></p>
+<ul>
+<li>fraud detection</li>
+<li>manufacturing</li>
+<li>monitoring computers in a data center</li>
+</ul>
+<h5 id="Gaussian-Distribution"><a href="#Gaussian-Distribution" class="headerlink" title="Gaussian Distribution"></a>Gaussian Distribution</h5><p>Gaussian (Normal) Distribution $x \sim \mathcal{N} \left( \mu ,\, \sigma^2 \right)$<br><br>$x$ is a distributed Gaussian with mean $\mu$, variance $\sigma^2$.<br><br>$p\left( x;\,\mu,\,\sigma^2\right) = \dfrac{1}{\sqrt{2\pi}\sigma} \exp{ \left( - \dfrac{ \left(x-\mu\right)^2 }{ 2\sigma^2 } \right) }$</p>
+<p><strong>Parameter Estimation</strong></p>
+<p>Dataset $\left\{ x^\left(1\right) ,\, x^\left(2\right) ,\,\dots,\, x^\left(m\right) \right\} \quad x^\left(i\right) \in\mathbb{R}$ $\quad \Leftarrow \quad x^\left(i\right) \sim \mathcal{N} \left( \mu ,\, \sigma^2 \right)$</p>
+<p>Maximum Likelihood Estimation<br><br>$\mu = \dfrac{1}{m} \displaystyle\sum_{i=1}^{m} x^\left(i\right) \qquad \sigma^2 = \dfrac{1}{m} \displaystyle\sum_{i=1}^{m} \left( x^\left(i\right)-\mu \right)^2$</p>
+<h5 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h5><p><strong>Density Estimation</strong></p>
+<p>Training set: $\left\{ x^\left(1\right) ,\, x^\left(2\right) ,\,\dots,\, x^\left(m\right) \right\}$<br><br>Each example is $x\in\mathbb{R}^n$<br><br>$p\left(x\right) = \displaystyle\prod_{j=1}^{n} p\left( x_j;\,\mu_j,\,\sigma_j^2\right)$</p>
+<p><strong>Anomaly Detection Algorithm</strong></p>
+<ol>
+<li><p>Choose features $x_i$ that might be indicative of anomalous examples</p>
+</li>
+<li><p>Fit parameters $\mu_1,\,\dots,\,\mu_n,\,\sigma_1^2,\,\dots,\,\sigma_n^2$</p>
+<p>$\mu = \dfrac{1}{m} \displaystyle\sum_{i=1}^{m} x^\left(i\right) \qquad \sigma^2 = \dfrac{1}{m} \displaystyle\sum_{i=1}^{m} \left( x^\left(i\right)-\mu \right)^2$</p>
+</li>
+<li><p>Given a new example $x$, compute $p\left(x\right)$</p>
+<p>$p\left(x\right) = \displaystyle\prod_{j=1}^{n} p\left( x_j;\,\mu_j,\,\sigma_j^2\right) = \displaystyle\prod_{j=1}^{n} \dfrac{1}{\sqrt{2\pi}\sigma_j} \exp{ \left( - \dfrac{ \left(x_j-\mu_j\right)^2 }{ 2\sigma_j^2 } \right) }$</p>
+<p>Flag an anomaly if $p\left(x\right) \lt \varepsilon$</p>
+</li>
+</ol>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/2.png" alt="2"></p>
+<h4 id="Building-an-Anomaly-Detection-System"><a href="#Building-an-Anomaly-Detection-System" class="headerlink" title="Building an Anomaly Detection System"></a>Building an Anomaly Detection System</h4><h5 id="Developing-and-Evaluating-an-Anomaly-Detection-System"><a href="#Developing-and-Evaluating-an-Anomaly-Detection-System" class="headerlink" title="Developing and Evaluating an Anomaly Detection System"></a>Developing and Evaluating an Anomaly Detection System</h5><p>Assume we have some labeled data of anomalous and non-anomalous examples.<br>&emsp;&emsp;($y=0$ if normal, $y=1$ if anomalous).<br><br>Training set: $x^\left(1\right) ,\,x^\left(2\right) ,\,\dots ,\,x^\left(m\right)$ (assume normal examples / not anomalous)<br><br>Cross validation set: $\left( x^\left(1\right)_\textrm{cv} ,\, y^\left(1\right)_\textrm{cv} \right) ,\, \left( x^\left(2\right)_\textrm{cv} ,\, y^\left(2\right)_\textrm{cv} \right) ,\, \dots ,\, \left( x^\left(m_\textrm{cv}\right)_\textrm{cv} ,\, y^\left(m_\textrm{cv}\right)_\textrm{cv} \right)$<br><br>Test set: $\left( x^\left(1\right)_\textrm{test} ,\, y^\left(1\right)_\textrm{test} \right) ,\, \left( x^\left(2\right)_\textrm{test} ,\, y^\left(2\right)_\textrm{test} \right) ,\, \dots ,\, \left( x^\left(m_\textrm{test}\right)_\textrm{test} ,\, y^\left(m_\textrm{test}\right)_\textrm{test} \right)$</p>
+<p><strong>Algorithm Evaluation</strong></p>
+<p>Fit model $p\left(x\right)$ on the training set $\left\{ x^\left(1\right) ,\,x^\left(2\right) ,\,\dots ,\,x^\left(m\right) \right\}$<br><br>On a cross-validation / test example $x$, predict<br><br>$\qquad y= \begin{cases} 1 &amp; \textsf{if } p\left(x\right) \lt \varepsilon \quad \textrm{ (anomaly)} \\ 0 &amp; \textsf{if } p\left(x\right) \geq \varepsilon \quad \textrm{ (normal)} \end{cases}$<br><br>Possible evaluation metrics:<br>$\qquad \begin{aligned} &amp; \textsf{- True Positive, False Positive, True Negative, False Negative} \\ &amp; \textsf{- Precision / Recall} \\ &amp; \textsf{- F}_\textsf{1}\textsf{ score } \end{aligned}$<br><br>Can also use cross-validation set to choose parameter $\varepsilon$</p>
+<h5 id="Anomaly-Detection-vs-Supervised-Learning"><a href="#Anomaly-Detection-vs-Supervised-Learning" class="headerlink" title="Anomaly Detection vs. Supervised Learning"></a>Anomaly Detection vs. Supervised Learning</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Anomaly Detection</th>
+<th style="text-align:left">Supervised Learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Very small number of positive examples $\left(y=1\right)$; <br>Large number of negative examples $\left(y=0\right)$.</td>
+<td style="text-align:left">Large number of positive and negative examples.</td>
+</tr>
+<tr>
+<td style="text-align:left">Many different types of anomalies. Hard for any algorithm to learn from positive examples what the anomalies look like.</td>
+<td style="text-align:left">Enough positive examples for algorithm to set a sense of what positive examples are like.</td>
+</tr>
+<tr>
+<td style="text-align:left">Future anomalies may look nothing like any of the anomalous examples we’ve seen so far.</td>
+<td style="text-align:left">Future positive examples likely to be similar to ones in training set.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="Choosing-What-Features-to-Use"><a href="#Choosing-What-Features-to-Use" class="headerlink" title="Choosing What Features to Use"></a>Choosing What Features to Use</h5><p><strong>Non-gaussian Features</strong></p>
+<p>transform: $x\leftarrow \log\left(x+c\right) ,\, x^{1/t} ,\,\dots$</p>
+<p><strong>Error Analysis for Anomaly Detection</strong></p>
+<p>Want large $p\left(x\right)$ for normal examples $x$, small $p\left(x\right)$ for anomalous examples $x$.<br><br>The most common problem: $p\left(x\right)$ is comparable for normal and anomalous examples.<br><br>Look at the anomaly that failed to flag, and see if that inspires creating new features.</p>
+<h4 id="Multivariate-Gaussian-Distribution"><a href="#Multivariate-Gaussian-Distribution" class="headerlink" title="Multivariate Gaussian Distribution"></a>Multivariate Gaussian Distribution</h4><h5 id="Multivariate-Gaussian-Distribution-1"><a href="#Multivariate-Gaussian-Distribution-1" class="headerlink" title="Multivariate Gaussian Distribution"></a>Multivariate Gaussian Distribution</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/3.png" alt="motivating example"></p>
+<p><strong>Multivariate Gaussian Distribution</strong></p>
+<p>$x\in\mathbb{R}^n$. Don’t model $p\left(x_1\right) ,\, p\left(x_2\right) ,\, \dots$ separately; model $p\left(x\right)$ all in one go.<br><br><strong>Parameters:</strong> $\mu \in \mathbb{R}^n ,\, \Sigma \in \mathbb{R}^{n \times n}$ (covariance matrix)<br><br>$p\left(x;\,\mu,\,\Sigma\right) = \dfrac{1}{\left(2\pi\right)^{\frac{n}{2}} \left|\Sigma\right|^{\frac{1}{2}}} \exp\left( -\dfrac{1}{2} \left(x-\mu\right)^\mathsf{T} \Sigma^{-1} \left(x-\mu\right) \right)$</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/4.png" alt="Multivariate Gaussian Distribution"></p>
+<h5 id="Anomaly-Detection-using-the-Multivariate-Gaussian-Distribution"><a href="#Anomaly-Detection-using-the-Multivariate-Gaussian-Distribution" class="headerlink" title="Anomaly Detection using the Multivariate Gaussian Distribution"></a>Anomaly Detection using the Multivariate Gaussian Distribution</h5><p><strong>Parameters</strong> $\mu ,\, \Sigma$<br><br>$p\left(x;\,\mu,\,\Sigma\right) = \dfrac{1}{\left(2\pi\right)^{\frac{n}{2}} \left|\Sigma\right|^{\frac{1}{2}}} \exp\left( -\dfrac{1}{2} \left(x-\mu\right)^\mathsf{T} \Sigma^{-1} \left(x-\mu\right) \right)$</p>
+<p><strong>Parameter Fitting</strong><br><br>Given training set $\left\{ x^\left(1\right) ,\, x^\left(2\right) ,\, \dots ,\, x^\left(m\right) \right\}$<br><br>$\mu=\dfrac{1}{m} \displaystyle\sum_{i=1}^{m} x^\left(i\right) \qquad \Sigma=\dfrac{1}{m} \displaystyle\sum_{i=1}^{m} \left( x^\left(i\right)-\mu \right) \left( x^\left(i\right)-\mu \right)^\mathsf{T}$</p>
+<p><strong>Anomaly Detection Algorithm</strong></p>
+<ol>
+<li><p>Fit model $p\left(x\right)$ by setting</p>
+<p>$\mu=\dfrac{1}{m} \displaystyle\sum_{i=1}^{m} x^\left(i\right) \qquad \Sigma=\dfrac{1}{m} \displaystyle\sum_{i=1}^{m} \left( x^\left(i\right)-\mu \right) \left( x^\left(i\right)-\mu \right)^\mathsf{T}$</p>
+</li>
+<li><p>Given a new example $x$, compute $p\left(x\right)$</p>
+<p>$p\left(x\right) = \dfrac{1}{\left(2\pi\right)^{\frac{n}{2}} \left|\Sigma\right|^{\frac{1}{2}}} \exp\left( -\dfrac{1}{2} \left(x-\mu\right)^\mathsf{T} \Sigma^{-1} \left(x-\mu\right) \right)$</p>
+<p>Flag an anomaly if $p\left(x\right) \lt \varepsilon$</p>
+</li>
+</ol>
+<p><strong>Relationship to Original Model</strong></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-9/5.png" alt="orig"></p>
+<p>Original model $p\left(x\right) = p\left( x_1;\,\mu_1,\,\sigma_1^2\right) \times p\left( x_2;\,\mu_2,\,\sigma_2^2\right) \times \cdots \times p\left( x_n;\,\mu_n,\,\sigma_n^2\right)$<br><br>Corresponds to multivariate Gaussian $p\left(x\right) = \dfrac{1}{\left(2\pi\right)^{\frac{n}{2}} \left|\Sigma\right|^{\frac{1}{2}}} \exp\left( -\dfrac{1}{2} \left(x-\mu\right)^\mathsf{T} \Sigma^{-1} \left(x-\mu\right) \right)$<br><br>where $\Sigma = \begin{bmatrix} \begin{matrix} \sigma_1^2 &amp; \\ &amp; \sigma_2^2 \end{matrix} &amp; \Large{0} \\ \Large{0} &amp; \begin{matrix} \ddots &amp; \\ &amp; \sigma_n^2 \end{matrix} \end{bmatrix}$</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Original Model</th>
+<th>Multivariate Gaussian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$p\left(x\right) = \displaystyle\prod_{j=1}^{n} p\left( x_j;\,\mu_j,\,\sigma_j^2\right)$</td>
+<td>$p\left(x\right) = \dfrac{1}{\left(2\pi\right)^{\frac{n}{2}} \left(\det\Sigma\right)^{\frac{1}{2}}} \exp\left( -\dfrac{1}{2} \left(x-\mu\right)^\mathsf{T} \Sigma^{-1} \left(x-\mu\right) \right)$</td>
+</tr>
+<tr>
+<td>Manually create features to capture anomalies where $x_1,\,x_2$ take unusual combinations of values.</td>
+<td>Automatically captures correlations between features.</td>
+</tr>
+<tr>
+<td>Computationally cheaper. (scales better to large $n$)</td>
+<td>Computationally more expensive.</td>
+</tr>
+<tr>
+<td>OK even if training set size $m$ is small.</td>
+<td>Must have $m\gt n$, or else $\Sigma$ is non-invertible.</td>
+</tr>
+</tbody>
+</table>
+</div>
 ]]></content>
       <categories>
         <category>Open Course</category>
