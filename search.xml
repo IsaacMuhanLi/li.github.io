@@ -115,6 +115,69 @@
       </tags>
   </entry>
   <entry>
+    <title>Artificial Intelligence (4) · Search · II</title>
+    <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/</url>
+    <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
+<p><br></p>
+<p>本节内容：极小极大，α-β 剪枝</p>
+<a id="more"></a>
+<p><br></p>
+<h3 id="第六讲-博弈、极小极大、α-β-剪枝"><a href="#第六讲-博弈、极小极大、α-β-剪枝" class="headerlink" title="第六讲 博弈、极小极大、α-β 剪枝"></a>第六讲 博弈、极小极大、α-β 剪枝</h3><h4 id="下棋程序"><a href="#下棋程序" class="headerlink" title="下棋程序"></a>下棋程序</h4><ol>
+<li><p><del>Analysis Strategy Tactics</del></p>
+</li>
+<li><p>IF-THEN Rules</p>
+</li>
+<li><p>Look Ahead &amp; Evaluate</p>
+<p>static value $ S=g\left( f_{1},f_{2},\ldots ,f_{n}\right) =c_{1}f_{1}+c_{1}f_{2}+\ldots +c_{n}f_{n} $</p>
+</li>
+<li><p>British Museum</p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/vocab.jpg" alt="vocab"></p>
+</li>
+<li><p>LOOK AHEAD AS FAR AS POSSIBLE</p>
+<ul>
+<li><p>Game Tree</p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/GameTree.jpg" alt="GameTree"></p>
+</li>
+<li><p>Pruning</p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/Pruning.jpg" alt="Pruning"><strong>注意：α-β 剪枝是对 minimax 的优化（而不是近似），因此会给出同样的解</strong></p>
+</li>
+<li><p><em>Deep Cutoff</em></p>
+<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/DeepCutoff.jpg" alt="DeepCutoff"></p>
+<p><strong>S ≈ 2b<sup>d/2</sup></strong> —— 同样算力加多了一倍深度 / 同样深度所需算力开根号</p>
+</li>
+<li><p><strong><em>Progressive Deepening</em></strong></p>
+<pre><code> 为避免运行超时得不到结果而只能走随机的一步，可以在上（每）一层先给出一个走法，一层一层做极小极大。这样只需要完成当前层的 1/d 算力，却能给出比较靠谱的结果。从下面的式子看出，对每一层的代价求和，总代价与只算倒数第二层相差不大。
+</code></pre><p>$ S’=1+b+b^{2}+\ldots +b^{n-1}=\dfrac {b^{n}-1}{b-1}\approx b^{n-1} $<br><br><em>P.S. 计算的中间值将用于对树重新排序以求得最大化的剪枝</em></p>
+</li>
+</ul>
+</li>
+</ol>
+<p><br></p>
+<h4 id="Minimax-Alpha-Beta-Progressive-Deepening"><a href="#Minimax-Alpha-Beta-Progressive-Deepening" class="headerlink" title="Minimax + Alpha-Beta + Progressive Deepening"></a>Minimax + Alpha-Beta + Progressive Deepening</h4><ul>
+<li><strong>DEAD HORSE PRINCIPLE</strong><br>一旦确定比最优差，就把整枝剪掉</li>
+<li><strong>MARSHALL ARTS PRINCIPLE</strong><br>在每一层给出结果，避免下一层算不完</li>
+<li><strong>ANYTIME ALGORITHMS</strong><br>一旦需要，随时都能给出一个（当时的最佳）答案</li>
+</ul>
+<p><br></p>
+<h4 id="Deep-Blue"><a href="#Deep-Blue" class="headerlink" title="Deep Blue"></a>Deep Blue</h4><ul>
+<li>MINIMAX</li>
+<li>Alpha-Beta</li>
+<li>Progressive Deepening</li>
+<li>Parallel Computing</li>
+<li>Opening Book</li>
+<li>End Game</li>
+<li><strong>Uneven Tree Development</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Artificial Intelligence</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Artificial Intelligence (3) · Search · I</title>
     <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-3/</url>
     <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
@@ -218,69 +281,6 @@
             <i class="fa fa-quote-right"></i>
           </blockquote>
 <p><br></p>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Artificial Intelligence</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Artificial Intelligence (4) · Search · II</title>
-    <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/</url>
-    <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
-<p><br></p>
-<p>本节内容：极小极大，α-β 剪枝</p>
-<a id="more"></a>
-<p><br></p>
-<h3 id="第六讲-博弈、极小极大、α-β-剪枝"><a href="#第六讲-博弈、极小极大、α-β-剪枝" class="headerlink" title="第六讲 博弈、极小极大、α-β 剪枝"></a>第六讲 博弈、极小极大、α-β 剪枝</h3><h4 id="下棋程序"><a href="#下棋程序" class="headerlink" title="下棋程序"></a>下棋程序</h4><ol>
-<li><p><del>Analysis Strategy Tactics</del></p>
-</li>
-<li><p>IF-THEN Rules</p>
-</li>
-<li><p>Look Ahead &amp; Evaluate</p>
-<p>static value $ S=g\left( f_{1},f_{2},\ldots ,f_{n}\right) =c_{1}f_{1}+c_{1}f_{2}+\ldots +c_{n}f_{n} $</p>
-</li>
-<li><p>British Museum</p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/vocab.jpg" alt="vocab"></p>
-</li>
-<li><p>LOOK AHEAD AS FAR AS POSSIBLE</p>
-<ul>
-<li><p>Game Tree</p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/GameTree.jpg" alt="GameTree"></p>
-</li>
-<li><p>Pruning</p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/Pruning.jpg" alt="Pruning"><strong>注意：α-β 剪枝是对 minimax 的优化（而不是近似），因此会给出同样的解</strong></p>
-</li>
-<li><p><em>Deep Cutoff</em></p>
-<p><img src="/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-4/DeepCutoff.jpg" alt="DeepCutoff"></p>
-<p><strong>S ≈ 2b<sup>d/2</sup></strong> —— 同样算力加多了一倍深度 / 同样深度所需算力开根号</p>
-</li>
-<li><p><strong><em>Progressive Deepening</em></strong></p>
-<pre><code> 为避免运行超时得不到结果而只能走随机的一步，可以在上（每）一层先给出一个走法，一层一层做极小极大。这样只需要完成当前层的 1/d 算力，却能给出比较靠谱的结果。从下面的式子看出，对每一层的代价求和，总代价与只算倒数第二层相差不大。
-</code></pre><p>$ S’=1+b+b^{2}+\ldots +b^{n-1}=\dfrac {b^{n}-1}{b-1}\approx b^{n-1} $<br><br><em>P.S. 计算的中间值将用于对树重新排序以求得最大化的剪枝</em></p>
-</li>
-</ul>
-</li>
-</ol>
-<p><br></p>
-<h4 id="Minimax-Alpha-Beta-Progressive-Deepening"><a href="#Minimax-Alpha-Beta-Progressive-Deepening" class="headerlink" title="Minimax + Alpha-Beta + Progressive Deepening"></a>Minimax + Alpha-Beta + Progressive Deepening</h4><ul>
-<li><strong>DEAD HORSE PRINCIPLE</strong><br>一旦确定比最优差，就把整枝剪掉</li>
-<li><strong>MARSHALL ARTS PRINCIPLE</strong><br>在每一层给出结果，避免下一层算不完</li>
-<li><strong>ANYTIME ALGORITHMS</strong><br>一旦需要，随时都能给出一个（当时的最佳）答案</li>
-</ul>
-<p><br></p>
-<h4 id="Deep-Blue"><a href="#Deep-Blue" class="headerlink" title="Deep Blue"></a>Deep Blue</h4><ul>
-<li>MINIMAX</li>
-<li>Alpha-Beta</li>
-<li>Progressive Deepening</li>
-<li>Parallel Computing</li>
-<li>Opening Book</li>
-<li>End Game</li>
-<li><strong>Uneven Tree Development</strong></li>
-</ul>
 ]]></content>
       <categories>
         <category>Open Course</category>
@@ -690,49 +690,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
-    <title>Deep Learning (1) · Introduction</title>
-    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/</url>
-    <content><![CDATA[<p>Deep Learning Specialization, Course A<br><strong>Neural Networks and Deep Learning</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 1:</em></strong> <em>Introduction to Deep Learning</em></p>
-<ol>
-<li>Understand the major trends driving the rise of deep learning.</li>
-<li>Be able to explain how deep learning is applied to supervised learning.</li>
-<li>Understand what are the major categories of models (such as CNNs and RNNs), and when they should be applied.</li>
-<li>Be able to recognize the basics of when deep learning will (or will not) work well.</li>
-</ol>
-<a id="more"></a>
-<h3 id="Introduction-to-Deep-Learning"><a href="#Introduction-to-Deep-Learning" class="headerlink" title="Introduction to Deep Learning"></a>Introduction to Deep Learning</h3><h4 id="What-is-a-neural-network"><a href="#What-is-a-neural-network" class="headerlink" title="What is a neural network?"></a>What is a neural network?</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/house-price.png" alt="House Price"></p>
-<p><strong>ReLU,</strong> Rectified Linear Unit Function: $\max\left(0,y\right)$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/1.png" alt="What is a neural network?"></p>
-<p><strong>Notice</strong> that each of these hidden units in the neural network takes its inputs all four input features. <strong><em>(density connected)</em></strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/2.png" alt="What is a neural network?"></p>
-<h4 id="Supervised-Learning-with-Neural-Networks"><a href="#Supervised-Learning-with-Neural-Networks" class="headerlink" title="Supervised Learning with Neural Networks"></a>Supervised Learning with Neural Networks</h4><ul>
-<li><strong>standard neural network</strong></li>
-<li><strong>convolution on neural networks, CNN:</strong> image applications</li>
-<li><strong>recurrent neural network, RNN:</strong> sequence data</li>
-<li><strong>custom / hybrid</strong></li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/nn.png" alt="Neural Networks"></p>
-<ul>
-<li><strong>Structured Data:</strong> features have well defined meanings</li>
-<li><strong>Unstructured Data:</strong> audio / image / text</li>
-</ul>
-<h4 id="Why-is-Deep-Learning-taking-off"><a href="#Why-is-Deep-Learning-taking-off" class="headerlink" title="Why is Deep Learning taking off?"></a>Why is Deep Learning taking off?</h4><ul>
-<li><strong>Data</strong><br><strong><em>m:</em></strong> size of training sets / number of training examples &emsp; <em>(on small training sets: feature engineering)</em><br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/scale.png" alt="Scale"></li>
-<li><strong>Computation</strong></li>
-<li><strong>Algorithms</strong><br><strong><em>activation function:</em></strong> Sigmoid → ReLU<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/relu.png" alt="Activation Function"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Artificial Intelligence (8) · Learning · III</title>
     <url>/post/Open-Course/Artificial-Intelligence/Artificial-Intelligence-Patrick-Winston-8/</url>
     <content><![CDATA[<h3 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h3><p>MIT OPEN COURSE WARE<br>6.034, Fall 2010, <strong>Artificial Intelligence,</strong> <em>Patrick H. Winston</em><br><a href="https://www.youtube.com/watch?v=TjZBTDzGeGg&amp;list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi">Youtube</a> / <a href="https://www.bilibili.com/video/av75097245">Bilibili</a></p>
@@ -1071,6 +1028,49 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Deep Learning (1) · Introduction</title>
+    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/</url>
+    <content><![CDATA[<p>Deep Learning Specialization, Course A<br><strong>Neural Networks and Deep Learning</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 1:</em></strong> <em>Introduction to Deep Learning</em></p>
+<ol>
+<li>Understand the major trends driving the rise of deep learning.</li>
+<li>Be able to explain how deep learning is applied to supervised learning.</li>
+<li>Understand what are the major categories of models (such as CNNs and RNNs), and when they should be applied.</li>
+<li>Be able to recognize the basics of when deep learning will (or will not) work well.</li>
+</ol>
+<a id="more"></a>
+<h3 id="Introduction-to-Deep-Learning"><a href="#Introduction-to-Deep-Learning" class="headerlink" title="Introduction to Deep Learning"></a>Introduction to Deep Learning</h3><h4 id="What-is-a-neural-network"><a href="#What-is-a-neural-network" class="headerlink" title="What is a neural network?"></a>What is a neural network?</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/house-price.png" alt="House Price"></p>
+<p><strong>ReLU,</strong> Rectified Linear Unit Function: $\max\left(0,y\right)$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/1.png" alt="What is a neural network?"></p>
+<p><strong>Notice</strong> that each of these hidden units in the neural network takes its inputs all four input features. <strong><em>(density connected)</em></strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/2.png" alt="What is a neural network?"></p>
+<h4 id="Supervised-Learning-with-Neural-Networks"><a href="#Supervised-Learning-with-Neural-Networks" class="headerlink" title="Supervised Learning with Neural Networks"></a>Supervised Learning with Neural Networks</h4><ul>
+<li><strong>standard neural network</strong></li>
+<li><strong>convolution on neural networks, CNN:</strong> image applications</li>
+<li><strong>recurrent neural network, RNN:</strong> sequence data</li>
+<li><strong>custom / hybrid</strong></li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/nn.png" alt="Neural Networks"></p>
+<ul>
+<li><strong>Structured Data:</strong> features have well defined meanings</li>
+<li><strong>Unstructured Data:</strong> audio / image / text</li>
+</ul>
+<h4 id="Why-is-Deep-Learning-taking-off"><a href="#Why-is-Deep-Learning-taking-off" class="headerlink" title="Why is Deep Learning taking off?"></a>Why is Deep Learning taking off?</h4><ul>
+<li><strong>Data</strong><br><strong><em>m:</em></strong> size of training sets / number of training examples &emsp; <em>(on small training sets: feature engineering)</em><br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/scale.png" alt="Scale"></li>
+<li><strong>Computation</strong></li>
+<li><strong>Algorithms</strong><br><strong><em>activation function:</em></strong> Sigmoid → ReLU<br><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-1/relu.png" alt="Activation Function"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Deep Learning (11) · Deep Convolutional Models</title>
     <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-11/</url>
     <content><![CDATA[<p>Deep Learning Specialization, Course D<br><strong>Convolutional Neural Networks</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
@@ -1289,75 +1289,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
-    <title>Deep Learning (14) · Recurrent Neural Networks</title>
-    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/</url>
-    <content><![CDATA[<p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 1:</em></strong> <em>Recurrent Neural Networks</em></p>
-<ol>
-<li>Learn about recurrent neural networks. This type of model has been proven to perform extremely well on temporal data. It has several variants including LSTMs, GRUs and Bidirectional RNNs, which you are going to learn about in this section.</li>
-</ol>
-<a id="more"></a>
-<h3 id="Recurrent-Neural-Networks"><a href="#Recurrent-Neural-Networks" class="headerlink" title="Recurrent Neural Networks"></a>Recurrent Neural Networks</h3><h4 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h4><ul>
-<li><strong><em>x:</em></strong> x<sup>&lt;1&gt;</sup>, x<sup>&lt;2&gt;</sup>, x<sup>&lt;3&gt;</sup>, …, x<sup>&lt;t&gt;</sup>, …, x<sup>&lt;9&gt;</sup>,   T<sub>x</sub> = 9<br><em>Harry Potter and Hermione Granger invented a new spell.</em></li>
-<li><strong><em>y:</em></strong> y<sup>&lt;1&gt;</sup>, y<sup>&lt;2&gt;</sup>, y<sup>&lt;3&gt;</sup>, …, y<sup>&lt;t&gt;</sup>, …, y<sup>&lt;9&gt;</sup>,   T<sub>y</sub> = 9<br>named-entity recognition: <em>1 1 0 1 1 0 0 0 0</em></li>
-</ul>
-<p>$\begin{matrix} \qquad \textit{x:} &amp; \textsf{Harry} &amp; \textsf{Potter} &amp; \textsf{and} &amp; \textsf{Hermione} &amp; \textsf{Granger} &amp; \textsf{invented} &amp; \textsf{a} &amp; \textsf{new} &amp; \textsf{spell} \\ &amp; x^{\left\lt 1\right\gt } &amp; x^{\left\lt 2\right\gt } &amp; x^{\left\lt 3\right\gt } &amp; x^{\left\lt 4\right\gt } &amp; x^{\left\lt 5\right\gt } &amp; x^{\left\lt 6\right\gt } &amp; x^{\left\lt 7\right\gt } &amp; x^{\left\lt 8\right\gt } &amp; x^{\left\lt 9\right\gt } \\ {\rm Vocabulary} &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \large{\rm one \ hot}  &amp;&amp;&amp;&amp;&amp; \\ \left[\begin{matrix} \rm a \\ \rm aaron \\ \vdots \\ \rm and \\ \vdots \\ \rm harry \\ \vdots \\ \rm potter \\ \vdots \\ \rm zulu \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \cdots &amp; \cdots \end{matrix}$</p>
-<p>use a new fake word <strong>&lt;UNK&gt;</strong> to represent words not in the vocabulary<br>use a toke <strong>&lt;EOS&gt;</strong> to represent the end of every sentence</p>
-<h4 id="Recurrent-Neural-Network-Model"><a href="#Recurrent-Neural-Network-Model" class="headerlink" title="Recurrent Neural Network Model"></a>Recurrent Neural Network Model</h4><p><strong>Why not a standard network</strong></p>
-<ul>
-<li>inputs and outputs can be different lengths in different examples</li>
-<li>does not share features learned across different positions of text</li>
-</ul>
-<p><strong>Recurrent Neural Network</strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/1.png" alt></p>
-<p><strong><em>limitation:</em></strong> not using information later in the sequence → BRNN (Bidirectional Recurrent Neural Network)</p>
-<h5 id="Forward-Propagation"><a href="#Forward-Propagation" class="headerlink" title="Forward Propagation"></a>Forward Propagation</h5><p>$\begin{aligned}a^{\left\lt 0\right\gt } &amp;= \overrightarrow {0} _{\strut} \\ a^{\left\lt 1\right\gt } &amp;= g\left( W_{aa} a^{\left\lt 0\right\gt } + W_{ax} x^{\left\lt 1\right\gt } +b_a \right) &amp;{\rm tanh / ReLU} \\ \hat{y}^{\left\lt 1\right\gt } &amp;= g\left( W_{ya} a^{\left\lt 1\right\gt } +b_y \right) &amp;{\rm sigmoid / softmax} \\ &amp;\ \ \vdots \\ a^{\left\lt t\right\gt } &amp;= g\left( W_{aa} a^{\left\lt t-1\right\gt } + W_{ax} x^{\left\lt t\right\gt } +b_a \right) \\ &amp;= g\left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right) &amp; W_a &amp;= \left[ \begin{array}{c|c} W_{aa} &amp; W_{ax} \end{array} \right] \\ \hat{y}^{\left\lt t\right\gt } &amp;= g\left( W_{ya} a^{\left\lt t\right\gt } +b_y \right) = g\left( W_{y} a^{\left\lt t\right\gt } +b_y \right) &amp; \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] &amp;= \left[ \begin{array}{c} a^{\left\lt t-1\right\gt } \\ \hline x^{\left\lt t\right\gt } \end{array} \right] \end{aligned}$</p>
-<h4 id="Backpropagation-Through-Time"><a href="#Backpropagation-Through-Time" class="headerlink" title="Backpropagation Through Time"></a>Backpropagation Through Time</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/2.png" alt></p>
-<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = -{y}^{\left\lt t\right\gt } \log \hat{y}^{\left\lt t\right\gt } - \left(1-{y}^{\left\lt t\right\gt } \right) \log \left( 1- \hat{y}^{\left\lt t\right\gt } \right) \\ &amp; L \left( \hat{y}, y\right) = \sum_{t=1}^{T_y} L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
-<h4 id="Different-Types-of-RNNs"><a href="#Different-Types-of-RNNs" class="headerlink" title="Different Types of RNNs"></a>Different Types of RNNs</h4><ul>
-<li>many-to-many architecture</li>
-<li>many-to-one architecture</li>
-<li>one-to-many architecture</li>
-<li>one-to-one architecture</li>
-<li>many-to-many architecture <em>(different length)</em></li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/3.png" alt></p>
-<h4 id="Language-Model-and-Sequence-Generation"><a href="#Language-Model-and-Sequence-Generation" class="headerlink" title="Language Model and Sequence Generation"></a>Language Model and Sequence Generation</h4><p>$P\left( y^{\left\lt 1\right\gt }, y^{\left\lt 2\right\gt }, \dots, y^{\left\lt T_y\right\gt }\right)$</p>
-<ul>
-<li><strong><em>training set:</em></strong> large corpus of text</li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/4.png" alt></p>
-<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = - \sum_i {y}^{\left\lt t\right\gt }_i \log \hat{y}^{\left\lt t\right\gt } _i \\ &amp; L \left( \hat{y}, y\right) = \sum_t L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
-<h4 id="Sampling-Novel-Sequences"><a href="#Sampling-Novel-Sequences" class="headerlink" title="Sampling Novel Sequences"></a>Sampling Novel Sequences</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/5.png" alt></p>
-<h4 id="Vanishing-Gradients-with-RNNs"><a href="#Vanishing-Gradients-with-RNNs" class="headerlink" title="Vanishing Gradients with RNNs"></a>Vanishing Gradients with RNNs</h4><p>$\xleftarrow{\textrm{The}\ cat\ \textrm{which … …} \ was\ \textrm{full.}}$<br>$\xleftarrow{\textrm{The}\ cats\ \textrm{which … …} \ were\ \textrm{full.}}$</p>
-<h4 id="Gated-Recurrent-Unit-GRU"><a href="#Gated-Recurrent-Unit-GRU" class="headerlink" title="Gated Recurrent Unit (GRU)"></a>Gated Recurrent Unit (GRU)</h4><p>$a ^{\left\lt t\right\gt } = \tanh \left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right)$</p>
-<h5 id="Simplified-GRU"><a href="#Simplified-GRU" class="headerlink" title="Simplified GRU"></a>Simplified GRU</h5><ul>
-<li><strong><em>c:</em></strong> memory cell, c<sup>&lt;t&gt;</sup> = a<sup>&lt;t&gt;</sup></li>
-</ul>
-<p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; {\approx 0 \ {\rm or} \ 1} \quad \textsf{Gate: update?} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt }  + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \qquad &amp; \textsf{element-wise multiplication} \end{aligned}$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/6.png" alt></p>
-<h5 id="Full-GRU"><a href="#Full-GRU" class="headerlink" title="Full GRU"></a>Full GRU</h5><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ \Gamma_r \odot c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) \\ \Gamma_r &amp;= {\rm sigmoid} \left( W_r \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_r \right) \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= {c} ^{\left\lt t\right\gt } \end{aligned}$</p>
-<h4 id="Long-Short-Term-Memory-LSTM"><a href="#Long-Short-Term-Memory-LSTM" class="headerlink" title="Long Short Term Memory (LSTM)"></a>Long Short Term Memory (LSTM)</h4><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; \textsf{update gate} \\ \Gamma_f &amp;= {\rm sigmoid} \left( W_f \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_f \right) &amp; \textsf{forget gate} \\ \Gamma_o &amp;= {\rm sigmoid} \left( W_o \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_o \right) &amp; \textsf{output gate} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \Gamma_f \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= \Gamma_o \odot \tanh \left( {c} ^{\left\lt t\right\gt } \right) \end{aligned}$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/7.png" alt></p>
-<h4 id="Bidirectional-RNN-BRNN"><a href="#Bidirectional-RNN-BRNN" class="headerlink" title="Bidirectional RNN (BRNN)"></a>Bidirectional RNN (BRNN)</h4><p><strong>Acyclic Graph</strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/8.png" alt></p>
-<p>$\hat{y}^{\left\lt t\right\gt } = g\left( W_y \left[ \overrightarrow {a}^{\left\lt t\right\gt } , \overleftarrow {a}^{\left\lt t\right\gt } \right] +b_y\right)$</p>
-<h4 id="Deep-RNNs"><a href="#Deep-RNNs" class="headerlink" title="Deep RNNs"></a>Deep RNNs</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/9.png" alt></p>
-<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Building-a-Recurrent-Neural-Network-step-by-step"><a href="#Building-a-Recurrent-Neural-Network-step-by-step" class="headerlink" title="Building a Recurrent Neural Network - step by step"></a>Building a Recurrent Neural Network - step by step</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/10.png" alt></p>
-<h4 id="Dinosaur-Island-Character-Level-Language-Modeling"><a href="#Dinosaur-Island-Character-Level-Language-Modeling" class="headerlink" title="Dinosaur Island - Character-Level Language Modeling"></a>Dinosaur Island - Character-Level Language Modeling</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/11.png" alt></p>
-<h4 id="Jazz-Improvisation-with-LSTM"><a href="#Jazz-Improvisation-with-LSTM" class="headerlink" title="Jazz Improvisation with LSTM"></a>Jazz Improvisation with LSTM</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/12.png" alt></p>
-<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Deep Learning (15) · Natural Language Processing</title>
     <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-15/</url>
     <content><![CDATA[<p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
@@ -1433,6 +1364,75 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
 <h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Operations-on-Word-Vectors-Debiasing"><a href="#Operations-on-Word-Vectors-Debiasing" class="headerlink" title="Operations on Word Vectors - Debiasing"></a>Operations on Word Vectors - Debiasing</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-15/10.png" alt></p>
 <h4 id="Emojify"><a href="#Emojify" class="headerlink" title="Emojify"></a>Emojify</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-15/11.png" alt></p>
 <p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-15/12.png" alt></p>
+<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Deep Learning (14) · Recurrent Neural Networks</title>
+    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/</url>
+    <content><![CDATA[<p>Deep Learning Specialization, Course E<br><strong>Sequence Models</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 1:</em></strong> <em>Recurrent Neural Networks</em></p>
+<ol>
+<li>Learn about recurrent neural networks. This type of model has been proven to perform extremely well on temporal data. It has several variants including LSTMs, GRUs and Bidirectional RNNs, which you are going to learn about in this section.</li>
+</ol>
+<a id="more"></a>
+<h3 id="Recurrent-Neural-Networks"><a href="#Recurrent-Neural-Networks" class="headerlink" title="Recurrent Neural Networks"></a>Recurrent Neural Networks</h3><h4 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h4><ul>
+<li><strong><em>x:</em></strong> x<sup>&lt;1&gt;</sup>, x<sup>&lt;2&gt;</sup>, x<sup>&lt;3&gt;</sup>, …, x<sup>&lt;t&gt;</sup>, …, x<sup>&lt;9&gt;</sup>,   T<sub>x</sub> = 9<br><em>Harry Potter and Hermione Granger invented a new spell.</em></li>
+<li><strong><em>y:</em></strong> y<sup>&lt;1&gt;</sup>, y<sup>&lt;2&gt;</sup>, y<sup>&lt;3&gt;</sup>, …, y<sup>&lt;t&gt;</sup>, …, y<sup>&lt;9&gt;</sup>,   T<sub>y</sub> = 9<br>named-entity recognition: <em>1 1 0 1 1 0 0 0 0</em></li>
+</ul>
+<p>$\begin{matrix} \qquad \textit{x:} &amp; \textsf{Harry} &amp; \textsf{Potter} &amp; \textsf{and} &amp; \textsf{Hermione} &amp; \textsf{Granger} &amp; \textsf{invented} &amp; \textsf{a} &amp; \textsf{new} &amp; \textsf{spell} \\ &amp; x^{\left\lt 1\right\gt } &amp; x^{\left\lt 2\right\gt } &amp; x^{\left\lt 3\right\gt } &amp; x^{\left\lt 4\right\gt } &amp; x^{\left\lt 5\right\gt } &amp; x^{\left\lt 6\right\gt } &amp; x^{\left\lt 7\right\gt } &amp; x^{\left\lt 8\right\gt } &amp; x^{\left\lt 9\right\gt } \\ {\rm Vocabulary} &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \large{\rm one \ hot}  &amp;&amp;&amp;&amp;&amp; \\ \left[\begin{matrix} \rm a \\ \rm aaron \\ \vdots \\ \rm and \\ \vdots \\ \rm harry \\ \vdots \\ \rm potter \\ \vdots \\ \rm zulu \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{matrix}\right] &amp; \left[\begin{matrix} 0 \\ 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \\ \vdots \\ 0 \\ \vdots \\ 0 \end{matrix}\right] &amp; \cdots &amp; \cdots \end{matrix}$</p>
+<p>use a new fake word <strong>&lt;UNK&gt;</strong> to represent words not in the vocabulary<br>use a toke <strong>&lt;EOS&gt;</strong> to represent the end of every sentence</p>
+<h4 id="Recurrent-Neural-Network-Model"><a href="#Recurrent-Neural-Network-Model" class="headerlink" title="Recurrent Neural Network Model"></a>Recurrent Neural Network Model</h4><p><strong>Why not a standard network</strong></p>
+<ul>
+<li>inputs and outputs can be different lengths in different examples</li>
+<li>does not share features learned across different positions of text</li>
+</ul>
+<p><strong>Recurrent Neural Network</strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/1.png" alt></p>
+<p><strong><em>limitation:</em></strong> not using information later in the sequence → BRNN (Bidirectional Recurrent Neural Network)</p>
+<h5 id="Forward-Propagation"><a href="#Forward-Propagation" class="headerlink" title="Forward Propagation"></a>Forward Propagation</h5><p>$\begin{aligned}a^{\left\lt 0\right\gt } &amp;= \overrightarrow {0} _{\strut} \\ a^{\left\lt 1\right\gt } &amp;= g\left( W_{aa} a^{\left\lt 0\right\gt } + W_{ax} x^{\left\lt 1\right\gt } +b_a \right) &amp;{\rm tanh / ReLU} \\ \hat{y}^{\left\lt 1\right\gt } &amp;= g\left( W_{ya} a^{\left\lt 1\right\gt } +b_y \right) &amp;{\rm sigmoid / softmax} \\ &amp;\ \ \vdots \\ a^{\left\lt t\right\gt } &amp;= g\left( W_{aa} a^{\left\lt t-1\right\gt } + W_{ax} x^{\left\lt t\right\gt } +b_a \right) \\ &amp;= g\left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right) &amp; W_a &amp;= \left[ \begin{array}{c|c} W_{aa} &amp; W_{ax} \end{array} \right] \\ \hat{y}^{\left\lt t\right\gt } &amp;= g\left( W_{ya} a^{\left\lt t\right\gt } +b_y \right) = g\left( W_{y} a^{\left\lt t\right\gt } +b_y \right) &amp; \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] &amp;= \left[ \begin{array}{c} a^{\left\lt t-1\right\gt } \\ \hline x^{\left\lt t\right\gt } \end{array} \right] \end{aligned}$</p>
+<h4 id="Backpropagation-Through-Time"><a href="#Backpropagation-Through-Time" class="headerlink" title="Backpropagation Through Time"></a>Backpropagation Through Time</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/2.png" alt></p>
+<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = -{y}^{\left\lt t\right\gt } \log \hat{y}^{\left\lt t\right\gt } - \left(1-{y}^{\left\lt t\right\gt } \right) \log \left( 1- \hat{y}^{\left\lt t\right\gt } \right) \\ &amp; L \left( \hat{y}, y\right) = \sum_{t=1}^{T_y} L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
+<h4 id="Different-Types-of-RNNs"><a href="#Different-Types-of-RNNs" class="headerlink" title="Different Types of RNNs"></a>Different Types of RNNs</h4><ul>
+<li>many-to-many architecture</li>
+<li>many-to-one architecture</li>
+<li>one-to-many architecture</li>
+<li>one-to-one architecture</li>
+<li>many-to-many architecture <em>(different length)</em></li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/3.png" alt></p>
+<h4 id="Language-Model-and-Sequence-Generation"><a href="#Language-Model-and-Sequence-Generation" class="headerlink" title="Language Model and Sequence Generation"></a>Language Model and Sequence Generation</h4><p>$P\left( y^{\left\lt 1\right\gt }, y^{\left\lt 2\right\gt }, \dots, y^{\left\lt T_y\right\gt }\right)$</p>
+<ul>
+<li><strong><em>training set:</em></strong> large corpus of text</li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/4.png" alt></p>
+<p>$\begin{aligned} &amp; L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right) = - \sum_i {y}^{\left\lt t\right\gt }_i \log \hat{y}^{\left\lt t\right\gt } _i \\ &amp; L \left( \hat{y}, y\right) = \sum_t L^{\left\lt t\right\gt } \left( \hat{y}^{\left\lt t\right\gt }, y^{\left\lt t\right\gt } \right)  \end{aligned}$</p>
+<h4 id="Sampling-Novel-Sequences"><a href="#Sampling-Novel-Sequences" class="headerlink" title="Sampling Novel Sequences"></a>Sampling Novel Sequences</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/5.png" alt></p>
+<h4 id="Vanishing-Gradients-with-RNNs"><a href="#Vanishing-Gradients-with-RNNs" class="headerlink" title="Vanishing Gradients with RNNs"></a>Vanishing Gradients with RNNs</h4><p>$\xleftarrow{\textrm{The}\ cat\ \textrm{which … …} \ was\ \textrm{full.}}$<br>$\xleftarrow{\textrm{The}\ cats\ \textrm{which … …} \ were\ \textrm{full.}}$</p>
+<h4 id="Gated-Recurrent-Unit-GRU"><a href="#Gated-Recurrent-Unit-GRU" class="headerlink" title="Gated Recurrent Unit (GRU)"></a>Gated Recurrent Unit (GRU)</h4><p>$a ^{\left\lt t\right\gt } = \tanh \left( W_{a} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_a \right)$</p>
+<h5 id="Simplified-GRU"><a href="#Simplified-GRU" class="headerlink" title="Simplified GRU"></a>Simplified GRU</h5><ul>
+<li><strong><em>c:</em></strong> memory cell, c<sup>&lt;t&gt;</sup> = a<sup>&lt;t&gt;</sup></li>
+</ul>
+<p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; {\approx 0 \ {\rm or} \ 1} \quad \textsf{Gate: update?} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt }  + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \qquad &amp; \textsf{element-wise multiplication} \end{aligned}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/6.png" alt></p>
+<h5 id="Full-GRU"><a href="#Full-GRU" class="headerlink" title="Full GRU"></a>Full GRU</h5><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ \Gamma_r \odot c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) \\ \Gamma_r &amp;= {\rm sigmoid} \left( W_r \left[ c^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_r \right) \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \left(1-\Gamma_u\right) \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= {c} ^{\left\lt t\right\gt } \end{aligned}$</p>
+<h4 id="Long-Short-Term-Memory-LSTM"><a href="#Long-Short-Term-Memory-LSTM" class="headerlink" title="Long Short Term Memory (LSTM)"></a>Long Short Term Memory (LSTM)</h4><p>$\begin{aligned} \tilde{c} ^{\left\lt t\right\gt } &amp;= \tanh \left( W_{c} \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_c \right) \\ \Gamma_u &amp;= {\rm sigmoid} \left( W_u \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_u \right) &amp; \textsf{update gate} \\ \Gamma_f &amp;= {\rm sigmoid} \left( W_f \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_f \right) &amp; \textsf{forget gate} \\ \Gamma_o &amp;= {\rm sigmoid} \left( W_o \left[ a^{\left\lt t-1\right\gt }, x^{\left\lt t\right\gt } \right] +b_o \right) &amp; \textsf{output gate} \\ c^{\left\lt t\right\gt } &amp;= \Gamma_u \odot \tilde{c}^{\left\lt t\right\gt } + \Gamma_f \odot c^{\left\lt t-1\right\gt } \\ {a} ^{\left\lt t\right\gt } &amp;= \Gamma_o \odot \tanh \left( {c} ^{\left\lt t\right\gt } \right) \end{aligned}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/7.png" alt></p>
+<h4 id="Bidirectional-RNN-BRNN"><a href="#Bidirectional-RNN-BRNN" class="headerlink" title="Bidirectional RNN (BRNN)"></a>Bidirectional RNN (BRNN)</h4><p><strong>Acyclic Graph</strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/8.png" alt></p>
+<p>$\hat{y}^{\left\lt t\right\gt } = g\left( W_y \left[ \overrightarrow {a}^{\left\lt t\right\gt } , \overleftarrow {a}^{\left\lt t\right\gt } \right] +b_y\right)$</p>
+<h4 id="Deep-RNNs"><a href="#Deep-RNNs" class="headerlink" title="Deep RNNs"></a>Deep RNNs</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/9.png" alt></p>
+<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Building-a-Recurrent-Neural-Network-step-by-step"><a href="#Building-a-Recurrent-Neural-Network-step-by-step" class="headerlink" title="Building a Recurrent Neural Network - step by step"></a>Building a Recurrent Neural Network - step by step</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/10.png" alt></p>
+<h4 id="Dinosaur-Island-Character-Level-Language-Modeling"><a href="#Dinosaur-Island-Character-Level-Language-Modeling" class="headerlink" title="Dinosaur Island - Character-Level Language Modeling"></a>Dinosaur Island - Character-Level Language Modeling</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/11.png" alt></p>
+<h4 id="Jazz-Improvisation-with-LSTM"><a href="#Jazz-Improvisation-with-LSTM" class="headerlink" title="Jazz Improvisation with LSTM"></a>Jazz Improvisation with LSTM</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-14/12.png" alt></p>
 <p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
 ]]></content>
       <categories>
@@ -1922,114 +1922,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
-    <title>Deep Learning (6) · Optimization Algorithms</title>
-    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/</url>
-    <content><![CDATA[<p>Deep Learning Specialization, Course B<br><strong>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</strong><br>by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 2:</em></strong> <em>Optimization Algorithms</em></p>
-<ol>
-<li>Remember different optimization methods such as (Stochastic) Gradient Descent, Momentum, RMSProp and Adam</li>
-<li>Use random minibatches to accelerate the convergence and improve the optimization</li>
-<li>Know the benefits of learning rate decay and apply it to your optimization</li>
-</ol>
-<a id="more"></a>
-<h3 id="Optimization-Algorithms"><a href="#Optimization-Algorithms" class="headerlink" title="Optimization Algorithms"></a>Optimization Algorithms</h3><h4 id="Mini-Batch-Gradient-Descent"><a href="#Mini-Batch-Gradient-Descent" class="headerlink" title="Mini-Batch Gradient Descent"></a>Mini-Batch Gradient Descent</h4><p>$X_{n_x \times m} = \left[ \underbrace{ \overbrace{ \begin{matrix} x^{\left(1\right)} &amp; x^{\left(2\right)} &amp; \cdots &amp; x^{\left(1000\right)} \end{matrix} }^{\rm mini-batch} }_{ X^{\left\{1\right\} } } \begin{matrix} | \end{matrix} \underbrace{ \begin{matrix} x^{\left(1001\right)} &amp; \cdots &amp; | &amp; \cdots &amp; | &amp;\cdots &amp; x^{\left(m\right)} \end{matrix} }_{X^{ \left\{2\right\} } \qquad X^{ \left\{3\right\} } \qquad\cdots } \right]$</p>
-<p>$Y_{1 \times m} = \left[ \underbrace{ \overbrace{ \begin{matrix} y^{\left(1\right)} &amp; y^{\left(2\right)} &amp; \cdots &amp; y^{\left(1000\right)} \end{matrix} }^{\rm mini-batch} }_{ Y^{\left\{1\right\} } } \begin{matrix} | \end{matrix} \underbrace{ \begin{matrix} y^{\left(1001\right)} &amp; \cdots &amp; | &amp; \cdots &amp; | &amp;\cdots &amp; y^{\left(m\right)} \end{matrix} }_{Y^{ \left\{2\right\} } \qquad Y^{ \left\{3\right\} } \qquad\cdots } \right]$</p>
-<ul>
-<li><p><strong><em>mini-batch t:</em></strong> X<sup>{t}</sup>, Y<sup>{t}</sup></p>
-</li>
-<li><p><strong><em>mini-batch gradient descent</em></strong></p>
-<p>for t = 1, 2, …, 5000:&emsp;&emsp;<em>(if m = 5,000,000)</em></p>
-<p>&emsp;&emsp;forward prop on X<sup>{t}</sup></p>
-<p>&emsp;&emsp;$\qquad \begin{aligned} Z^{\left[1\right]}&amp;=W^{\left[1\right]}X^{\left\{t\right\}}+b^{\left[1\right]} \\ A^{\left[1\right]}&amp;=g^{\left[1\right]}\left(Z^{\left[1\right]}\right) \\ \cdots \\Z^{\left[l\right]}&amp;=W^{\left[l\right]}A^{\left[l-1\right]}+b^{\left[l\right]} \\ A^{\left[l\right]}&amp;=g^{\left[l\right]}\left(Z^{\left[l\right]}\right) \end{aligned} \qquad \begin{aligned}\\ \\ \\ \\ l = 1, \ 2,\ \dots,\ L \\ \textsf{vectorized}\end{aligned}$</p>
-<p>&emsp;&emsp;compute cost function J</p>
-<p>&emsp;&emsp;$\qquad \begin{aligned} J^{\left\{t\right\}} = \dfrac{1}{1000} \sum_{i=1}^{m} L &amp; \left( \hat{y} ^\left(i\right),\, y^\left(i\right) \right) + \dfrac{\lambda}{2\cdot1000} \sum_{l=1}^{L} \left|\left| W^{\left[l\right]} \right| \right| ^2_F \end{aligned}$</p>
-<p>&emsp;&emsp;back prop to compute gradients of J<sup>{t}</sup> and update weights</p>
-<p>&emsp;&emsp;$\qquad \begin{aligned} &amp; W^{\left[l\right]} := W^{\left[l\right]} - dW^{\left[l\right]} \\ &amp; b^{\left[l\right]} := b^{\left[l\right]} - db^{\left[l\right]}\end{aligned}$</p>
-<p>$\rightarrow$ <strong><em>1 epoch</em></strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/e.png" alt="epoch"></p>
-</li>
-</ul>
-<h4 id="Understanding-Mini-Batch-Gradient-Descent"><a href="#Understanding-Mini-Batch-Gradient-Descent" class="headerlink" title="Understanding Mini-Batch Gradient Descent"></a>Understanding Mini-Batch Gradient Descent</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/c.png" alt="c"></p>
-<ul>
-<li><em>if mini-batch</em> <strong><em>size = m:</em></strong> batch gradient decent<ul>
-<li>(X<sup>{1}</sup>, Y<sup>{1}</sup>) = (X, Y) → too long per iteration</li>
-</ul>
-</li>
-<li><em>if mini-batch</em> <strong><em>size = 1:</em></strong> stochastic gradient descent<ul>
-<li>(X<sup>{1}</sup>, Y<sup>{1}</sup>) = (X<sup>(1)</sup>, Y<sup>(1)</sup>) → lose speedup from vectorization</li>
-</ul>
-</li>
-<li><strong><em>in between:</em></strong> fastest learning<ul>
-<li>vectorization</li>
-<li>make progress without entire training set</li>
-</ul>
-</li>
-</ul>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/m.png" alt="1-m"></p>
-<ul>
-<li><strong><em>small training set</em></strong> <em>(2000):</em> use batch gradient descent</li>
-<li><strong><em>typical mini-batch size:</em></strong> 64, 128, 256, 512</li>
-<li>make sure mini-batches fit in memory</li>
-</ul>
-<h4 id="Exponentially-Weighted-Averages"><a href="#Exponentially-Weighted-Averages" class="headerlink" title="Exponentially Weighted Averages"></a>Exponentially Weighted Averages</h4><p>$\begin{aligned} V_0 &amp;= 0 \\ V_1 &amp;= 0.9V_0 + 0.1 \theta_1 \\ V_2 &amp;= 0.9V_1 + 0.1 \theta_2 \\ &amp;\vdots \\ V_n &amp;= 0.9V_{n-1} + 0.1 \theta_n \end{aligned}$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/t.png" alt="t"></p>
-<p>$V_t = \beta V_{t-1} + \left( 1-\beta \right) \theta_t$</p>
-<ul>
-<li><strong><em>large β:</em></strong> adapt slower</li>
-<li><strong><em>small β:</em></strong> more noisy</li>
-</ul>
-<h4 id="Understanding-Exponentially-Weighted-Averages"><a href="#Understanding-Exponentially-Weighted-Averages" class="headerlink" title="Understanding Exponentially Weighted Averages"></a>Understanding Exponentially Weighted Averages</h4><p>$V_{100} = 0.1\ \theta_{100} +0.1\times0.9\ \theta_{99} +0.1\times0.9^2\ \theta_{98} + \cdots +0.1\times0.9^{10}\ \theta_{90} \quad \underbrace{\color {grey} {+ 0.1\times0.9^{11}\ \theta_{89} + \cdots}} _{\rm omit\ when\ \left(1-\varepsilon\right) ^{1/\varepsilon} &lt; \frac{1}{e} , \ \varepsilon = 1-\beta}$</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vθ = <span class="number">0</span></span><br><span class="line">repeat:</span><br><span class="line">    get <span class="built_in">next</span> θt</span><br><span class="line">    vθ = β * vθ + (<span class="number">1</span>-β) * θt</span><br></pre></td></tr></table></figure>
-<h4 id="Bias-Correction-in-Exponentially-Weighted-Averages"><a href="#Bias-Correction-in-Exponentially-Weighted-Averages" class="headerlink" title="Bias Correction in Exponentially Weighted Averages"></a>Bias Correction in Exponentially Weighted Averages</h4><p>$\begin{array}{lc|cl} \begin{aligned} V_0 &amp;= 0 \qquad\Leftarrow \\ V_1 &amp;= 0.98V_0 + 0.02 \theta_1 = 0.02 \theta_1 \\ V_2 &amp;= 0.9V_1 + 0.1 = 0.02 \theta_1= 0.0196 \theta_1 + 0.02 \theta_1 \end{aligned} &amp; &amp; &amp; \begin{aligned} &amp; {\rm use} \ \ V_t / \left( 1-\beta^t\right) \\ \Rightarrow \ \ &amp; V_2 = \dfrac{ 0.0196 \theta_1 + 0.02 \theta_1 }{0.0396} \end{aligned} \end{array}$</p>
-<h4 id="Gradient-Descent-with-Momentum"><a href="#Gradient-Descent-with-Momentum" class="headerlink" title="Gradient Descent with Momentum"></a>Gradient Descent with Momentum</h4><p>on iteration t:</p>
-<p>&emsp;&emsp;compute $dW,\ dB$ on current <em>mini-</em>batch</p>
-<p>&emsp;&emsp;$V_{dW} = \beta_1 V_{dW} + \left( 1-\beta_1 \right) dW \quad {\color{gray} {= \beta_1 V_{dW} + dW}}$</p>
-<p>&emsp;&emsp;$V_{db} = \beta_1 V_{db} + \left( 1-\beta_1 \right) db \quad {\color{gray} {= \beta_1 V_{db} + db}}$</p>
-<p>&emsp;&emsp;$W:=W-\alpha V_{dW}, \quad b:=b-\alpha V_{db}$</p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/md.png" alt="momentum"></p>
-<h4 id="Root-Mean-Square-Prop-RMSProp"><a href="#Root-Mean-Square-Prop-RMSProp" class="headerlink" title="Root Mean Square Prop (RMSProp)"></a>Root Mean Square Prop (RMSProp)</h4><p>on iteration t:</p>
-<p>&emsp;&emsp;compute $dW,\ dB$ on current <em>mini-</em>batch</p>
-<p>&emsp;&emsp;$S_{dW} = \beta_2 S_{dW} + \left(1-\beta_2\right) dW^2$ &emsp;<em>element-wise</em></p>
-<p>&emsp;&emsp;$S_{db} = \beta_2 S_{db} + \left(1-\beta_2 \right) db^2$</p>
-<p>&emsp;&emsp;$W:=W-\alpha\dfrac{dW}{\sqrt{S_{dW}} + \varepsilon}, \quad b:=b-\alpha\dfrac{db}{\sqrt{S_{db}} + \varepsilon}, \qquad \left(\, \varepsilon \sim 10^{-8} \ \Rightarrow \ \neq 0 \,\right)$</p>
-<h4 id="Adaptive-Moment-Estimation-Adam-Optimization-Algorithm"><a href="#Adaptive-Moment-Estimation-Adam-Optimization-Algorithm" class="headerlink" title="Adaptive Moment Estimation (Adam) Optimization Algorithm"></a>Adaptive Moment Estimation (Adam) Optimization Algorithm</h4><p>initialize $V_{dW}=0, \ S_{dW}=0, \ V_{db}=0, \ S_{db}=0$</p>
-<p>on iteration t:</p>
-<p>&emsp;&emsp;compute $dW,\ dB$ on current <em>mini-</em>batch</p>
-<p>&emsp;&emsp;$V_{dW} = \beta_1 V_{dW} + \left( 1-\beta_1 \right) dW \qquad\ \ V_{db} = \beta_1 V_{db} + \left( 1-\beta_1 \right) db$</p>
-<p>&emsp;&emsp;$S_{dW} = \beta_2 S_{dW} + \left(1-\beta_2\right) dW^2 \qquad S_{db} = \beta_2 S_{db} + \left(1-\beta_2 \right) db^2$</p>
-<p>&emsp;&emsp;$V_{dW}^{\,^{\rm corrected}} = V_{dW} / \left( 1- \beta_1^{\ t} \right) \qquad\qquad V_{db}^{\,^{\rm corrected}} = V_{db} / \left( 1- \beta_1^{\ t} \right)$</p>
-<p>&emsp;&emsp;$S_{dW}^{\,^{\rm corrected}} = V_{dW} / \left( 1- \beta_2^{\ t} \right) \qquad\qquad\ S_{db}^{\,^{\rm corrected}} = S_{db} / \left( 1- \beta_2^{\ t} \right)$</p>
-<p>&emsp;&emsp;$W:=W-\alpha\dfrac{V_{dW}^{\,^{\rm corrected}}}{\sqrt{S_{dW}^{\,^{\rm corrected}} } + \varepsilon} \qquad\quad\ \ b:=b-\alpha\dfrac{V_{db}^{\,^{\rm corrected}}}{\sqrt{S_{db}^{\,^{\rm corrected}} } + \varepsilon}$</p>
-<h5 id="Hyperparameters-Choice"><a href="#Hyperparameters-Choice" class="headerlink" title="Hyperparameters Choice"></a>Hyperparameters Choice</h5><ul>
-<li><strong><em>α:</em></strong> needs to be tuned</li>
-<li><strong><em>β<sub>1</sub>:</em></strong> 0.9</li>
-<li><strong><em>β<sub>2</sub>:</em></strong> 0.999</li>
-<li><strong><em>ε:</em></strong> 10<sup>-8</sup></li>
-</ul>
-<h4 id="Learning-Rate-Decay"><a href="#Learning-Rate-Decay" class="headerlink" title="Learning Rate Decay"></a>Learning Rate Decay</h4><p>$\alpha = \dfrac{1}{1 + \underbrace{\rm decay{\small -}rate}_\textsf{hyperparameter} \times {\rm epoch{\small -}number}} \cdot \alpha_0$</p>
-<p>$\alpha = \lambda ^{\rm epoch{\small -}number} \cdot \alpha_0, \quad \lambda &lt; 1 \ \ \sim 0.95$</p>
-<p>$\alpha =\dfrac{\overbrace{\gamma_{const}}^\textsf{hyperparameter}}{\sqrt{\rm epoch{\small -}number}}\cdot\alpha_0\qquad\textsf{or}\quad =\dfrac{\gamma_{const}}{\sqrt{t}}\cdot\alpha_0$</p>
-<p>$\alpha = f_\textsf{discrete staircase}$</p>
-<h4 id="The-Problem-of-Local-Optima"><a href="#The-Problem-of-Local-Optima" class="headerlink" title="The Problem of Local Optima"></a>The Problem of Local Optima</h4><h5 id="Local-Optima-×"><a href="#Local-Optima-×" class="headerlink" title="Local Optima ×"></a>Local Optima ×</h5><p><strong>Saddle Point</strong></p>
-<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/z.png" alt="Local Optima"></p>
-<h5 id="Plateaus-√"><a href="#Plateaus-√" class="headerlink" title="Plateaus √"></a>Plateaus √</h5><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/p.png" alt="Plateau"></p>
-<ul>
-<li>unlikely to get stuck in a bad local optima</li>
-<li>plateaus can make learning slow</li>
-</ul>
-<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/3.png" alt="optimization"></p>
-<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Deep Learning (7) · Hyperparameter Tuning</title>
     <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-7/</url>
     <content><![CDATA[<p>Deep Learning Specialization, Course B<br><strong>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</strong><br>by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
@@ -2317,6 +2209,114 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Deep Learning (6) · Optimization Algorithms</title>
+    <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/</url>
+    <content><![CDATA[<p>Deep Learning Specialization, Course B<br><strong>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</strong><br>by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 2:</em></strong> <em>Optimization Algorithms</em></p>
+<ol>
+<li>Remember different optimization methods such as (Stochastic) Gradient Descent, Momentum, RMSProp and Adam</li>
+<li>Use random minibatches to accelerate the convergence and improve the optimization</li>
+<li>Know the benefits of learning rate decay and apply it to your optimization</li>
+</ol>
+<a id="more"></a>
+<h3 id="Optimization-Algorithms"><a href="#Optimization-Algorithms" class="headerlink" title="Optimization Algorithms"></a>Optimization Algorithms</h3><h4 id="Mini-Batch-Gradient-Descent"><a href="#Mini-Batch-Gradient-Descent" class="headerlink" title="Mini-Batch Gradient Descent"></a>Mini-Batch Gradient Descent</h4><p>$X_{n_x \times m} = \left[ \underbrace{ \overbrace{ \begin{matrix} x^{\left(1\right)} &amp; x^{\left(2\right)} &amp; \cdots &amp; x^{\left(1000\right)} \end{matrix} }^{\rm mini-batch} }_{ X^{\left\{1\right\} } } \begin{matrix} | \end{matrix} \underbrace{ \begin{matrix} x^{\left(1001\right)} &amp; \cdots &amp; | &amp; \cdots &amp; | &amp;\cdots &amp; x^{\left(m\right)} \end{matrix} }_{X^{ \left\{2\right\} } \qquad X^{ \left\{3\right\} } \qquad\cdots } \right]$</p>
+<p>$Y_{1 \times m} = \left[ \underbrace{ \overbrace{ \begin{matrix} y^{\left(1\right)} &amp; y^{\left(2\right)} &amp; \cdots &amp; y^{\left(1000\right)} \end{matrix} }^{\rm mini-batch} }_{ Y^{\left\{1\right\} } } \begin{matrix} | \end{matrix} \underbrace{ \begin{matrix} y^{\left(1001\right)} &amp; \cdots &amp; | &amp; \cdots &amp; | &amp;\cdots &amp; y^{\left(m\right)} \end{matrix} }_{Y^{ \left\{2\right\} } \qquad Y^{ \left\{3\right\} } \qquad\cdots } \right]$</p>
+<ul>
+<li><p><strong><em>mini-batch t:</em></strong> X<sup>{t}</sup>, Y<sup>{t}</sup></p>
+</li>
+<li><p><strong><em>mini-batch gradient descent</em></strong></p>
+<p>for t = 1, 2, …, 5000:&emsp;&emsp;<em>(if m = 5,000,000)</em></p>
+<p>&emsp;&emsp;forward prop on X<sup>{t}</sup></p>
+<p>&emsp;&emsp;$\qquad \begin{aligned} Z^{\left[1\right]}&amp;=W^{\left[1\right]}X^{\left\{t\right\}}+b^{\left[1\right]} \\ A^{\left[1\right]}&amp;=g^{\left[1\right]}\left(Z^{\left[1\right]}\right) \\ \cdots \\Z^{\left[l\right]}&amp;=W^{\left[l\right]}A^{\left[l-1\right]}+b^{\left[l\right]} \\ A^{\left[l\right]}&amp;=g^{\left[l\right]}\left(Z^{\left[l\right]}\right) \end{aligned} \qquad \begin{aligned}\\ \\ \\ \\ l = 1, \ 2,\ \dots,\ L \\ \textsf{vectorized}\end{aligned}$</p>
+<p>&emsp;&emsp;compute cost function J</p>
+<p>&emsp;&emsp;$\qquad \begin{aligned} J^{\left\{t\right\}} = \dfrac{1}{1000} \sum_{i=1}^{m} L &amp; \left( \hat{y} ^\left(i\right),\, y^\left(i\right) \right) + \dfrac{\lambda}{2\cdot1000} \sum_{l=1}^{L} \left|\left| W^{\left[l\right]} \right| \right| ^2_F \end{aligned}$</p>
+<p>&emsp;&emsp;back prop to compute gradients of J<sup>{t}</sup> and update weights</p>
+<p>&emsp;&emsp;$\qquad \begin{aligned} &amp; W^{\left[l\right]} := W^{\left[l\right]} - dW^{\left[l\right]} \\ &amp; b^{\left[l\right]} := b^{\left[l\right]} - db^{\left[l\right]}\end{aligned}$</p>
+<p>$\rightarrow$ <strong><em>1 epoch</em></strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/e.png" alt="epoch"></p>
+</li>
+</ul>
+<h4 id="Understanding-Mini-Batch-Gradient-Descent"><a href="#Understanding-Mini-Batch-Gradient-Descent" class="headerlink" title="Understanding Mini-Batch Gradient Descent"></a>Understanding Mini-Batch Gradient Descent</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/c.png" alt="c"></p>
+<ul>
+<li><em>if mini-batch</em> <strong><em>size = m:</em></strong> batch gradient decent<ul>
+<li>(X<sup>{1}</sup>, Y<sup>{1}</sup>) = (X, Y) → too long per iteration</li>
+</ul>
+</li>
+<li><em>if mini-batch</em> <strong><em>size = 1:</em></strong> stochastic gradient descent<ul>
+<li>(X<sup>{1}</sup>, Y<sup>{1}</sup>) = (X<sup>(1)</sup>, Y<sup>(1)</sup>) → lose speedup from vectorization</li>
+</ul>
+</li>
+<li><strong><em>in between:</em></strong> fastest learning<ul>
+<li>vectorization</li>
+<li>make progress without entire training set</li>
+</ul>
+</li>
+</ul>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/m.png" alt="1-m"></p>
+<ul>
+<li><strong><em>small training set</em></strong> <em>(2000):</em> use batch gradient descent</li>
+<li><strong><em>typical mini-batch size:</em></strong> 64, 128, 256, 512</li>
+<li>make sure mini-batches fit in memory</li>
+</ul>
+<h4 id="Exponentially-Weighted-Averages"><a href="#Exponentially-Weighted-Averages" class="headerlink" title="Exponentially Weighted Averages"></a>Exponentially Weighted Averages</h4><p>$\begin{aligned} V_0 &amp;= 0 \\ V_1 &amp;= 0.9V_0 + 0.1 \theta_1 \\ V_2 &amp;= 0.9V_1 + 0.1 \theta_2 \\ &amp;\vdots \\ V_n &amp;= 0.9V_{n-1} + 0.1 \theta_n \end{aligned}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/t.png" alt="t"></p>
+<p>$V_t = \beta V_{t-1} + \left( 1-\beta \right) \theta_t$</p>
+<ul>
+<li><strong><em>large β:</em></strong> adapt slower</li>
+<li><strong><em>small β:</em></strong> more noisy</li>
+</ul>
+<h4 id="Understanding-Exponentially-Weighted-Averages"><a href="#Understanding-Exponentially-Weighted-Averages" class="headerlink" title="Understanding Exponentially Weighted Averages"></a>Understanding Exponentially Weighted Averages</h4><p>$V_{100} = 0.1\ \theta_{100} +0.1\times0.9\ \theta_{99} +0.1\times0.9^2\ \theta_{98} + \cdots +0.1\times0.9^{10}\ \theta_{90} \quad \underbrace{\color {grey} {+ 0.1\times0.9^{11}\ \theta_{89} + \cdots}} _{\rm omit\ when\ \left(1-\varepsilon\right) ^{1/\varepsilon} &lt; \frac{1}{e} , \ \varepsilon = 1-\beta}$</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vθ = <span class="number">0</span></span><br><span class="line">repeat:</span><br><span class="line">    get <span class="built_in">next</span> θt</span><br><span class="line">    vθ = β * vθ + (<span class="number">1</span>-β) * θt</span><br></pre></td></tr></table></figure>
+<h4 id="Bias-Correction-in-Exponentially-Weighted-Averages"><a href="#Bias-Correction-in-Exponentially-Weighted-Averages" class="headerlink" title="Bias Correction in Exponentially Weighted Averages"></a>Bias Correction in Exponentially Weighted Averages</h4><p>$\begin{array}{lc|cl} \begin{aligned} V_0 &amp;= 0 \qquad\Leftarrow \\ V_1 &amp;= 0.98V_0 + 0.02 \theta_1 = 0.02 \theta_1 \\ V_2 &amp;= 0.9V_1 + 0.1 = 0.02 \theta_1= 0.0196 \theta_1 + 0.02 \theta_1 \end{aligned} &amp; &amp; &amp; \begin{aligned} &amp; {\rm use} \ \ V_t / \left( 1-\beta^t\right) \\ \Rightarrow \ \ &amp; V_2 = \dfrac{ 0.0196 \theta_1 + 0.02 \theta_1 }{0.0396} \end{aligned} \end{array}$</p>
+<h4 id="Gradient-Descent-with-Momentum"><a href="#Gradient-Descent-with-Momentum" class="headerlink" title="Gradient Descent with Momentum"></a>Gradient Descent with Momentum</h4><p>on iteration t:</p>
+<p>&emsp;&emsp;compute $dW,\ dB$ on current <em>mini-</em>batch</p>
+<p>&emsp;&emsp;$V_{dW} = \beta_1 V_{dW} + \left( 1-\beta_1 \right) dW \quad {\color{gray} {= \beta_1 V_{dW} + dW}}$</p>
+<p>&emsp;&emsp;$V_{db} = \beta_1 V_{db} + \left( 1-\beta_1 \right) db \quad {\color{gray} {= \beta_1 V_{db} + db}}$</p>
+<p>&emsp;&emsp;$W:=W-\alpha V_{dW}, \quad b:=b-\alpha V_{db}$</p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/md.png" alt="momentum"></p>
+<h4 id="Root-Mean-Square-Prop-RMSProp"><a href="#Root-Mean-Square-Prop-RMSProp" class="headerlink" title="Root Mean Square Prop (RMSProp)"></a>Root Mean Square Prop (RMSProp)</h4><p>on iteration t:</p>
+<p>&emsp;&emsp;compute $dW,\ dB$ on current <em>mini-</em>batch</p>
+<p>&emsp;&emsp;$S_{dW} = \beta_2 S_{dW} + \left(1-\beta_2\right) dW^2$ &emsp;<em>element-wise</em></p>
+<p>&emsp;&emsp;$S_{db} = \beta_2 S_{db} + \left(1-\beta_2 \right) db^2$</p>
+<p>&emsp;&emsp;$W:=W-\alpha\dfrac{dW}{\sqrt{S_{dW}} + \varepsilon}, \quad b:=b-\alpha\dfrac{db}{\sqrt{S_{db}} + \varepsilon}, \qquad \left(\, \varepsilon \sim 10^{-8} \ \Rightarrow \ \neq 0 \,\right)$</p>
+<h4 id="Adaptive-Moment-Estimation-Adam-Optimization-Algorithm"><a href="#Adaptive-Moment-Estimation-Adam-Optimization-Algorithm" class="headerlink" title="Adaptive Moment Estimation (Adam) Optimization Algorithm"></a>Adaptive Moment Estimation (Adam) Optimization Algorithm</h4><p>initialize $V_{dW}=0, \ S_{dW}=0, \ V_{db}=0, \ S_{db}=0$</p>
+<p>on iteration t:</p>
+<p>&emsp;&emsp;compute $dW,\ dB$ on current <em>mini-</em>batch</p>
+<p>&emsp;&emsp;$V_{dW} = \beta_1 V_{dW} + \left( 1-\beta_1 \right) dW \qquad\ \ V_{db} = \beta_1 V_{db} + \left( 1-\beta_1 \right) db$</p>
+<p>&emsp;&emsp;$S_{dW} = \beta_2 S_{dW} + \left(1-\beta_2\right) dW^2 \qquad S_{db} = \beta_2 S_{db} + \left(1-\beta_2 \right) db^2$</p>
+<p>&emsp;&emsp;$V_{dW}^{\,^{\rm corrected}} = V_{dW} / \left( 1- \beta_1^{\ t} \right) \qquad\qquad V_{db}^{\,^{\rm corrected}} = V_{db} / \left( 1- \beta_1^{\ t} \right)$</p>
+<p>&emsp;&emsp;$S_{dW}^{\,^{\rm corrected}} = V_{dW} / \left( 1- \beta_2^{\ t} \right) \qquad\qquad\ S_{db}^{\,^{\rm corrected}} = S_{db} / \left( 1- \beta_2^{\ t} \right)$</p>
+<p>&emsp;&emsp;$W:=W-\alpha\dfrac{V_{dW}^{\,^{\rm corrected}}}{\sqrt{S_{dW}^{\,^{\rm corrected}} } + \varepsilon} \qquad\quad\ \ b:=b-\alpha\dfrac{V_{db}^{\,^{\rm corrected}}}{\sqrt{S_{db}^{\,^{\rm corrected}} } + \varepsilon}$</p>
+<h5 id="Hyperparameters-Choice"><a href="#Hyperparameters-Choice" class="headerlink" title="Hyperparameters Choice"></a>Hyperparameters Choice</h5><ul>
+<li><strong><em>α:</em></strong> needs to be tuned</li>
+<li><strong><em>β<sub>1</sub>:</em></strong> 0.9</li>
+<li><strong><em>β<sub>2</sub>:</em></strong> 0.999</li>
+<li><strong><em>ε:</em></strong> 10<sup>-8</sup></li>
+</ul>
+<h4 id="Learning-Rate-Decay"><a href="#Learning-Rate-Decay" class="headerlink" title="Learning Rate Decay"></a>Learning Rate Decay</h4><p>$\alpha = \dfrac{1}{1 + \underbrace{\rm decay{\small -}rate}_\textsf{hyperparameter} \times {\rm epoch{\small -}number}} \cdot \alpha_0$</p>
+<p>$\alpha = \lambda ^{\rm epoch{\small -}number} \cdot \alpha_0, \quad \lambda &lt; 1 \ \ \sim 0.95$</p>
+<p>$\alpha =\dfrac{\overbrace{\gamma_{const}}^\textsf{hyperparameter}}{\sqrt{\rm epoch{\small -}number}}\cdot\alpha_0\qquad\textsf{or}\quad =\dfrac{\gamma_{const}}{\sqrt{t}}\cdot\alpha_0$</p>
+<p>$\alpha = f_\textsf{discrete staircase}$</p>
+<h4 id="The-Problem-of-Local-Optima"><a href="#The-Problem-of-Local-Optima" class="headerlink" title="The Problem of Local Optima"></a>The Problem of Local Optima</h4><h5 id="Local-Optima-×"><a href="#Local-Optima-×" class="headerlink" title="Local Optima ×"></a>Local Optima ×</h5><p><strong>Saddle Point</strong></p>
+<p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/z.png" alt="Local Optima"></p>
+<h5 id="Plateaus-√"><a href="#Plateaus-√" class="headerlink" title="Plateaus √"></a>Plateaus √</h5><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/p.png" alt="Plateau"></p>
+<ul>
+<li>unlikely to get stuck in a bad local optima</li>
+<li>plateaus can make learning slow</li>
+</ul>
+<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h4><p><img src="/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-6/3.png" alt="optimization"></p>
+<p><a href="https://github.com/bugstop/coursera-deep-learning-solutions" target="_blank">Solutions Manual</a></p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Deep Learning (9) · ML Strategy · II</title>
     <url>/post/Open-Course/Deep-Learning/Deep-Learning-Andrew-Ng-9/</url>
     <content><![CDATA[<p>Deep Learning Specialization, Course C<br><strong>Structuring Machine Learning Projects</strong> by deeplearning.ai, <strong><em>Andrew Ng,</em></strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning/home/info">Coursera</a></p>
@@ -2499,77 +2499,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
-    <title>Game Theory (1)</title>
-    <url>/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/</url>
-    <content><![CDATA[<p>Yale University, <strong>Game Theory,</strong> Economics 159</p>
-<blockquote>
-<p>Game theory is a method of studying strategic situations.</p>
-</blockquote>
-<p><br></p>
-<h2 id="Class-1-Prisoners’-Dilemma"><a href="#Class-1-Prisoners’-Dilemma" class="headerlink" title="Class 1 - Prisoners’ Dilemma"></a>Class 1 - Prisoners’ Dilemma</h2><div class="note default">
-            <h4 id="Game-1"><a href="#Game-1" class="headerlink" title="Game 1"></a>Game 1</h4><p>$\begin{matrix} &amp; \begin{matrix} \textrm{Pair} \end{matrix} &amp;&amp;&amp; \textrm{payoffs} \textit{  (evil gits)} &amp;&amp; \textrm{payoffs} \textit{  (indignant angels)} \\ \begin{matrix} \\ \textrm{Me} \end{matrix} &amp; \begin{matrix} &amp;\alpha&amp;\beta \\ \alpha&amp;\textrm{B-, B-}&amp;\textrm{A, C} \\ \beta&amp;\textrm{C, A}&amp;\textrm{B+, B+} \end{matrix} &amp;&amp;&amp; \begin{matrix} &amp;\alpha&amp;\beta \\ \alpha&amp;0,0&amp;3,-1 \\ \beta&amp;-1,3&amp;1,1 \end{matrix} &amp;&amp; \begin{matrix} &amp;\alpha&amp;\beta \\ \alpha&amp;0,0&amp;-1,-3 \\ \beta&amp;-3,-1&amp;1,1 \end{matrix} \\ &amp; &amp;&amp;&amp; {}_\texttt{Prisoners’ Dilemma} &amp;&amp; {}_\texttt{Coordination Problem} \end{matrix}$</p>
-          </div>
-<a id="more"></a>
-<blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <p style="text-align:left!important"><strong>Lesson 1:</strong> Do not play a strictly <em>(weakly)</em> dominated strategy.</p>
-<p style="text-align:left!important"><strong>Lesson 2:</strong> Rational choice can lead to outcomes that "suck" <em>(Pareto Inefficient)</em>. &emsp; <strong>Prisoners' Dilemma</strong></p>
-<p style="text-align:left!important"><strong>Lesson 3:</strong> You can't get what you want till you know what you want <em>(payoffs)</em>.</p>
-<p style="text-align:left!important"><strong>Lesson 4:</strong> Put yourself in others' shoes and try to figure out what they will do.</p>
-<p style="text-align:left!important"><strong>Lesson 5:</strong> Yale students are evil.</p>
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
-<p><br></p>
-<h2 id="Class-2-Deleting-Dominated-Strategies"><a href="#Class-2-Deleting-Dominated-Strategies" class="headerlink" title="Class 2 - Deleting Dominated Strategies"></a>Class 2 - Deleting Dominated Strategies</h2><p>$ \textrm{ingredients of a game: } \begin{cases} \texttt{players} \\ \texttt{strategies} \\ \texttt{payoffs} \end{cases}$</p>
-<div class="note default">
-            <h4 id="Game-2"><a href="#Game-2" class="headerlink" title="Game 2"></a>Game 2</h4><p>Pick a number between 1 and 100. The winner is the person whose number is closest to 2/3 times the average number.</p><p>$\begin{cases} 67 \sim 100 \ \ &amp; &amp; \textrm{weakly dominated} &amp; \textit{ lesson 1} \\ 45 \sim 67 &amp; \texttt{rationality} &amp; \textrm{weakly dominated after delete 67~100} &amp; \textit{ lesson 4} \\ 30 \sim 45 &amp; \texttt{know others are rational} &amp; \textrm{weakly dominated after delete 45~67 and 67~100} &amp; \textit{ in shoes in shoes} \\ \,\vdots &amp;&amp; \texttt{iterative deletion of dominated strategies} \\ 1 &amp; \texttt{R, KR, KKR, KKKR, …} &amp; {}_\texttt{Common Knowledge} \end{cases}$</p><p><strong><em>Mutual knowledge doesn’t imply common knowledge.</em></strong></p>
-          </div>
-<p><br></p>
-<h2 id="Class-3-Median-Voter-Theorem"><a href="#Class-3-Median-Voter-Theorem" class="headerlink" title="Class 3 - Median Voter Theorem"></a>Class 3 - Median Voter Theorem</h2><div class="note default">
-            <h4 id="Game-3"><a href="#Game-3" class="headerlink" title="Game 3"></a>Game 3</h4><p><strong>model of politics:</strong> 2 candidates, uniformly distributed voters, $\textrm{choose: }\xrightarrow[\textrm{political spectrum}]{1\,2\,3\,4\,5\,6\,7\,8\,9\,10}$</p><p>$\begin{matrix} \textrm{2 strictly dominates 1} \\  \textrm{9 strictly dominates 10} \end{matrix} \longrightarrow \begin{matrix} \textrm{3 strictly dominates 2} \\  \textrm{8 strictly dominates 9} \end{matrix} \cdots\xrightarrow[\texttt{ dominated strategies }]{\texttt{ iterative deletion of }}\cdots \begin{matrix} \textrm{5 strictly dominates 4} \\  \textrm{6 strictly dominates 7} \end{matrix}$</p><p><strong>Median Voter Theorem:</strong> candidates close to each other, close to the center</p>
-          </div>
-<p><br></p>
-<h2 id="Class-4-Best-Response"><a href="#Class-4-Best-Response" class="headerlink" title="Class 4 - Best Response"></a>Class 4 - Best Response</h2><div class="note default">
-            <h4 id="Game-4"><a href="#Game-4" class="headerlink" title="Game 4"></a>Game 4</h4><p>$\begin{matrix} &amp;L&amp;R \\ U&amp;5,1&amp;0,2 \\ M&amp;1,3&amp;4,1 \\ D&amp;4,2&amp;2,3 \end{matrix} \qquad \begin{matrix} \textit{U does best against L} \\ \textit{M does best against R} \end{matrix}\quad \texttt{best response based on belief} $</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/1.png" alt="Best Response"></p>
-          </div>
-<div class="note default">
-            <h4 id="Game-5"><a href="#Game-5" class="headerlink" title="Game 5"></a>Game 5</h4><p><strong>Penalty Kick Game</strong></p><p>$\begin{matrix} &amp;L&amp;R \\ U&amp;4,-4&amp;9,-9 \\ M&amp;6,-6&amp;6,-6 \\ D&amp;9,-9&amp;4,-4 \end{matrix} \qquad \begin{matrix} \textrm{no dominated strategies, but:} \\ \textrm{M is not a best response to any belief} \end{matrix}$</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/2.png" alt="Best Response"></p>
-          </div>
-<blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <p style="text-align:left!important"><strong>Lesson 6:</strong> Do not choose a strategy that is never a best response to any belief.</p>
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
-<div class="note default">
-            <h4 id="Game-6"><a href="#Game-6" class="headerlink" title="Game 6"></a>Game 6</h4><p><strong>Partnership Game:</strong> 2 agents, own firm jointly, share $50\%$ of the profit each. Each agent chooses the effort level to put in the firm, $S_i\in\left[\,0,4\,\right]$ <em>(continuum)</em>. The frim profit is given by $4\left(s_1+s_2+b\cdot s_1\,s_2\right),\,\Tiny{0\leq b\leq1/4}$. Payoffs are: $U_1\left(s_1,\,s_2\right)=1/2\cdot4\left(s_1+s_2+b\cdot s_1\,s_2\right)-s_1^2$, $U_2\left(s_1,\,s_2\right)=1/2\cdot4\left(s_1+s_2+b\cdot s_1\,s_2\right)-s_2^2$</p><p>$\max_{s_1}2\left(s_1+s_2+b\cdot s_1\,s_2\right)-s_1^2$</p><p>$\dfrac{\partial U_1}{\partial s_1} = 2 + 2b\,s_2 - 2 \hat s_1 =0 \quad\Rightarrow\quad \mathrm{BR}_1\left(s_2\right) = \hat s_1 = 1 + b\,s_2 \,,\,\, \mathrm{BR}_2\left(s_1\right) = \hat s_2 = 1 + b\,s_1$</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/3.png" alt="Best Response"></p><p>$\texttt{iterative deletion until converge} \quad\Rightarrow\quad s_1^\ast = s_2^\ast = \dfrac{1}{1-b} \qquad {}_\texttt{Nash Equilibrium}$</p><p><strong>Externality:</strong> my effort benefits you, not just for me.</p>
-          </div>
-<p><br></p>
-<h2 id="Class-5-Nash-Equilibrium-Coordination-Problems"><a href="#Class-5-Nash-Equilibrium-Coordination-Problems" class="headerlink" title="Class 5 - Nash Equilibrium (Coordination Problems)"></a>Class 5 - Nash Equilibrium (Coordination Problems)</h2><p><strong>Nash Equilibrium:</strong> players are playing a best response to each other. no individual can do <strong>strictly</strong> better by deviating, holding everyone else’s actions <em>(no regrets)</em>.</p>
-<div class="note default">
-            <h4 id="Game-7"><a href="#Game-7" class="headerlink" title="Game 7"></a>Game 7</h4><p>$\begin{matrix} &amp; \begin{matrix} \textrm{P2} \end{matrix}  \\ \begin{matrix} \\ \textrm{P1} \end{matrix} &amp; \begin{matrix} &amp;L&amp;C&amp;R \\ U&amp;0,\hat4&amp;\hat4,0&amp;5,3 \\ M&amp;\hat4,0&amp;0,\hat4&amp;5,3 \\ D&amp;3,5&amp;3,5&amp;\hat6,\hat6 \end{matrix} &amp;&amp;&amp; \begin{cases} \mathrm{BR}_1\left(L\right)=M \\ \mathrm{BR}_1\left(C\right)=U \\ \mathrm{BR}_1\left(R\right)=D \end{cases} &amp; \begin{cases} \mathrm{BR}_2\left(U\right)=L \\ \mathrm{BR}_2\left(M\right)=C \\ \mathrm{BR}_2\left(D\right)=R \end{cases} \\ &amp; &amp;&amp;&amp;\Rightarrow\ \mathrm{NE} = \left(D,R\right) \end{matrix}$</p><p>$\begin{matrix} &amp; \begin{matrix} \textrm{P2} \end{matrix}  \\ \begin{matrix} \\ \textrm{P1} \end{matrix} &amp; \begin{matrix} &amp;L&amp;C&amp;R \\ U&amp;0,2&amp;2,\hat3&amp;4,\hat3 \\ M&amp;\hat9,1&amp;\hat3,\hat2&amp;0,0 \\ D&amp;0,\hat3&amp;1,0&amp;\hat8,0 \end{matrix} &amp;&amp;&amp; \begin{cases} \mathrm{BR}_1\left(L\right)=M \\ \mathrm{BR}_1\left(C\right)=M \\ \mathrm{BR}_1\left(R\right)=D \end{cases} &amp; \begin{cases} \mathrm{BR}_2\left(U\right)=C,R \\ \mathrm{BR}_2\left(M\right)=C \\ \mathrm{BR}_2\left(D\right)=L \end{cases} \\ &amp; &amp;&amp;&amp;\Rightarrow\ \mathrm{NE} = \left(M,C\right) \end{matrix}$</p>
-          </div>
-<div class="note default">
-            <h4 id="Game-8"><a href="#Game-8" class="headerlink" title="Game 8"></a>Game 8</h4><p><strong>Investment Game:</strong> choose: invest $0$ or $10$ dollar.<br>if you do not invest, $\mathrm{payoff}=0$, if you invest, $\mathrm{payoff}=\begin{cases}\$5&amp;\textrm{if }\geq90\%\textrm{ invest}&amp;\texttt{coordination} \\ -\$10&amp;\textrm{if }&lt;90\%\textrm{ invest}\end{cases}$</p><p>guess and check: <strong>2 NEs</strong> $\quad \mathrm{NE}_1 \textrm{:  all invest,} \quad \mathrm{NE}_2 \textrm{:  no one invest}$</p><p><em>play converged fairly rapidly to the (“bad” maybe) Nash Equilibrium</em></p>
-          </div>
-<p><strong>In Coordination Problems, unlike Prisoners’ Dilemma, <em>communication</em> can help.<br>Nash Equilibrium can be a self-enforcing agreement.</strong></p>
-<div class="note default">
-            <h4 id="Game-9"><a href="#Game-9" class="headerlink" title="Game 9"></a>Game 9</h4><p><strong>Going to the movie</strong></p><p>$\begin{matrix} &amp; \begin{matrix} &amp;&amp;&amp;&amp;&amp;&amp;&amp;\textrm{P2} \end{matrix}  \\ \begin{matrix} \\ \textrm{P1} \end{matrix} &amp; \begin{matrix} &amp;\textit{BU}&amp;\textit{GS}&amp;\textit{SW} \\ \textit{Bourne Ultimatum}&amp;\underline{2,1}&amp;0,0&amp;0,-1 \\ \textit{Good Shepherd}&amp;0,0&amp;\underline{1,2}&amp;0,-1 \\ \textit{Snow White}&amp;-1,0&amp;-1,0&amp;-2,-2&amp;\times \\ &amp;&amp;&amp;\times \end{matrix} \end{matrix}$</p><p><strong>the Battle of the Sexes:</strong> different people disagree about where they’d like to coordinate.</p>
-          </div>
-<p><br></p>
-<h2 id="Class-6-Nash-Equilibrium-Cournot-Duopoly"><a href="#Class-6-Nash-Equilibrium-Cournot-Duopoly" class="headerlink" title="Class 6 - Nash Equilibrium (Cournot Duopoly)"></a>Class 6 - Nash Equilibrium (Cournot Duopoly)</h2><div class="note default">
-            <h4 id="Game-10"><a href="#Game-10" class="headerlink" title="Game 10"></a>Game 10</h4><p><strong>Cournot Duopoly</strong> (a few players, many strategies)</p><p><strong>players:</strong> 2 firms, <strong>strategies:</strong> quantities of an identical product $q$, <strong>cost of production:</strong> constant marginal cost $c$, <strong>prices:</strong> $p=a-b\left(q_1+q_2\right)$, <strong>payoffs:</strong> profit $u_1\left(q_1,q_2\right)=pq_1-cq_1=aq_1-bq_1^2-bq_1q_2-cq_1$</p><p>$\dfrac{\partial u_1}{\partial p_1} = a-2bq_1-bq_2-c = 0 \quad\Rightarrow\quad \mathrm{BR}_1\left(q_2\right) = \hat q_1 = \dfrac{a-c}{2b} - \dfrac{q_2}{2} \,,\,\, \mathrm{BR}_2\left(q_1\right) = \hat q_2 = \dfrac{a-c}{2b} - \dfrac{q_1}{2}$</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/4.png" alt="Best Response"></p><p>$\begin{cases}\begin{aligned} \dfrac{a-c}{b} &amp;&amp; \texttt{competitive quantity} \\ \dfrac{2}{3}\cdot\dfrac{a-c}{b} &amp;&amp; {}\texttt{cournot quantity} \\ \dfrac{1}{2}\cdot\dfrac{a-c}{b} &amp;&amp; \texttt{molopoly quantity} \end{aligned}\end{cases}$</p>
-          </div>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Game Theory</category>
-      </categories>
-      <tags>
-        <tag>Economics</tag>
-        <tag>Game Theory</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitHub · Changing Author Info</title>
     <url>/post/Programming/Git/GitHub-Changing-Author-Info/</url>
     <content><![CDATA[<p>Before running this script, you’ll need:</p>
@@ -2597,80 +2526,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       <tags>
         <tag>Git</tag>
         <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Machine Learning (1) · Linear Regression · I</title>
-    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-1/</url>
-    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 1:</em></strong> Introduction, Linear Regression with One Variable</p>
-<h3 id="Machine-Learning-Introduction"><a href="#Machine-Learning-Introduction" class="headerlink" title="Machine Learning Introduction"></a>Machine Learning Introduction</h3><p>Machine learning is the field of study that gives computers the ability to learn without being explicitly programmed.</p>
-<p><strong><em>Definition:</em></strong> a computer program is said to learn from <strong>experience E</strong> with respect to some <strong>task T</strong> and some performance <strong>measure P,</strong> if its performance on T, as measured by P, improves with experience E.</p>
-<a id="more"></a>
-<h4 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h4><ul>
-<li><strong>Supervised Learning</strong><br><em>Given the “right answer” for each of our examples</em><ul>
-<li><strong>Regression:</strong> Predict real-valued output</li>
-<li><strong>Classification:</strong> Predict discrete-valued output</li>
-</ul>
-</li>
-<li><strong>Unsupervised Learning</strong><ul>
-<li><strong>Clustering</strong></li>
-<li><strong>Non-clustering</strong> <em>(The Cocktail Party Algorithm)</em></li>
-</ul>
-</li>
-<li><strong>Reinforcement Learning</strong></li>
-<li><strong>Recommender Systems</strong></li>
-</ul>
-<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><ul>
-<li><strong>Model Representation</strong><ul>
-<li><strong>m</strong> = number of training examples</li>
-<li><strong>x’</strong>s = <em>input</em> variable / features</li>
-<li><strong>y’</strong>s = <em>output</em> variable / <em>target</em> variable</li>
-<li><strong>(x<sup>(i)</sup>, y<sup>(i)</sup>)</strong> = i<sup>th</sup> training example</li>
-</ul>
-</li>
-</ul>
-<h4 id="Linear-Regression-with-One-Variable-univariate-linear-regression"><a href="#Linear-Regression-with-One-Variable-univariate-linear-regression" class="headerlink" title="Linear Regression with One Variable (univariate linear regression)"></a>Linear Regression with One Variable <em>(univariate linear regression)</em></h4><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-1/ModelRepresentation.png" alt="Model Representation"></p>
-<ul>
-<li><p><strong><em>Parameters:</em></strong> $\theta _{0},\theta _{1}$</p>
-</li>
-<li><p><strong><em>Hypothesis:</em></strong> $h_{\theta }\left( x\right) =\theta _{0}+\theta _{1}x$</p>
-</li>
-<li><p><strong><em>Cost Function:</em></strong> $J\left( \theta _{0},\theta _{1}\right) =  \dfrac {1}{2m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) ^{2} $ <em>(squared error function)</em></p>
-</li>
-<li><p><strong><em>Goal:</em></strong> $\min _{\theta _{0},\theta _{1}}J\left( \theta _{0},\theta _{1}\right) $ <em>(minimize the cost function)</em></p>
-</li>
-</ul>
-<h3 id="Parameter-Learning"><a href="#Parameter-Learning" class="headerlink" title="Parameter Learning"></a>Parameter Learning</h3><p>$\min _{\theta _{0},\theta _{1},…,\theta _{n}}J\left( \theta _{0},\theta _{1},…,\theta _{n}\right) $ </p>
-<h4 id="Gradient-Descent-Outline"><a href="#Gradient-Descent-Outline" class="headerlink" title="Gradient Descent Outline"></a>Gradient Descent Outline</h4><ul>
-<li>Start with some $\theta _{0},\theta _{1}$</li>
-<li>Keep changing $\theta _{0},\theta _{1}$ to reduce $J\left( \theta _{0},\theta _{1}\right) $ until end up at a <em>(local)</em> minimum</li>
-</ul>
-<h4 id="Gradient-Descent-Algorithm"><a href="#Gradient-Descent-Algorithm" class="headerlink" title="Gradient Descent Algorithm"></a>Gradient Descent Algorithm</h4><p><strong><em>repeat until convergence:</em></strong><br>&emsp;&emsp;$\theta _{j}:=\theta _{j}-\alpha \cdot \dfrac {\partial }{\partial \theta _{j}}J\left( \theta _{0},\theta _{1}\right)$&emsp;&emsp;<em>for $j=0$ and $j=1$</em></p>
-<ul>
-<li><strong>Simultaneously</strong> Update θ<sub>0</sub> and θ<sub>1</sub></li>
-<li><p><strong>Learning Rate</strong> $\alpha$</p>
-<ul>
-<li><strong>too small:</strong> slow</li>
-<li><strong>too large:</strong> overshoot <em>(fail to converge / diverge)</em></li>
-</ul>
-<p><em>As we approach a local minimum, the derivative term will automatically get smaller, and so gradient descent will automatically take smaller steps, no need to decrease α over time.</em></p>
-</li>
-</ul>
-<h4 id="Gradient-Descent-For-Linear-Regression"><a href="#Gradient-Descent-For-Linear-Regression" class="headerlink" title="Gradient Descent For Linear Regression"></a>Gradient Descent For Linear Regression</h4><p><strong><em>“Batch” Gradient Decent:</em></strong> Each step uses all training examples</p>
-<p>$\begin{equation} \begin{aligned} \dfrac {\partial }{\partial \theta _{j}}J\left( \theta _{0},\theta _{1}\right) &amp; = \dfrac {\partial }{\partial \theta _{j}} \dfrac {1}{2m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) ^{2} \\&amp; = \dfrac {\partial }{\partial \theta _{j}} \dfrac {1}{2m} \sum ^{m}_{i=1}\left( \theta _{0}+\theta _{1}x^{\left(i\right)} -y^{\left(i\right)}\right) ^{2} \end{aligned} \end{equation}$</p>
-<p>$\begin{aligned} \theta _{0}=\dfrac {\partial }{\partial \theta _{0}}J\left( \theta _{0},\theta _{1}\right) = \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \end{aligned}$</p>
-<p>$\begin{aligned} \theta _{1}=\dfrac {\partial }{\partial \theta _{1}}J\left( \theta _{0},\theta _{1}\right) = \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \cdot x^{\left(i\right)} \end{aligned}$</p>
-<p><strong><em>repeat until convergence:</em></strong><br>&emsp;&emsp;$\begin{aligned} \theta _{0}:=\theta _{0}-\alpha \cdot \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \end{aligned}$<br>&emsp;&emsp;$\begin{aligned} \theta _{1}:=\theta _{1}-\alpha \cdot \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \cdot x^{\left(i\right)} \end{aligned}$&emsp;&emsp;<strong><em>simultaneously</em></strong></p>
-<p><em>The cost function for linear regression is always going to be a convex function that doesn’t have any local optima except for the one global optimum.</em></p>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Machine Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -2799,6 +2654,80 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
+    <title>Machine Learning (1) · Linear Regression · I</title>
+    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-1/</url>
+    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 1:</em></strong> Introduction, Linear Regression with One Variable</p>
+<h3 id="Machine-Learning-Introduction"><a href="#Machine-Learning-Introduction" class="headerlink" title="Machine Learning Introduction"></a>Machine Learning Introduction</h3><p>Machine learning is the field of study that gives computers the ability to learn without being explicitly programmed.</p>
+<p><strong><em>Definition:</em></strong> a computer program is said to learn from <strong>experience E</strong> with respect to some <strong>task T</strong> and some performance <strong>measure P,</strong> if its performance on T, as measured by P, improves with experience E.</p>
+<a id="more"></a>
+<h4 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h4><ul>
+<li><strong>Supervised Learning</strong><br><em>Given the “right answer” for each of our examples</em><ul>
+<li><strong>Regression:</strong> Predict real-valued output</li>
+<li><strong>Classification:</strong> Predict discrete-valued output</li>
+</ul>
+</li>
+<li><strong>Unsupervised Learning</strong><ul>
+<li><strong>Clustering</strong></li>
+<li><strong>Non-clustering</strong> <em>(The Cocktail Party Algorithm)</em></li>
+</ul>
+</li>
+<li><strong>Reinforcement Learning</strong></li>
+<li><strong>Recommender Systems</strong></li>
+</ul>
+<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><ul>
+<li><strong>Model Representation</strong><ul>
+<li><strong>m</strong> = number of training examples</li>
+<li><strong>x’</strong>s = <em>input</em> variable / features</li>
+<li><strong>y’</strong>s = <em>output</em> variable / <em>target</em> variable</li>
+<li><strong>(x<sup>(i)</sup>, y<sup>(i)</sup>)</strong> = i<sup>th</sup> training example</li>
+</ul>
+</li>
+</ul>
+<h4 id="Linear-Regression-with-One-Variable-univariate-linear-regression"><a href="#Linear-Regression-with-One-Variable-univariate-linear-regression" class="headerlink" title="Linear Regression with One Variable (univariate linear regression)"></a>Linear Regression with One Variable <em>(univariate linear regression)</em></h4><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-1/ModelRepresentation.png" alt="Model Representation"></p>
+<ul>
+<li><p><strong><em>Parameters:</em></strong> $\theta _{0},\theta _{1}$</p>
+</li>
+<li><p><strong><em>Hypothesis:</em></strong> $h_{\theta }\left( x\right) =\theta _{0}+\theta _{1}x$</p>
+</li>
+<li><p><strong><em>Cost Function:</em></strong> $J\left( \theta _{0},\theta _{1}\right) =  \dfrac {1}{2m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) ^{2} $ <em>(squared error function)</em></p>
+</li>
+<li><p><strong><em>Goal:</em></strong> $\min _{\theta _{0},\theta _{1}}J\left( \theta _{0},\theta _{1}\right) $ <em>(minimize the cost function)</em></p>
+</li>
+</ul>
+<h3 id="Parameter-Learning"><a href="#Parameter-Learning" class="headerlink" title="Parameter Learning"></a>Parameter Learning</h3><p>$\min _{\theta _{0},\theta _{1},…,\theta _{n}}J\left( \theta _{0},\theta _{1},…,\theta _{n}\right) $ </p>
+<h4 id="Gradient-Descent-Outline"><a href="#Gradient-Descent-Outline" class="headerlink" title="Gradient Descent Outline"></a>Gradient Descent Outline</h4><ul>
+<li>Start with some $\theta _{0},\theta _{1}$</li>
+<li>Keep changing $\theta _{0},\theta _{1}$ to reduce $J\left( \theta _{0},\theta _{1}\right) $ until end up at a <em>(local)</em> minimum</li>
+</ul>
+<h4 id="Gradient-Descent-Algorithm"><a href="#Gradient-Descent-Algorithm" class="headerlink" title="Gradient Descent Algorithm"></a>Gradient Descent Algorithm</h4><p><strong><em>repeat until convergence:</em></strong><br>&emsp;&emsp;$\theta _{j}:=\theta _{j}-\alpha \cdot \dfrac {\partial }{\partial \theta _{j}}J\left( \theta _{0},\theta _{1}\right)$&emsp;&emsp;<em>for $j=0$ and $j=1$</em></p>
+<ul>
+<li><strong>Simultaneously</strong> Update θ<sub>0</sub> and θ<sub>1</sub></li>
+<li><p><strong>Learning Rate</strong> $\alpha$</p>
+<ul>
+<li><strong>too small:</strong> slow</li>
+<li><strong>too large:</strong> overshoot <em>(fail to converge / diverge)</em></li>
+</ul>
+<p><em>As we approach a local minimum, the derivative term will automatically get smaller, and so gradient descent will automatically take smaller steps, no need to decrease α over time.</em></p>
+</li>
+</ul>
+<h4 id="Gradient-Descent-For-Linear-Regression"><a href="#Gradient-Descent-For-Linear-Regression" class="headerlink" title="Gradient Descent For Linear Regression"></a>Gradient Descent For Linear Regression</h4><p><strong><em>“Batch” Gradient Decent:</em></strong> Each step uses all training examples</p>
+<p>$\begin{equation} \begin{aligned} \dfrac {\partial }{\partial \theta _{j}}J\left( \theta _{0},\theta _{1}\right) &amp; = \dfrac {\partial }{\partial \theta _{j}} \dfrac {1}{2m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) ^{2} \\&amp; = \dfrac {\partial }{\partial \theta _{j}} \dfrac {1}{2m} \sum ^{m}_{i=1}\left( \theta _{0}+\theta _{1}x^{\left(i\right)} -y^{\left(i\right)}\right) ^{2} \end{aligned} \end{equation}$</p>
+<p>$\begin{aligned} \theta _{0}=\dfrac {\partial }{\partial \theta _{0}}J\left( \theta _{0},\theta _{1}\right) = \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \end{aligned}$</p>
+<p>$\begin{aligned} \theta _{1}=\dfrac {\partial }{\partial \theta _{1}}J\left( \theta _{0},\theta _{1}\right) = \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \cdot x^{\left(i\right)} \end{aligned}$</p>
+<p><strong><em>repeat until convergence:</em></strong><br>&emsp;&emsp;$\begin{aligned} \theta _{0}:=\theta _{0}-\alpha \cdot \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \end{aligned}$<br>&emsp;&emsp;$\begin{aligned} \theta _{1}:=\theta _{1}-\alpha \cdot \dfrac {1}{m} \sum ^{m}_{i=1}\left( h_{\theta }\left( x^{\left(i\right)}\right) -y^{\left(i\right)}\right) \cdot x^{\left(i\right)} \end{aligned}$&emsp;&emsp;<strong><em>simultaneously</em></strong></p>
+<p><em>The cost function for linear regression is always going to be a convex function that doesn’t have any local optima except for the one global optimum.</em></p>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Machine Learning (2) · Linear Regression · II</title>
     <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-2/</url>
     <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
@@ -2848,6 +2777,77 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       <tags>
         <tag>Artificial Intelligence</tag>
         <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Game Theory (1)</title>
+    <url>/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/</url>
+    <content><![CDATA[<p>Yale University, <strong>Game Theory,</strong> Economics 159</p>
+<blockquote>
+<p>Game theory is a method of studying strategic situations.</p>
+</blockquote>
+<p><br></p>
+<h2 id="Class-1-Prisoners’-Dilemma"><a href="#Class-1-Prisoners’-Dilemma" class="headerlink" title="Class 1 - Prisoners’ Dilemma"></a>Class 1 - Prisoners’ Dilemma</h2><div class="note default">
+            <h4 id="Game-1"><a href="#Game-1" class="headerlink" title="Game 1"></a>Game 1</h4><p>$\begin{matrix} &amp; \begin{matrix} \textrm{Pair} \end{matrix} &amp;&amp;&amp; \textrm{payoffs} \textit{  (evil gits)} &amp;&amp; \textrm{payoffs} \textit{  (indignant angels)} \\ \begin{matrix} \\ \textrm{Me} \end{matrix} &amp; \begin{matrix} &amp;\alpha&amp;\beta \\ \alpha&amp;\textrm{B-, B-}&amp;\textrm{A, C} \\ \beta&amp;\textrm{C, A}&amp;\textrm{B+, B+} \end{matrix} &amp;&amp;&amp; \begin{matrix} &amp;\alpha&amp;\beta \\ \alpha&amp;0,0&amp;3,-1 \\ \beta&amp;-1,3&amp;1,1 \end{matrix} &amp;&amp; \begin{matrix} &amp;\alpha&amp;\beta \\ \alpha&amp;0,0&amp;-1,-3 \\ \beta&amp;-3,-1&amp;1,1 \end{matrix} \\ &amp; &amp;&amp;&amp; {}_\texttt{Prisoners’ Dilemma} &amp;&amp; {}_\texttt{Coordination Problem} \end{matrix}$</p>
+          </div>
+<a id="more"></a>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p style="text-align:left!important"><strong>Lesson 1:</strong> Do not play a strictly <em>(weakly)</em> dominated strategy.</p>
+<p style="text-align:left!important"><strong>Lesson 2:</strong> Rational choice can lead to outcomes that "suck" <em>(Pareto Inefficient)</em>. &emsp; <strong>Prisoners' Dilemma</strong></p>
+<p style="text-align:left!important"><strong>Lesson 3:</strong> You can't get what you want till you know what you want <em>(payoffs)</em>.</p>
+<p style="text-align:left!important"><strong>Lesson 4:</strong> Put yourself in others' shoes and try to figure out what they will do.</p>
+<p style="text-align:left!important"><strong>Lesson 5:</strong> Yale students are evil.</p>
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<p><br></p>
+<h2 id="Class-2-Deleting-Dominated-Strategies"><a href="#Class-2-Deleting-Dominated-Strategies" class="headerlink" title="Class 2 - Deleting Dominated Strategies"></a>Class 2 - Deleting Dominated Strategies</h2><p>$ \textrm{ingredients of a game: } \begin{cases} \texttt{players} \\ \texttt{strategies} \\ \texttt{payoffs} \end{cases}$</p>
+<div class="note default">
+            <h4 id="Game-2"><a href="#Game-2" class="headerlink" title="Game 2"></a>Game 2</h4><p>Pick a number between 1 and 100. The winner is the person whose number is closest to 2/3 times the average number.</p><p>$\begin{cases} 67 \sim 100 \ \ &amp; &amp; \textrm{weakly dominated} &amp; \textit{ lesson 1} \\ 45 \sim 67 &amp; \texttt{rationality} &amp; \textrm{weakly dominated after delete 67~100} &amp; \textit{ lesson 4} \\ 30 \sim 45 &amp; \texttt{know others are rational} &amp; \textrm{weakly dominated after delete 45~67 and 67~100} &amp; \textit{ in shoes in shoes} \\ \,\vdots &amp;&amp; \texttt{iterative deletion of dominated strategies} \\ 1 &amp; \texttt{R, KR, KKR, KKKR, …} &amp; {}_\texttt{Common Knowledge} \end{cases}$</p><p><strong><em>Mutual knowledge doesn’t imply common knowledge.</em></strong></p>
+          </div>
+<p><br></p>
+<h2 id="Class-3-Median-Voter-Theorem"><a href="#Class-3-Median-Voter-Theorem" class="headerlink" title="Class 3 - Median Voter Theorem"></a>Class 3 - Median Voter Theorem</h2><div class="note default">
+            <h4 id="Game-3"><a href="#Game-3" class="headerlink" title="Game 3"></a>Game 3</h4><p><strong>model of politics:</strong> 2 candidates, uniformly distributed voters, $\textrm{choose: }\xrightarrow[\textrm{political spectrum}]{1\,2\,3\,4\,5\,6\,7\,8\,9\,10}$</p><p>$\begin{matrix} \textrm{2 strictly dominates 1} \\  \textrm{9 strictly dominates 10} \end{matrix} \longrightarrow \begin{matrix} \textrm{3 strictly dominates 2} \\  \textrm{8 strictly dominates 9} \end{matrix} \cdots\xrightarrow[\texttt{ dominated strategies }]{\texttt{ iterative deletion of }}\cdots \begin{matrix} \textrm{5 strictly dominates 4} \\  \textrm{6 strictly dominates 7} \end{matrix}$</p><p><strong>Median Voter Theorem:</strong> candidates close to each other, close to the center</p>
+          </div>
+<p><br></p>
+<h2 id="Class-4-Best-Response"><a href="#Class-4-Best-Response" class="headerlink" title="Class 4 - Best Response"></a>Class 4 - Best Response</h2><div class="note default">
+            <h4 id="Game-4"><a href="#Game-4" class="headerlink" title="Game 4"></a>Game 4</h4><p>$\begin{matrix} &amp;L&amp;R \\ U&amp;5,1&amp;0,2 \\ M&amp;1,3&amp;4,1 \\ D&amp;4,2&amp;2,3 \end{matrix} \qquad \begin{matrix} \textit{U does best against L} \\ \textit{M does best against R} \end{matrix}\quad \texttt{best response based on belief} $</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/1.png" alt="Best Response"></p>
+          </div>
+<div class="note default">
+            <h4 id="Game-5"><a href="#Game-5" class="headerlink" title="Game 5"></a>Game 5</h4><p><strong>Penalty Kick Game</strong></p><p>$\begin{matrix} &amp;L&amp;R \\ U&amp;4,-4&amp;9,-9 \\ M&amp;6,-6&amp;6,-6 \\ D&amp;9,-9&amp;4,-4 \end{matrix} \qquad \begin{matrix} \textrm{no dominated strategies, but:} \\ \textrm{M is not a best response to any belief} \end{matrix}$</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/2.png" alt="Best Response"></p>
+          </div>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p style="text-align:left!important"><strong>Lesson 6:</strong> Do not choose a strategy that is never a best response to any belief.</p>
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<div class="note default">
+            <h4 id="Game-6"><a href="#Game-6" class="headerlink" title="Game 6"></a>Game 6</h4><p><strong>Partnership Game:</strong> 2 agents, own firm jointly, share $50\%$ of the profit each. Each agent chooses the effort level to put in the firm, $S_i\in\left[\,0,4\,\right]$ <em>(continuum)</em>. The frim profit is given by $4\left(s_1+s_2+b\cdot s_1\,s_2\right),\,\Tiny{0\leq b\leq1/4}$. Payoffs are: $U_1\left(s_1,\,s_2\right)=1/2\cdot4\left(s_1+s_2+b\cdot s_1\,s_2\right)-s_1^2$, $U_2\left(s_1,\,s_2\right)=1/2\cdot4\left(s_1+s_2+b\cdot s_1\,s_2\right)-s_2^2$</p><p>$\max_{s_1}2\left(s_1+s_2+b\cdot s_1\,s_2\right)-s_1^2$</p><p>$\dfrac{\partial U_1}{\partial s_1} = 2 + 2b\,s_2 - 2 \hat s_1 =0 \quad\Rightarrow\quad \mathrm{BR}_1\left(s_2\right) = \hat s_1 = 1 + b\,s_2 \,,\,\, \mathrm{BR}_2\left(s_1\right) = \hat s_2 = 1 + b\,s_1$</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/3.png" alt="Best Response"></p><p>$\texttt{iterative deletion until converge} \quad\Rightarrow\quad s_1^\ast = s_2^\ast = \dfrac{1}{1-b} \qquad {}_\texttt{Nash Equilibrium}$</p><p><strong>Externality:</strong> my effort benefits you, not just for me.</p>
+          </div>
+<p><br></p>
+<h2 id="Class-5-Nash-Equilibrium-Coordination-Problems"><a href="#Class-5-Nash-Equilibrium-Coordination-Problems" class="headerlink" title="Class 5 - Nash Equilibrium (Coordination Problems)"></a>Class 5 - Nash Equilibrium (Coordination Problems)</h2><p><strong>Nash Equilibrium:</strong> players are playing a best response to each other. no individual can do <strong>strictly</strong> better by deviating, holding everyone else’s actions <em>(no regrets)</em>.</p>
+<div class="note default">
+            <h4 id="Game-7"><a href="#Game-7" class="headerlink" title="Game 7"></a>Game 7</h4><p>$\begin{matrix} &amp; \begin{matrix} \textrm{P2} \end{matrix}  \\ \begin{matrix} \\ \textrm{P1} \end{matrix} &amp; \begin{matrix} &amp;L&amp;C&amp;R \\ U&amp;0,\hat4&amp;\hat4,0&amp;5,3 \\ M&amp;\hat4,0&amp;0,\hat4&amp;5,3 \\ D&amp;3,5&amp;3,5&amp;\hat6,\hat6 \end{matrix} &amp;&amp;&amp; \begin{cases} \mathrm{BR}_1\left(L\right)=M \\ \mathrm{BR}_1\left(C\right)=U \\ \mathrm{BR}_1\left(R\right)=D \end{cases} &amp; \begin{cases} \mathrm{BR}_2\left(U\right)=L \\ \mathrm{BR}_2\left(M\right)=C \\ \mathrm{BR}_2\left(D\right)=R \end{cases} \\ &amp; &amp;&amp;&amp;\Rightarrow\ \mathrm{NE} = \left(D,R\right) \end{matrix}$</p><p>$\begin{matrix} &amp; \begin{matrix} \textrm{P2} \end{matrix}  \\ \begin{matrix} \\ \textrm{P1} \end{matrix} &amp; \begin{matrix} &amp;L&amp;C&amp;R \\ U&amp;0,2&amp;2,\hat3&amp;4,\hat3 \\ M&amp;\hat9,1&amp;\hat3,\hat2&amp;0,0 \\ D&amp;0,\hat3&amp;1,0&amp;\hat8,0 \end{matrix} &amp;&amp;&amp; \begin{cases} \mathrm{BR}_1\left(L\right)=M \\ \mathrm{BR}_1\left(C\right)=M \\ \mathrm{BR}_1\left(R\right)=D \end{cases} &amp; \begin{cases} \mathrm{BR}_2\left(U\right)=C,R \\ \mathrm{BR}_2\left(M\right)=C \\ \mathrm{BR}_2\left(D\right)=L \end{cases} \\ &amp; &amp;&amp;&amp;\Rightarrow\ \mathrm{NE} = \left(M,C\right) \end{matrix}$</p>
+          </div>
+<div class="note default">
+            <h4 id="Game-8"><a href="#Game-8" class="headerlink" title="Game 8"></a>Game 8</h4><p><strong>Investment Game:</strong> choose: invest $0$ or $10$ dollar.<br>if you do not invest, $\mathrm{payoff}=0$, if you invest, $\mathrm{payoff}=\begin{cases}\$5&amp;\textrm{if }\geq90\%\textrm{ invest}&amp;\texttt{coordination} \\ -\$10&amp;\textrm{if }&lt;90\%\textrm{ invest}\end{cases}$</p><p>guess and check: <strong>2 NEs</strong> $\quad \mathrm{NE}_1 \textrm{:  all invest,} \quad \mathrm{NE}_2 \textrm{:  no one invest}$</p><p><em>play converged fairly rapidly to the (“bad” maybe) Nash Equilibrium</em></p>
+          </div>
+<p><strong>In Coordination Problems, unlike Prisoners’ Dilemma, <em>communication</em> can help.<br>Nash Equilibrium can be a self-enforcing agreement.</strong></p>
+<div class="note default">
+            <h4 id="Game-9"><a href="#Game-9" class="headerlink" title="Game 9"></a>Game 9</h4><p><strong>Going to the movie</strong></p><p>$\begin{matrix} &amp; \begin{matrix} &amp;&amp;&amp;&amp;&amp;&amp;&amp;\textrm{P2} \end{matrix}  \\ \begin{matrix} \\ \textrm{P1} \end{matrix} &amp; \begin{matrix} &amp;\textit{BU}&amp;\textit{GS}&amp;\textit{SW} \\ \textit{Bourne Ultimatum}&amp;\underline{2,1}&amp;0,0&amp;0,-1 \\ \textit{Good Shepherd}&amp;0,0&amp;\underline{1,2}&amp;0,-1 \\ \textit{Snow White}&amp;-1,0&amp;-1,0&amp;-2,-2&amp;\times \\ &amp;&amp;&amp;\times \end{matrix} \end{matrix}$</p><p><strong>the Battle of the Sexes:</strong> different people disagree about where they’d like to coordinate.</p>
+          </div>
+<p><br></p>
+<h2 id="Class-6-Nash-Equilibrium-Cournot-Duopoly"><a href="#Class-6-Nash-Equilibrium-Cournot-Duopoly" class="headerlink" title="Class 6 - Nash Equilibrium (Cournot Duopoly)"></a>Class 6 - Nash Equilibrium (Cournot Duopoly)</h2><div class="note default">
+            <h4 id="Game-10"><a href="#Game-10" class="headerlink" title="Game 10"></a>Game 10</h4><p><strong>Cournot Duopoly</strong> (a few players, many strategies)</p><p><strong>players:</strong> 2 firms, <strong>strategies:</strong> quantities of an identical product $q$, <strong>cost of production:</strong> constant marginal cost $c$, <strong>prices:</strong> $p=a-b\left(q_1+q_2\right)$, <strong>payoffs:</strong> profit $u_1\left(q_1,q_2\right)=pq_1-cq_1=aq_1-bq_1^2-bq_1q_2-cq_1$</p><p>$\dfrac{\partial u_1}{\partial p_1} = a-2bq_1-bq_2-c = 0 \quad\Rightarrow\quad \mathrm{BR}_1\left(q_2\right) = \hat q_1 = \dfrac{a-c}{2b} - \dfrac{q_2}{2} \,,\,\, \mathrm{BR}_2\left(q_1\right) = \hat q_2 = \dfrac{a-c}{2b} - \dfrac{q_1}{2}$</p><p><img src="/post/Open-Course/Game-Theory/Game-Theory-Ben-Polak-1/4.png" alt="Best Response"></p><p>$\begin{cases}\begin{aligned} \dfrac{a-c}{b} &amp;&amp; \texttt{competitive quantity} \\ \dfrac{2}{3}\cdot\dfrac{a-c}{b} &amp;&amp; {}\texttt{cournot quantity} \\ \dfrac{1}{2}\cdot\dfrac{a-c}{b} &amp;&amp; \texttt{molopoly quantity} \end{aligned}\end{cases}$</p>
+          </div>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Game Theory</category>
+      </categories>
+      <tags>
+        <tag>Economics</tag>
+        <tag>Game Theory</tag>
       </tags>
   </entry>
   <entry>
@@ -3120,74 +3120,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning (7) · Support Vector Machines</title>
-    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/</url>
-    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
-<p><strong><em>Week 7:</em></strong> Support Vector Machines</p>
-<h3 id="Support-Vector-Machines"><a href="#Support-Vector-Machines" class="headerlink" title="Support Vector Machines"></a>Support Vector Machines</h3><h4 id="Large-Margin-Classification"><a href="#Large-Margin-Classification" class="headerlink" title="Large Margin Classification"></a>Large Margin Classification</h4><h5 id="Optimization-Objective"><a href="#Optimization-Objective" class="headerlink" title="Optimization Objective"></a>Optimization Objective</h5><p><strong>Logistic Regression</strong></p>
-<p>$h_{\theta}\left(x\right) = \dfrac{1}{1+e^{ -\theta^\mathsf{T}x }}$</p>
-<p>if $y=1$, we want $h_{\theta}\left(x\right)\approx1$, $\theta^\mathsf{T}x\gg0$<br><br>if $y=0$, we want $h_{\theta}\left(x\right)\approx0$, $\theta^\mathsf{T}x\ll0$</p>
-<p>cost function $-y \log h_{\theta}\left(x\right) - \left(1-y\right) \log \left( 1- h_{\theta}\left(x\right) \right)$</p>
-<a id="more"></a>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/1.png" alt="cost"></p>
-<p><strong>Support Vector Machine</strong></p>
-<ul>
-<li><p><strong>logistic regression</strong> <em>“A+λB”</em><br>$\begin{aligned} \min_\theta \dfrac{1}{m} \left[ \sum_{i=1}^m y ^\left(i\right) \left[ -\log h_\theta \left( x^\left(i\right) \right) \right] + \left( 1-y^\left(i\right) \right) \left[ -\log \left( 1- h_\theta \left( x^\left(i\right) \right) \right) \right] \right] + \dfrac{\lambda}{2m} \sum_{j=1}^{n} \theta_j^{\,2} \end{aligned}$</p>
-</li>
-<li><p><strong>support vector machine</strong> <em>“CA+B”</em><br>$\begin{aligned} \min_\theta {\color{lightgrey} {\dfrac{1}{m}} } C\cdot \left[ \sum_{i=1}^m y ^\left(i\right) \left[ \mathsf{cost}_\mathsf{1} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) \right] + \left( 1-y^\left(i\right) \right) \left[ \mathsf{cost}_\mathsf{0} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) \right] \right] + \dfrac{1}{2 {\color{lightgrey} {m} }} \sum_{j=1}^{n} \theta_j^{\,2} \end{aligned}$</p>
-<p>hypothesis: $h_{\theta}\left(x\right)= \begin{cases} 1 &amp; \textsf{if } \theta^\mathsf{T}x\geq0 \\ 0 &amp; \textsf{otherwise} \end{cases}$</p>
-</li>
-</ul>
-<h5 id="Large-Margin-Intuition"><a href="#Large-Margin-Intuition" class="headerlink" title="Large Margin Intuition"></a>Large Margin Intuition</h5><p>$\begin{aligned} \min_\theta \; C\cdot \sum_{i=1}^m \left[ y ^\left(i\right) \, \mathsf{cost}_\mathsf{1} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) + \left( 1-y^\left(i\right) \right) \mathsf{cost}_\mathsf{0} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) \right] + \dfrac{1}{2} \sum_{j=1}^{n} \theta_j^{\,2} \end{aligned}$</p>
-<p>if $y=1$, we want $\theta^\mathsf{T}x\geq+1$ &emsp; (not just $\geq0$)<br><br>if $y=0$, we want $\theta^\mathsf{T}x\lt-1$ &emsp; (not just $\lt0$)</p>
-<p><strong>SVM Decision Boundary:</strong> linearly separable case</p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/2.png" alt="Large C"></p>
-<p><em>large margin classifier in presence of outliers</em></p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/3.png" alt="C"></p>
-<h5 id="Mathematics-Behind-Large-Margin-Classification"><a href="#Mathematics-Behind-Large-Margin-Classification" class="headerlink" title="Mathematics Behind Large Margin Classification"></a>Mathematics Behind Large Margin Classification</h5><p>$\begin{aligned} &amp; \min_\theta \dfrac{1}{2} \sum_{j=1}^{n} \theta_j^{\,2} = \dfrac{1}{2} \left| \theta \right| ^2 \\ &amp; \quad \begin{matrix} \textrm{s.t.} &amp; p^\left(i\right) \cdot \left| \theta \right| \geq +1 &amp; \textsf{if } y^\left(i\right)=1 \\ &amp; p^\left(i\right) \cdot \left| \theta \right| \lt -1 &amp; \textsf{if } y^\left(i\right)=0 \end{matrix} \\ &amp; \textrm{where } p^\left(i\right) \textrm{ is the projection of } x^\left(i\right) \textrm{ onto the vector } \theta \end{aligned}$</p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/4.png" alt="Large Margin"></p>
-<h4 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h4><h5 id="Kernels-1"><a href="#Kernels-1" class="headerlink" title="Kernels"></a>Kernels</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/5.png" alt="kernels"></p>
-<p>Given $x$, compute new feature depending on proximity to landmarks $l^\left(1\right) ,\, l^\left(2\right) ,\, l^\left(3\right)$</p>
-<p>$\begin{aligned} f_1 &amp;= \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(1\right) \right) = \exp \left( - \dfrac{ \left| x-l^\left(1\right) \right| ^2 }{2\sigma^2} \right) \\ f_2 &amp;= \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(2\right) \right) = \exp \left( - \dfrac{ \left| x-l^\left(2\right) \right| ^2 }{2\sigma^2} \right) \\ f_3 &amp;= \underbrace{\mathrm{similarity}}_\textsf{kernel} \hspace{-0.5mm} \left( x,\,l^\left(3\right) \right) = \exp \left( - \dfrac{ \left| x-l^\left(3\right) \right| ^2 }{2\sigma^2} \right) \quad \textsf{Gaussian kernel} \end{aligned}$</p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/6.png" alt="sigma"></p>
-<p>Predict $1$ when $\theta_0 + \theta_1f_1 + \theta_2f_2 + \theta_3f_3 \geq 0$</p>
-<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/7.png" alt="decision boundary"></p>
-<h5 id="SVM-with-Kernels"><a href="#SVM-with-Kernels" class="headerlink" title="SVM with Kernels"></a>SVM with Kernels</h5><p>Given $\left(x^\left(1\right),\,y^\left(1\right)\right) ,\, \left(x^\left(2\right),\,y^\left(2\right)\right) ,\,\dots,\, \left(x^\left(m\right),\,y^\left(m\right)\right)$,<br><br>Choose $l^\left(1\right)=x^\left(1\right) ,\, l^\left(2\right)=x^\left(2\right) ,\,\dots,\, l^\left(m\right)=x^\left(m\right)$.<br><br>Given example $x$:<br><br>&emsp; $f = \begin{bmatrix} f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m \end{bmatrix} = \begin{bmatrix} 1 \\ \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(1\right) \right) \\ \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(2\right) \right) \\ \vdots \\ \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(m\right) \right) \end{bmatrix}$<br><br>For training example $\left(x^\left(i\right),\,y^\left(i\right)\right)$:<br><br>&emsp; $f_i^\left(i\right) = \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(i\right) \right) = \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,x^\left(i\right) \right) = \exp \left( -\dfrac{0}{2\sigma^2} \right) =1$<br><br>&emsp; $f = \begin{bmatrix} f_0^\left(i\right) \\ f_1^\left(i\right) \\ f_2^\left(i\right) \\ \vdots \\ f_m^\left(i\right) \end{bmatrix} = \begin{bmatrix} 1 \\ \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(1\right) \right) \\ \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(2\right) \right) \\ \vdots \\ \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(m\right) \right) \end{bmatrix}$</p>
-<p><strong>Hypothesis</strong><br>&emsp; Given $x$, compute features $f \in \mathbb{R}^{m+1}$<br><br>&emsp; Predict $y=1$ if $\theta^\mathsf{T}f\geq0$<br><br>&emsp; Predict $y=0$ if $\theta^\mathsf{T}f\lt0$</p>
-<p><strong>Training</strong><br>&emsp; $\begin{aligned} \min_\theta \; C\cdot \sum_{i=1}^m \left[ y ^\left(i\right) \, \mathsf{cost}_\mathsf{1}  \hspace{-0.5mm} \left( \theta^\mathsf{T} f^\left(i\right) \right) + \left( 1-y^\left(i\right) \right) \mathsf{cost}_\mathsf{0} \hspace{-0.5mm} \left( \theta^\mathsf{T} f^\left(i\right) \right) \right] + \dfrac{1}{2} \sum_{j=1}^{m} \theta_j^{\,2} \end{aligned}$</p>
-<p><strong>SVM Parameters</strong><br>&emsp; $C \ _{ \tiny \left( \sim \dfrac{1}{\lambda} \right) } \ \ \begin{cases} \textsf{Large } C \textsf{: low bias, high variance} \\ \textsf{Small } C \textsf{: high bias, low variance} \end{cases}$<br><br>&emsp; $\sigma^2 \ \ \begin{cases} \textsf{Large } \sigma^2 \textsf{: features } f_i \textsf{ vary more smoothly, high bias, low variance} \\ \textsf{Small } \sigma^2 \textsf{: features } f_i \textsf{ vary less smoothly, low bias, high variance} \end{cases} ^\strut$</p>
-<h4 id="SVMs-in-Practice"><a href="#SVMs-in-Practice" class="headerlink" title="SVMs in Practice"></a>SVMs in Practice</h4><h5 id="Using-an-SVM"><a href="#Using-an-SVM" class="headerlink" title="Using an SVM"></a>Using an SVM</h5><p><strong>Choice of kernel (similarity function)</strong></p>
-<ul>
-<li><strong>No kernel (linear kernel)</strong><br>Predict $y=1$ if $\theta^\mathsf{T}x\geq0$</li>
-<li><strong>Gaussian kernel</strong><br>$f_i = \exp \left( - \dfrac{ \left| x-l^\left(i\right) \right| ^2 }{2\sigma^2} \right) \qquad l^\left(i\right)=x^\left(i\right)$<br><br>need to choose $\sigma^2$<br><br>perform feature scaling before using Gaussian kernel</li>
-<li><strong>Polynomial kernel</strong><br>$\mathrm{similarity} \hspace{-0.5mm} \left( x,\,l \right) = \left( x^\mathsf{T}l +\mathit{const} \right) ^\mathit{degree}$</li>
-<li>String kernel, chi-square kernel, histogram intersection kernel, …</li>
-</ul>
-<p><em>Not all similarity functions $\mathrm{similarity} \hspace{-0.5mm} \left( x,\,l \right)$ make valid kernels.</em><br><em>Need to satisfy technical condition called “Mercer’s Theorem” to make sure SVM packages’ optimizations run correctly, and do not diverge.</em></p>
-<p><strong>Multi-class Classification</strong></p>
-<ul>
-<li>built-in functionality</li>
-<li>use one-vs-all method</li>
-</ul>
-<p><strong>Logistic Regression vs. SVMs</strong></p>
-<p>$\begin{aligned} n &amp;= \textsf{number of features} \quad x \in \mathbb{R}^{n+1} \\ m &amp;= \textsf{number of training examples} \end{aligned}$</p>
-<ul>
-<li><strong>if $n$ is large (relative to $m$)</strong><br>use logistic regression, or SVM without a kernel (linear kernel)</li>
-<li><strong>if $n$ is small, $m$ is intermediate</strong><br>use SVM with Gaussian kernel</li>
-<li><strong>if $n$ is small, $m$ is large</strong><br>create/add more features, then use logistic regression or SVM without a kernel</li>
-<li>Neural network likely to work well for most of these settings, but maybe slower to train</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Open Course</category>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Machine Learning (8) · Unsupervised Learning</title>
     <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/</url>
     <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
@@ -3264,6 +3196,116 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       <tags>
         <tag>Artificial Intelligence</tag>
         <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Machine Learning (7) · Support Vector Machines</title>
+    <url>/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/</url>
+    <content><![CDATA[<p>Stanford University, <strong>Machine Learning,</strong> <em>Andrew Ng,</em> <a href="https://www.coursera.org/learn/machine-learning/home/info">Coursera</a></p>
+<p><strong><em>Week 7:</em></strong> Support Vector Machines</p>
+<h3 id="Support-Vector-Machines"><a href="#Support-Vector-Machines" class="headerlink" title="Support Vector Machines"></a>Support Vector Machines</h3><h4 id="Large-Margin-Classification"><a href="#Large-Margin-Classification" class="headerlink" title="Large Margin Classification"></a>Large Margin Classification</h4><h5 id="Optimization-Objective"><a href="#Optimization-Objective" class="headerlink" title="Optimization Objective"></a>Optimization Objective</h5><p><strong>Logistic Regression</strong></p>
+<p>$h_{\theta}\left(x\right) = \dfrac{1}{1+e^{ -\theta^\mathsf{T}x }}$</p>
+<p>if $y=1$, we want $h_{\theta}\left(x\right)\approx1$, $\theta^\mathsf{T}x\gg0$<br><br>if $y=0$, we want $h_{\theta}\left(x\right)\approx0$, $\theta^\mathsf{T}x\ll0$</p>
+<p>cost function $-y \log h_{\theta}\left(x\right) - \left(1-y\right) \log \left( 1- h_{\theta}\left(x\right) \right)$</p>
+<a id="more"></a>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/1.png" alt="cost"></p>
+<p><strong>Support Vector Machine</strong></p>
+<ul>
+<li><p><strong>logistic regression</strong> <em>“A+λB”</em><br>$\begin{aligned} \min_\theta \dfrac{1}{m} \left[ \sum_{i=1}^m y ^\left(i\right) \left[ -\log h_\theta \left( x^\left(i\right) \right) \right] + \left( 1-y^\left(i\right) \right) \left[ -\log \left( 1- h_\theta \left( x^\left(i\right) \right) \right) \right] \right] + \dfrac{\lambda}{2m} \sum_{j=1}^{n} \theta_j^{\,2} \end{aligned}$</p>
+</li>
+<li><p><strong>support vector machine</strong> <em>“CA+B”</em><br>$\begin{aligned} \min_\theta {\color{lightgrey} {\dfrac{1}{m}} } C\cdot \left[ \sum_{i=1}^m y ^\left(i\right) \left[ \mathsf{cost}_\mathsf{1} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) \right] + \left( 1-y^\left(i\right) \right) \left[ \mathsf{cost}_\mathsf{0} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) \right] \right] + \dfrac{1}{2 {\color{lightgrey} {m} }} \sum_{j=1}^{n} \theta_j^{\,2} \end{aligned}$</p>
+<p>hypothesis: $h_{\theta}\left(x\right)= \begin{cases} 1 &amp; \textsf{if } \theta^\mathsf{T}x\geq0 \\ 0 &amp; \textsf{otherwise} \end{cases}$</p>
+</li>
+</ul>
+<h5 id="Large-Margin-Intuition"><a href="#Large-Margin-Intuition" class="headerlink" title="Large Margin Intuition"></a>Large Margin Intuition</h5><p>$\begin{aligned} \min_\theta \; C\cdot \sum_{i=1}^m \left[ y ^\left(i\right) \, \mathsf{cost}_\mathsf{1} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) + \left( 1-y^\left(i\right) \right) \mathsf{cost}_\mathsf{0} \hspace{-0.5mm} \left( \theta^\mathsf{T} x^\left(i\right) \right) \right] + \dfrac{1}{2} \sum_{j=1}^{n} \theta_j^{\,2} \end{aligned}$</p>
+<p>if $y=1$, we want $\theta^\mathsf{T}x\geq+1$ &emsp; (not just $\geq0$)<br><br>if $y=0$, we want $\theta^\mathsf{T}x\lt-1$ &emsp; (not just $\lt0$)</p>
+<p><strong>SVM Decision Boundary:</strong> linearly separable case</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/2.png" alt="Large C"></p>
+<p><em>large margin classifier in presence of outliers</em></p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/3.png" alt="C"></p>
+<h5 id="Mathematics-Behind-Large-Margin-Classification"><a href="#Mathematics-Behind-Large-Margin-Classification" class="headerlink" title="Mathematics Behind Large Margin Classification"></a>Mathematics Behind Large Margin Classification</h5><p>$\begin{aligned} &amp; \min_\theta \dfrac{1}{2} \sum_{j=1}^{n} \theta_j^{\,2} = \dfrac{1}{2} \left| \theta \right| ^2 \\ &amp; \quad \begin{matrix} \textrm{s.t.} &amp; p^\left(i\right) \cdot \left| \theta \right| \geq +1 &amp; \textsf{if } y^\left(i\right)=1 \\ &amp; p^\left(i\right) \cdot \left| \theta \right| \lt -1 &amp; \textsf{if } y^\left(i\right)=0 \end{matrix} \\ &amp; \textrm{where } p^\left(i\right) \textrm{ is the projection of } x^\left(i\right) \textrm{ onto the vector } \theta \end{aligned}$</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/4.png" alt="Large Margin"></p>
+<h4 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h4><h5 id="Kernels-1"><a href="#Kernels-1" class="headerlink" title="Kernels"></a>Kernels</h5><p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/5.png" alt="kernels"></p>
+<p>Given $x$, compute new feature depending on proximity to landmarks $l^\left(1\right) ,\, l^\left(2\right) ,\, l^\left(3\right)$</p>
+<p>$\begin{aligned} f_1 &amp;= \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(1\right) \right) = \exp \left( - \dfrac{ \left| x-l^\left(1\right) \right| ^2 }{2\sigma^2} \right) \\ f_2 &amp;= \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(2\right) \right) = \exp \left( - \dfrac{ \left| x-l^\left(2\right) \right| ^2 }{2\sigma^2} \right) \\ f_3 &amp;= \underbrace{\mathrm{similarity}}_\textsf{kernel} \hspace{-0.5mm} \left( x,\,l^\left(3\right) \right) = \exp \left( - \dfrac{ \left| x-l^\left(3\right) \right| ^2 }{2\sigma^2} \right) \quad \textsf{Gaussian kernel} \end{aligned}$</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/6.png" alt="sigma"></p>
+<p>Predict $1$ when $\theta_0 + \theta_1f_1 + \theta_2f_2 + \theta_3f_3 \geq 0$</p>
+<p><img src="/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-7/7.png" alt="decision boundary"></p>
+<h5 id="SVM-with-Kernels"><a href="#SVM-with-Kernels" class="headerlink" title="SVM with Kernels"></a>SVM with Kernels</h5><p>Given $\left(x^\left(1\right),\,y^\left(1\right)\right) ,\, \left(x^\left(2\right),\,y^\left(2\right)\right) ,\,\dots,\, \left(x^\left(m\right),\,y^\left(m\right)\right)$,<br><br>Choose $l^\left(1\right)=x^\left(1\right) ,\, l^\left(2\right)=x^\left(2\right) ,\,\dots,\, l^\left(m\right)=x^\left(m\right)$.<br><br>Given example $x$:<br><br>&emsp; $f = \begin{bmatrix} f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m \end{bmatrix} = \begin{bmatrix} 1 \\ \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(1\right) \right) \\ \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(2\right) \right) \\ \vdots \\ \mathrm{similarity} \hspace{-0.5mm} \left( x,\,l^\left(m\right) \right) \end{bmatrix}$<br><br>For training example $\left(x^\left(i\right),\,y^\left(i\right)\right)$:<br><br>&emsp; $f_i^\left(i\right) = \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(i\right) \right) = \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,x^\left(i\right) \right) = \exp \left( -\dfrac{0}{2\sigma^2} \right) =1$<br><br>&emsp; $f = \begin{bmatrix} f_0^\left(i\right) \\ f_1^\left(i\right) \\ f_2^\left(i\right) \\ \vdots \\ f_m^\left(i\right) \end{bmatrix} = \begin{bmatrix} 1 \\ \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(1\right) \right) \\ \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(2\right) \right) \\ \vdots \\ \mathrm{similarity} \hspace{-0.5mm} \left( x^\left(i\right),\,l^\left(m\right) \right) \end{bmatrix}$</p>
+<p><strong>Hypothesis</strong><br>&emsp; Given $x$, compute features $f \in \mathbb{R}^{m+1}$<br><br>&emsp; Predict $y=1$ if $\theta^\mathsf{T}f\geq0$<br><br>&emsp; Predict $y=0$ if $\theta^\mathsf{T}f\lt0$</p>
+<p><strong>Training</strong><br>&emsp; $\begin{aligned} \min_\theta \; C\cdot \sum_{i=1}^m \left[ y ^\left(i\right) \, \mathsf{cost}_\mathsf{1}  \hspace{-0.5mm} \left( \theta^\mathsf{T} f^\left(i\right) \right) + \left( 1-y^\left(i\right) \right) \mathsf{cost}_\mathsf{0} \hspace{-0.5mm} \left( \theta^\mathsf{T} f^\left(i\right) \right) \right] + \dfrac{1}{2} \sum_{j=1}^{m} \theta_j^{\,2} \end{aligned}$</p>
+<p><strong>SVM Parameters</strong><br>&emsp; $C \ _{ \tiny \left( \sim \dfrac{1}{\lambda} \right) } \ \ \begin{cases} \textsf{Large } C \textsf{: low bias, high variance} \\ \textsf{Small } C \textsf{: high bias, low variance} \end{cases}$<br><br>&emsp; $\sigma^2 \ \ \begin{cases} \textsf{Large } \sigma^2 \textsf{: features } f_i \textsf{ vary more smoothly, high bias, low variance} \\ \textsf{Small } \sigma^2 \textsf{: features } f_i \textsf{ vary less smoothly, low bias, high variance} \end{cases} ^\strut$</p>
+<h4 id="SVMs-in-Practice"><a href="#SVMs-in-Practice" class="headerlink" title="SVMs in Practice"></a>SVMs in Practice</h4><h5 id="Using-an-SVM"><a href="#Using-an-SVM" class="headerlink" title="Using an SVM"></a>Using an SVM</h5><p><strong>Choice of kernel (similarity function)</strong></p>
+<ul>
+<li><strong>No kernel (linear kernel)</strong><br>Predict $y=1$ if $\theta^\mathsf{T}x\geq0$</li>
+<li><strong>Gaussian kernel</strong><br>$f_i = \exp \left( - \dfrac{ \left| x-l^\left(i\right) \right| ^2 }{2\sigma^2} \right) \qquad l^\left(i\right)=x^\left(i\right)$<br><br>need to choose $\sigma^2$<br><br>perform feature scaling before using Gaussian kernel</li>
+<li><strong>Polynomial kernel</strong><br>$\mathrm{similarity} \hspace{-0.5mm} \left( x,\,l \right) = \left( x^\mathsf{T}l +\mathit{const} \right) ^\mathit{degree}$</li>
+<li>String kernel, chi-square kernel, histogram intersection kernel, …</li>
+</ul>
+<p><em>Not all similarity functions $\mathrm{similarity} \hspace{-0.5mm} \left( x,\,l \right)$ make valid kernels.</em><br><em>Need to satisfy technical condition called “Mercer’s Theorem” to make sure SVM packages’ optimizations run correctly, and do not diverge.</em></p>
+<p><strong>Multi-class Classification</strong></p>
+<ul>
+<li>built-in functionality</li>
+<li>use one-vs-all method</li>
+</ul>
+<p><strong>Logistic Regression vs. SVMs</strong></p>
+<p>$\begin{aligned} n &amp;= \textsf{number of features} \quad x \in \mathbb{R}^{n+1} \\ m &amp;= \textsf{number of training examples} \end{aligned}$</p>
+<ul>
+<li><strong>if $n$ is large (relative to $m$)</strong><br>use logistic regression, or SVM without a kernel (linear kernel)</li>
+<li><strong>if $n$ is small, $m$ is intermediate</strong><br>use SVM with Gaussian kernel</li>
+<li><strong>if $n$ is small, $m$ is large</strong><br>create/add more features, then use logistic regression or SVM without a kernel</li>
+<li>Neural network likely to work well for most of these settings, but maybe slower to train</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Open Course</category>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python · Anaconda Tutorial</title>
+    <url>/post/Programming/Python/Python-Anaconda-Tutorial/</url>
+    <content><![CDATA[<p>这里只列出了部分基础操作命令。<br><br></p>
+<h3 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h3><ol>
+<li><strong>查看所有环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
+或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
+<li><strong>创建环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create --name your_env_name</span><br></pre></td></tr></table></figure>
+或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name</span><br></pre></td></tr></table></figure>
+指定 Python 版本和安装包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name python=3.5 numpy pandas</span><br></pre></td></tr></table></figure>
+克隆一部分旧的环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name --<span class="built_in">clone</span> oldname</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li><strong>启用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate your_env_name</span><br></pre></td></tr></table></figure>
+或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">activate your_env_name</span><br></pre></td></tr></table></figure></li>
+<li><strong>停用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></table></figure></li>
+<li><strong>删除环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n your_env_name --all</span><br></pre></td></tr></table></figure></li>
+<li><strong>导出环境配置</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env <span class="built_in">export</span> &gt; environment.yml</span><br></pre></td></tr></table></figure></li>
+<li><strong>根据配置文件生成环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
+<br></li>
+</ol>
+<h3 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h3><ol>
+<li><strong>列举包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+指定某个包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list -n packagename</span><br></pre></td></tr></table></figure></li>
+<li><strong>安装包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install packagename</span><br></pre></td></tr></table></figure>
+指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -n envname</span><br></pre></td></tr></table></figure></li>
+<li><strong>更新包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update packagename</span><br></pre></td></tr></table></figure>
+指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update -n envname packagename</span><br></pre></td></tr></table></figure></li>
+<li><strong>删除包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove packagename</span><br></pre></td></tr></table></figure>
+指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n envname</span><br></pre></td></tr></table></figure></li>
+<li><strong>更新 conda、anaconda、python</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update conda</span><br><span class="line">conda update anaconda</span><br><span class="line">conda update python</span><br></pre></td></tr></table></figure>
+指定 Python 版本<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install python=3.6</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Programming</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -3385,48 +3427,6 @@ Q\left(test\right) =\sum _{^{sets\ produced}}D\left(set\right)\times\mathrm{\dfr
       <tags>
         <tag>Artificial Intelligence</tag>
         <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python · Anaconda Tutorial</title>
-    <url>/post/Programming/Python/Python-Anaconda-Tutorial/</url>
-    <content><![CDATA[<p>这里只列出了部分基础操作命令。<br><br></p>
-<h3 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h3><ol>
-<li><strong>查看所有环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
-或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure></li>
-<li><strong>创建环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create --name your_env_name</span><br></pre></td></tr></table></figure>
-或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name</span><br></pre></td></tr></table></figure>
-指定 Python 版本和安装包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name python=3.5 numpy pandas</span><br></pre></td></tr></table></figure>
-克隆一部分旧的环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n your_env_name --<span class="built_in">clone</span> oldname</span><br></pre></td></tr></table></figure>
-<a id="more"></a></li>
-<li><strong>启用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate your_env_name</span><br></pre></td></tr></table></figure>
-或者使用命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">activate your_env_name</span><br></pre></td></tr></table></figure></li>
-<li><strong>停用环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></table></figure></li>
-<li><strong>删除环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n your_env_name --all</span><br></pre></td></tr></table></figure></li>
-<li><strong>导出环境配置</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env <span class="built_in">export</span> &gt; environment.yml</span><br></pre></td></tr></table></figure></li>
-<li><strong>根据配置文件生成环境</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
-<br></li>
-</ol>
-<h3 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h3><ol>
-<li><strong>列举包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
-指定某个包<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list -n packagename</span><br></pre></td></tr></table></figure></li>
-<li><strong>安装包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install packagename</span><br></pre></td></tr></table></figure>
-指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -n envname</span><br></pre></td></tr></table></figure></li>
-<li><strong>更新包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update packagename</span><br></pre></td></tr></table></figure>
-指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update -n envname packagename</span><br></pre></td></tr></table></figure></li>
-<li><strong>删除包</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove packagename</span><br></pre></td></tr></table></figure>
-指定某个环境<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n envname</span><br></pre></td></tr></table></figure></li>
-<li><strong>更新 conda、anaconda、python</strong><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update conda</span><br><span class="line">conda update anaconda</span><br><span class="line">conda update python</span><br></pre></td></tr></table></figure>
-指定 Python 版本<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install python=3.6</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Programming</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
 </search>
