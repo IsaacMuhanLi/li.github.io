@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://www.bugstop.cc/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/3.png">
 <meta property="og:image" content="https://www.bugstop.cc/post/Open-Course/Machine-Learning/Machine-Learning-Andrew-Ng-8/4.png">
 <meta property="article:published_time" content="2021-01-21T00:47:46.000Z">
-<meta property="article:modified_time" content="2021-02-15T05:12:38.188Z">
+<meta property="article:modified_time" content="2021-04-16T22:27:34.864Z">
 <meta property="article:author" content="Muhan Li">
 <meta property="article:tag" content="Artificial Intelligence">
 <meta property="article:tag" content="Machine Learning">
@@ -283,8 +283,8 @@
 <p><strong>Optimization Objective</strong></p>
 <p>$\begin{aligned} &amp; J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) = \dfrac{1}{m} \sum_{i=1}^{m} \left| x^\left(i\right) - \mu_{ c^\left(i\right) } \right| ^2 \\ &amp; \min_{ \substack{ c^\left(i\right) ,\,\dots,\, c^\left(m\right) , \\ \mu_1 ,\,\dots,\, \mu_K } } J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right) \qquad \textsf{distortion} \end{aligned}$</p>
 <ol>
-<li><strong>cluster assignment step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ wrt $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$, holding $\mu_1 ,\, \dots ,\, \mu_K$ fixed</li>
-<li><strong>move centroid step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ wrt $\mu_1 ,\, \dots ,\, \mu_K$, holding $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$ fixed</li>
+<li><strong>cluster assignment step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ with respect to $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$, holding $\mu_1 ,\, \dots ,\, \mu_K$ fixed</li>
+<li><strong>move centroid step</strong><br>minimize $J\left( c^\left(1\right) ,\, \dots ,\, c^\left(m\right) ,\, \mu_1 ,\, \dots ,\, \mu_K \right)$ with respect to $\mu_1 ,\, \dots ,\, \mu_K$, holding $c^\left(1\right) ,\, \dots ,\, c^\left(m\right)$ fixed</li>
 </ol>
 <h5 id="Random-Initialization"><a href="#Random-Initialization" class="headerlink" title="Random Initialization"></a>Random Initialization</h5><p>Randomly pick $K$ training examples and set $\mu_1 ,\,\dots,\, \mu_K$ equal to these $K$ examples. $\left( K \lt m \right)$</p>
 <p><strong>Local Optima</strong></p>
@@ -429,20 +429,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -493,12 +493,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">158k</span>
+    <span title="Symbols count total">159k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:23</span>
+    <span title="Reading time total">2:24</span>
 </div>
 
         
